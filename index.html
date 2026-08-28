@@ -8,7 +8,9 @@
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--bg-dark:#0d1117;--bg-sidebar:#161b22;--bg-card:#1c2333;--bg-card-hover:#222d3f;--bg-input:#0d1117;--text-primary:#e6edf3;--text-secondary:#7d8590;--accent:#58a6ff;--accent-hover:#79c0ff;--green:#3fb950;--red:#f85149;--yellow:#d29922;--orange:#db6d28;--purple:#bc8cff;--cyan:#39d2c0;--pink:#f778ba;--border:#30363d}
 body{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;background:var(--bg-dark);color:var(--text-primary);display:flex;min-height:100vh;overflow-x:hidden}
-::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg-dark)}::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg-dark)}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
 .sidebar{width:260px;min-width:260px;background:var(--bg-sidebar);border-right:1px solid var(--border);height:100vh;overflow-y:auto;position:fixed;z-index:100}
 .sidebar-header{padding:20px;border-bottom:1px solid var(--border)}
 .sidebar-header h1{font-size:1.25rem;color:var(--accent);display:flex;align-items:center;gap:8px}
@@ -18,12 +20,13 @@ body{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;background:
 .search-box input:focus{border-color:var(--accent)}
 .search-box::before{content:"🔍";position:absolute;left:24px;top:50%;transform:translateY(-50%);font-size:.7rem}
 .nav-cat{padding:10px 16px 4px;font-size:.65rem;font-weight:700;color:var(--text-secondary);letter-spacing:1.2px;text-transform:uppercase;margin-top:4px}
-.nav-item{display:flex;align-items:center;padding:6px 16px;cursor:pointer;font-size:.83rem;color:var(--text-secondary);transition:.15s;gap:8px;border-left:3px solid transparent}
+.nav-item{display:flex;align-items:center;padding:6px 16px;cursor:pointer;font-size:.83rem;color:var(--text-secondary);transition:.15s;gap:8px;border-left:3px solid transparent;user-select:none}
 .nav-item:hover{background:var(--bg-card);color:var(--text-primary)}
 .nav-item.active{background:rgba(88,166,255,.12);color:var(--accent);border-left-color:var(--accent);font-weight:600}
 .nav-item .ic{font-size:.85rem;width:20px;text-align:center}
 .main{margin-left:260px;flex:1;padding:24px 28px;width:calc(100% - 260px)}
-.view{display:none}.view.active{display:block}
+.view{display:none}
+.view.active{display:block}
 .dash-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:18px}
 .dash-card{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:18px;cursor:pointer;transition:.25s}
 .dash-card:hover{background:var(--bg-card-hover);transform:translateY(-2px);border-color:var(--accent)}
@@ -36,9 +39,12 @@ textarea,input[type="text"],input[type="number"],select{width:100%;padding:9px 1
 textarea:focus,input:focus,select:focus{border-color:var(--accent)}
 label{font-size:.83rem;color:var(--text-secondary);margin-bottom:4px;display:block;font-weight:600}
 .btn{padding:7px 16px;border:none;border-radius:6px;cursor:pointer;font-size:.83rem;font-weight:600;transition:.15s;display:inline-flex;align-items:center;gap:5px}
-.btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{background:var(--accent-hover);color:#000}
-.btn-secondary{background:var(--border);color:var(--text-primary)}.btn-secondary:hover{background:#444c56}
-.btn-success{background:var(--green);color:#fff}.btn-danger{background:var(--red);color:#fff}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-hover);color:#000}
+.btn-secondary{background:var(--border);color:var(--text-primary)}
+.btn-secondary:hover{background:#444c56}
+.btn-success{background:var(--green);color:#fff}
+.btn-danger{background:var(--red);color:#fff}
 .btn-sm{padding:4px 10px;font-size:.76rem}
 .btn-group{display:flex;gap:7px;margin:12px 0;flex-wrap:wrap}
 .out-box{background:var(--bg-input);border:1px solid var(--border);border-radius:6px;padding:13px;margin-top:10px;font-family:'Cascadia Code','Consolas',monospace;font-size:.83rem;white-space:pre-wrap;word-break:break-all;max-height:450px;overflow-y:auto;min-height:50px;line-height:1.5}
@@ -64,9 +70,7 @@ tr:hover{background:rgba(88,166,255,.04)}
 .stat-card .lbl{font-size:.73rem;color:var(--text-secondary);margin-top:2px}
 .hl{background:rgba(248,81,73,.25);border-radius:2px;padding:0 2px}
 .hl-green{background:rgba(63,185,80,.25)}
-.hl-yellow{background:rgba(210,153,34,.25)}
-.hl-blue{background:rgba(88,166,255,.25)}
-.acc-header{cursor:pointer;padding:11px;background:var(--bg-input);border:1px solid var(--border);border-radius:6px;margin-bottom:4px;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:.88rem}
+.acc-header{cursor:pointer;padding:11px;background:var(--bg-input);border:1px solid var(--border);border-radius:6px;margin-bottom:4px;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:.88rem;user-select:none}
 .acc-header:hover{border-color:var(--accent)}
 .acc-body{padding:13px;display:none;border:1px solid var(--border);border-top:0;border-radius:0 0 6px 6px;margin-bottom:10px;margin-top:-5px;font-size:.85rem;line-height:1.6}
 .acc-body.open{display:block}
@@ -81,8 +85,14 @@ tr:hover{background:rgba(88,166,255,.04)}
 .toast{position:fixed;bottom:20px;right:20px;background:var(--green);color:#fff;padding:10px 20px;border-radius:8px;font-size:.83rem;z-index:9999;opacity:0;transition:.3s;pointer-events:none}
 .toast.show{opacity:1}
 .mobile-toggle{display:none;position:fixed;top:10px;left:10px;z-index:101;background:var(--accent);color:#fff;border:none;padding:8px 12px;border-radius:6px;cursor:pointer;font-size:1.1rem}
-@media(max-width:900px){.mobile-toggle{display:block}.sidebar{transform:translateX(-100%);transition:.3s}.sidebar.open{transform:translateX(0)}.main{margin-left:0;width:100%;padding:16px}.grid-2,.grid-3{grid-template-columns:1fr}.dash-grid{grid-template-columns:1fr}}
-.sep{height:1px;background:var(--border);margin:16px 0}
+@media(max-width:900px){
+  .mobile-toggle{display:block}
+  .sidebar{transform:translateX(-100%);transition:.3s}
+  .sidebar.open{transform:translateX(0)}
+  .main{margin-left:0;width:100%;padding:16px}
+  .grid-2,.grid-3{grid-template-columns:1fr}
+  .dash-grid{grid-template-columns:1fr}
+}
 .info-box{background:rgba(88,166,255,.08);border:1px solid rgba(88,166,255,.2);border-radius:6px;padding:12px;font-size:.83rem;margin:10px 0}
 .warn-box{background:rgba(210,153,34,.08);border:1px solid rgba(210,153,34,.2);border-radius:6px;padding:12px;font-size:.83rem;margin:10px 0}
 .danger-box{background:rgba(248,81,73,.08);border:1px solid rgba(248,81,73,.2);border-radius:6px;padding:12px;font-size:.83rem;margin:10px 0}
@@ -103,55 +113,55 @@ tr:hover{background:rgba(88,166,255,.04)}
   </div>
 
   <div class="nav-cat">HOME</div>
-  <div class="nav-item active" onclick="go('dashboard',this)"><span class="ic">📊</span>Dashboard</div>
+  <div class="nav-item active" data-view="dashboard"><span class="ic">📊</span>Dashboard</div>
 
   <div class="nav-cat">HEADER ANALYSIS</div>
-  <div class="nav-item" onclick="go('headerAnalyzer',this)"><span class="ic">📨</span>Header Analyzer</div>
-  <div class="nav-item" onclick="go('hopTracer',this)"><span class="ic">🔀</span>Hop Tracer</div>
-  <div class="nav-item" onclick="go('authChecker',this)"><span class="ic">✅</span>Auth Result Checker</div>
+  <div class="nav-item" data-view="headerAnalyzer"><span class="ic">📨</span>Header Analyzer</div>
+  <div class="nav-item" data-view="hopTracer"><span class="ic">🔀</span>Hop Tracer</div>
+  <div class="nav-item" data-view="authChecker"><span class="ic">✅</span>Auth Result Checker</div>
 
   <div class="nav-cat">AUTHENTICATION</div>
-  <div class="nav-item" onclick="go('spfBuilder',this)"><span class="ic">🛡️</span>SPF Builder</div>
-  <div class="nav-item" onclick="go('dkimAnalyzer',this)"><span class="ic">🔏</span>DKIM Analyzer</div>
-  <div class="nav-item" onclick="go('dmarcBuilder',this)"><span class="ic">📋</span>DMARC Builder</div>
-  <div class="nav-item" onclick="go('authFlow',this)"><span class="ic">📐</span>Auth Flow Visualizer</div>
+  <div class="nav-item" data-view="spfBuilder"><span class="ic">🛡️</span>SPF Builder</div>
+  <div class="nav-item" data-view="dkimAnalyzer"><span class="ic">🔏</span>DKIM Analyzer</div>
+  <div class="nav-item" data-view="dmarcBuilder"><span class="ic">📋</span>DMARC Builder</div>
+  <div class="nav-item" data-view="authFlow"><span class="ic">📐</span>Auth Flow Visualizer</div>
 
   <div class="nav-cat">THREAT ANALYSIS</div>
-  <div class="nav-item" onclick="go('phishAnalyzer',this)"><span class="ic">🎣</span>Phishing Analyzer</div>
-  <div class="nav-item" onclick="go('urlAnalyzer',this)"><span class="ic">🔗</span>URL Analyzer</div>
-  <div class="nav-item" onclick="go('homoglyphDetector',this)"><span class="ic">👁️</span>Homoglyph Detector</div>
-  <div class="nav-item" onclick="go('iocExtractor',this)"><span class="ic">🧲</span>IOC Extractor</div>
-  <div class="nav-item" onclick="go('attachRisk',this)"><span class="ic">📎</span>Attachment Analyzer</div>
+  <div class="nav-item" data-view="phishAnalyzer"><span class="ic">🎣</span>Phishing Analyzer</div>
+  <div class="nav-item" data-view="urlAnalyzer"><span class="ic">🔗</span>URL Analyzer</div>
+  <div class="nav-item" data-view="homoglyphDetector"><span class="ic">👁️</span>Homoglyph Detector</div>
+  <div class="nav-item" data-view="iocExtractor"><span class="ic">🧲</span>IOC Extractor</div>
+  <div class="nav-item" data-view="attachRisk"><span class="ic">📎</span>Attachment Analyzer</div>
 
   <div class="nav-cat">ENCODE / DECODE</div>
-  <div class="nav-item" onclick="go('base64Tool',this)"><span class="ic">📦</span>Base64</div>
-  <div class="nav-item" onclick="go('qpDecoder',this)"><span class="ic">📃</span>Quoted-Printable</div>
-  <div class="nav-item" onclick="go('urlDecoder',this)"><span class="ic">🔓</span>URL / SafeLink Decode</div>
-  <div class="nav-item" onclick="go('defangTool',this)"><span class="ic">🦷</span>Defang / Refang</div>
+  <div class="nav-item" data-view="base64Tool"><span class="ic">📦</span>Base64</div>
+  <div class="nav-item" data-view="qpDecoder"><span class="ic">📃</span>Quoted-Printable</div>
+  <div class="nav-item" data-view="urlDecoder"><span class="ic">🔓</span>URL / SafeLink Decode</div>
+  <div class="nav-item" data-view="defangTool"><span class="ic">🦷</span>Defang / Refang</div>
 
   <div class="nav-cat">POLICY & RULES</div>
-  <div class="nav-item" onclick="go('ruleBuilder',this)"><span class="ic">🏗️</span>Transport Rule Builder</div>
-  <div class="nav-item" onclick="go('regexTester',this)"><span class="ic">🔧</span>Regex Tester</div>
-  <div class="nav-item" onclick="go('headerRegex',this)"><span class="ic">📚</span>Header Regex Library</div>
+  <div class="nav-item" data-view="ruleBuilder"><span class="ic">🏗️</span>Transport Rule Builder</div>
+  <div class="nav-item" data-view="regexTester"><span class="ic">🔧</span>Regex Tester</div>
+  <div class="nav-item" data-view="headerRegex"><span class="ic">📚</span>Header Regex Library</div>
 
   <div class="nav-cat">INCIDENT RESPONSE</div>
-  <div class="nav-item" onclick="go('severityCalc',this)"><span class="ic">⚠️</span>Severity Calculator</div>
-  <div class="nav-item" onclick="go('irTemplates',this)"><span class="ic">📑</span>IR Templates</div>
-  <div class="nav-item" onclick="go('becPlaybook',this)"><span class="ic">💼</span>BEC Playbook</div>
+  <div class="nav-item" data-view="severityCalc"><span class="ic">⚠️</span>Severity Calculator</div>
+  <div class="nav-item" data-view="irTemplates"><span class="ic">📑</span>IR Templates</div>
+  <div class="nav-item" data-view="becPlaybook"><span class="ic">💼</span>BEC Playbook</div>
 
   <div class="nav-cat">REFERENCE</div>
-  <div class="nav-item" onclick="go('phishIndicators',this)"><span class="ic">🚩</span>Phishing Indicators</div>
-  <div class="nav-item" onclick="go('becPatterns',this)"><span class="ic">🎭</span>BEC Patterns</div>
-  <div class="nav-item" onclick="go('smtpRef',this)"><span class="ic">📡</span>SMTP Codes</div>
-  <div class="nav-item" onclick="go('portRef',this)"><span class="ic">🔌</span>Email Ports</div>
-  <div class="nav-item" onclick="go('mimeRef',this)"><span class="ic">📎</span>MIME Types</div>
-  <div class="nav-item" onclick="go('rfcRef',this)"><span class="ic">📜</span>RFC Reference</div>
-  <div class="nav-item" onclick="go('glossary',this)"><span class="ic">📖</span>Glossary</div>
+  <div class="nav-item" data-view="phishIndicators"><span class="ic">🚩</span>Phishing Indicators</div>
+  <div class="nav-item" data-view="becPatterns"><span class="ic">🎭</span>BEC Patterns</div>
+  <div class="nav-item" data-view="smtpRef"><span class="ic">📡</span>SMTP Codes</div>
+  <div class="nav-item" data-view="portRef"><span class="ic">🔌</span>Email Ports</div>
+  <div class="nav-item" data-view="mimeRef"><span class="ic">📎</span>MIME Types</div>
+  <div class="nav-item" data-view="rfcRef"><span class="ic">📜</span>RFC Reference</div>
+  <div class="nav-item" data-view="glossary"><span class="ic">📖</span>Glossary</div>
 </aside>
 
 <main class="main">
 
-<!-- DASHBOARD -->
+<!-- ==================== DASHBOARD ==================== -->
 <div class="view active" id="dashboard">
   <h2>✉️ EmailSec Toolkit</h2>
   <p style="color:var(--text-secondary);margin-bottom:18px">Your all-in-one email security utility belt — 30+ tools, all client-side, no data leaves your browser.</p>
@@ -162,22 +172,22 @@ tr:hover{background:rgba(88,166,255,.04)}
     <div class="stat-card"><div class="num">7</div><div class="lbl">Categories</div></div>
   </div>
   <div class="dash-grid">
-    <div class="dash-card" onclick="go('headerAnalyzer',sn('headerAnalyzer'))"><h3>📨 Header Analyzer</h3><p>Parse and analyze raw email headers</p></div>
-    <div class="dash-card" onclick="go('spfBuilder',sn('spfBuilder'))"><h3>🛡️ SPF Builder</h3><p>Build and validate SPF records</p></div>
-    <div class="dash-card" onclick="go('dmarcBuilder',sn('dmarcBuilder'))"><h3>📋 DMARC Builder</h3><p>Generate DMARC DNS records</p></div>
-    <div class="dash-card" onclick="go('phishAnalyzer',sn('phishAnalyzer'))"><h3>🎣 Phishing Analyzer</h3><p>Score emails for phishing indicators</p></div>
-    <div class="dash-card" onclick="go('urlAnalyzer',sn('urlAnalyzer'))"><h3>🔗 URL Analyzer</h3><p>Inspect and decode suspicious URLs</p></div>
-    <div class="dash-card" onclick="go('homoglyphDetector',sn('homoglyphDetector'))"><h3>👁️ Homoglyph Detector</h3><p>Find lookalike characters in domains</p></div>
-    <div class="dash-card" onclick="go('iocExtractor',sn('iocExtractor'))"><h3>🧲 IOC Extractor</h3><p>Extract IPs, domains, hashes, URLs from emails</p></div>
-    <div class="dash-card" onclick="go('defangTool',sn('defangTool'))"><h3>🦷 Defang / Refang</h3><p>Safe IOC sharing for incident reports</p></div>
-    <div class="dash-card" onclick="go('ruleBuilder',sn('ruleBuilder'))"><h3>🏗️ Transport Rule Builder</h3><p>Build email gateway transport rules</p></div>
-    <div class="dash-card" onclick="go('severityCalc',sn('severityCalc'))"><h3>⚠️ Severity Calculator</h3><p>Score email security incidents</p></div>
-    <div class="dash-card" onclick="go('becPlaybook',sn('becPlaybook'))"><h3>💼 BEC Playbook</h3><p>Business Email Compromise response guide</p></div>
-    <div class="dash-card" onclick="go('smtpRef',sn('smtpRef'))"><h3>📡 SMTP Codes</h3><p>SMTP response code reference</p></div>
+    <div class="dash-card" data-view="headerAnalyzer"><h3>📨 Header Analyzer</h3><p>Parse and analyze raw email headers</p></div>
+    <div class="dash-card" data-view="spfBuilder"><h3>🛡️ SPF Builder</h3><p>Build and validate SPF records</p></div>
+    <div class="dash-card" data-view="dmarcBuilder"><h3>📋 DMARC Builder</h3><p>Generate DMARC DNS records</p></div>
+    <div class="dash-card" data-view="phishAnalyzer"><h3>🎣 Phishing Analyzer</h3><p>Score emails for phishing indicators</p></div>
+    <div class="dash-card" data-view="urlAnalyzer"><h3>🔗 URL Analyzer</h3><p>Inspect and decode suspicious URLs</p></div>
+    <div class="dash-card" data-view="homoglyphDetector"><h3>👁️ Homoglyph Detector</h3><p>Find lookalike characters in domains</p></div>
+    <div class="dash-card" data-view="iocExtractor"><h3>🧲 IOC Extractor</h3><p>Extract IPs, domains, hashes, URLs</p></div>
+    <div class="dash-card" data-view="defangTool"><h3>🦷 Defang / Refang</h3><p>Safe IOC sharing for incident reports</p></div>
+    <div class="dash-card" data-view="ruleBuilder"><h3>🏗️ Transport Rule Builder</h3><p>Build email gateway transport rules</p></div>
+    <div class="dash-card" data-view="severityCalc"><h3>⚠️ Severity Calculator</h3><p>Score email security incidents</p></div>
+    <div class="dash-card" data-view="becPlaybook"><h3>💼 BEC Playbook</h3><p>Business Email Compromise response guide</p></div>
+    <div class="dash-card" data-view="smtpRef"><h3>📡 SMTP Codes</h3><p>SMTP response code reference</p></div>
   </div>
 </div>
 
-<!-- HEADER ANALYZER -->
+<!-- ==================== HEADER ANALYZER ==================== -->
 <div class="view" id="headerAnalyzer">
   <div class="tool-box">
     <h2>📨 Email Header Analyzer</h2>
@@ -193,7 +203,7 @@ tr:hover{background:rgba(88,166,255,.04)}
   </div>
 </div>
 
-<!-- HOP TRACER -->
+<!-- ==================== HOP TRACER ==================== -->
 <div class="view" id="hopTracer">
   <div class="tool-box">
     <h2>🔀 Hop Tracer</h2>
@@ -206,20 +216,20 @@ tr:hover{background:rgba(88,166,255,.04)}
   </div>
 </div>
 
-<!-- AUTH RESULT CHECKER -->
+<!-- ==================== AUTH CHECKER ==================== -->
 <div class="view" id="authChecker">
   <div class="tool-box">
     <h2>✅ Authentication Result Checker</h2>
     <p class="desc">Parse Authentication-Results headers to quickly check SPF, DKIM, and DMARC status.</p>
     <div class="fg"><label>Paste Authentication-Results Header</label>
-      <textarea id="authInput" rows="6" placeholder="Authentication-Results: mx.google.com;&#10;  spf=pass (google.com: domain of user@example.com designates 192.0.2.1 as permitted sender) smtp.mailfrom=example.com;&#10;  dkim=pass header.d=example.com header.s=selector1;&#10;  dmarc=pass (p=REJECT) header.from=example.com"></textarea>
+      <textarea id="authInput" rows="6" placeholder="Authentication-Results: mx.google.com;&#10;  spf=pass smtp.mailfrom=example.com;&#10;  dkim=pass header.d=example.com header.s=selector1;&#10;  dmarc=pass (p=REJECT) header.from=example.com"></textarea>
     </div>
     <div class="btn-group"><button class="btn btn-primary" onclick="checkAuth()">✅ Check Results</button></div>
     <div id="authResults"></div>
   </div>
 </div>
 
-<!-- SPF BUILDER -->
+<!-- ==================== SPF BUILDER ==================== -->
 <div class="view" id="spfBuilder">
   <div class="tool-box">
     <h2>🛡️ SPF Record Builder</h2>
@@ -249,7 +259,7 @@ tr:hover{background:rgba(88,166,255,.04)}
   </div>
 </div>
 
-<!-- DKIM ANALYZER -->
+<!-- ==================== DKIM ANALYZER ==================== -->
 <div class="view" id="dkimAnalyzer">
   <div class="tool-box">
     <h2>🔏 DKIM Signature Analyzer</h2>
@@ -262,7 +272,7 @@ tr:hover{background:rgba(88,166,255,.04)}
   </div>
 </div>
 
-<!-- DMARC BUILDER -->
+<!-- ==================== DMARC BUILDER ==================== -->
 <div class="view" id="dmarcBuilder">
   <div class="tool-box">
     <h2>📋 DMARC Record Builder</h2>
@@ -292,7 +302,7 @@ tr:hover{background:rgba(88,166,255,.04)}
   </div>
 </div>
 
-<!-- AUTH FLOW VISUALIZER -->
+<!-- ==================== AUTH FLOW ==================== -->
 <div class="view" id="authFlow">
   <div class="tool-box">
     <h2>📐 Email Authentication Flow</h2>
@@ -301,7 +311,7 @@ tr:hover{background:rgba(88,166,255,.04)}
   </div>
 </div>
 
-<!-- PHISHING ANALYZER -->
+<!-- ==================== PHISHING ANALYZER ==================== -->
 <div class="view" id="phishAnalyzer">
   <div class="tool-box">
     <h2>🎣 Phishing Analyzer</h2>
@@ -314,7 +324,7 @@ tr:hover{background:rgba(88,166,255,.04)}
   </div>
 </div>
 
-<!-- URL ANALYZER -->
+<!-- ==================== URL ANALYZER ==================== -->
 <div class="view" id="urlAnalyzer">
   <div class="tool-box">
     <h2>🔗 URL Analyzer</h2>
@@ -327,14 +337,14 @@ tr:hover{background:rgba(88,166,255,.04)}
   </div>
 </div>
 
-<!-- HOMOGLYPH DETECTOR -->
+<!-- ==================== HOMOGLYPH ==================== -->
 <div class="view" id="homoglyphDetector">
   <div class="tool-box">
     <h2>👁️ Homoglyph / Lookalike Domain Detector</h2>
     <p class="desc">Detect lookalike (homoglyph) characters used in domain spoofing attacks.</p>
     <div class="grid-2">
-      <div class="fg"><label>Suspicious Domain</label><input type="text" id="homoSuspect" placeholder="e.g. paypaI.com, goog1e.com, rnicrosoft.com"></div>
-      <div class="fg"><label>Legitimate Domain (compare against)</label><input type="text" id="homoLegit" placeholder="e.g. paypal.com, google.com, microsoft.com"></div>
+      <div class="fg"><label>Suspicious Domain</label><input type="text" id="homoSuspect" placeholder="e.g. paypaI.com, goog1e.com"></div>
+      <div class="fg"><label>Legitimate Domain</label><input type="text" id="homoLegit" placeholder="e.g. paypal.com, google.com"></div>
     </div>
     <div class="btn-group">
       <button class="btn btn-primary" onclick="detectHomoglyphs()">👁️ Compare</button>
@@ -344,7 +354,7 @@ tr:hover{background:rgba(88,166,255,.04)}
   </div>
 </div>
 
-<!-- IOC EXTRACTOR -->
+<!-- ==================== IOC EXTRACTOR ==================== -->
 <div class="view" id="iocExtractor">
   <div class="tool-box">
     <h2>🧲 IOC Extractor</h2>
@@ -363,7 +373,7 @@ tr:hover{background:rgba(88,166,255,.04)}
   </div>
 </div>
 
-<!-- ATTACHMENT ANALYZER -->
+<!-- ==================== ATTACHMENT ANALYZER ==================== -->
 <div class="view" id="attachRisk">
   <div class="tool-box">
     <h2>📎 Attachment Risk Analyzer</h2>
@@ -376,7 +386,7 @@ tr:hover{background:rgba(88,166,255,.04)}
   </div>
 </div>
 
-<!-- BASE64 -->
+<!-- ==================== BASE64 ==================== -->
 <div class="view" id="base64Tool">
   <div class="tool-box">
     <h2>📦 Base64 Encode / Decode</h2>
@@ -391,7 +401,7 @@ tr:hover{background:rgba(88,166,255,.04)}
   </div>
 </div>
 
-<!-- QUOTED-PRINTABLE -->
+<!-- ==================== QP DECODER ==================== -->
 <div class="view" id="qpDecoder">
   <div class="tool-box">
     <h2>📃 Quoted-Printable Decoder</h2>
@@ -407,27 +417,25 @@ tr:hover{background:rgba(88,166,255,.04)}
   </div>
 </div>
 
-<!-- URL / SAFELINK DECODER -->
+<!-- ==================== URL / SAFELINK DECODER ==================== -->
 <div class="view" id="urlDecoder">
   <div class="tool-box">
     <h2>🔓 URL / SafeLink Decoder</h2>
-    <p class="desc">Decode URL-encoded strings, Microsoft SafeLinks, Proofpoint, Barracuda, and other rewritten URLs.</p>
+    <p class="desc">Decode URL-encoded strings, Microsoft SafeLinks, Proofpoint, and other rewritten URLs.</p>
     <div class="fg"><label>Encoded URL(s) — one per line</label>
-      <textarea id="safeLinkInput" rows="6" placeholder="https://nam02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fexample.com&data=...&#10;https://urldefense.proofpoint.com/v2/url?u=https-3A__example.com&d=...&#10;or any URL-encoded string"></textarea>
+      <textarea id="safeLinkInput" rows="6" placeholder="https://nam02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fexample.com&data=...&#10;https://urldefense.proofpoint.com/v2/url?u=https-3A__example.com&d=..."></textarea>
     </div>
-    <div class="btn-group">
-      <button class="btn btn-primary" onclick="decodeSafeLinks()">🔓 Decode</button>
-    </div>
+    <div class="btn-group"><button class="btn btn-primary" onclick="decodeSafeLinks()">🔓 Decode</button></div>
     <div id="safeLinkOutput" class="out-box"></div>
   </div>
 </div>
 
-<!-- DEFANG / REFANG -->
+<!-- ==================== DEFANG ==================== -->
 <div class="view" id="defangTool">
   <div class="tool-box">
     <h2>🦷 Defang / Refang</h2>
     <p class="desc">Defang IOCs for safe sharing in reports, or refang them for investigation.</p>
-    <div class="fg"><label>Input</label><textarea id="defangInput" rows="6" placeholder="https://malicious-site.com&#10;192.168.1.100&#10;evil@phishing.com&#10;hxxps://already[.]defanged[.]com"></textarea></div>
+    <div class="fg"><label>Input</label><textarea id="defangInput" rows="6" placeholder="https://malicious-site.com&#10;192.168.1.100&#10;evil@phishing.com"></textarea></div>
     <div class="btn-group">
       <button class="btn btn-primary" onclick="defang()">🦷 Defang</button>
       <button class="btn btn-secondary" onclick="refang()">🔄 Refang</button>
@@ -437,7 +445,7 @@ tr:hover{background:rgba(88,166,255,.04)}
   </div>
 </div>
 
-<!-- TRANSPORT RULE BUILDER -->
+<!-- ==================== RULE BUILDER ==================== -->
 <div class="view" id="ruleBuilder">
   <div class="tool-box">
     <h2>🏗️ Transport Rule Builder</h2>
@@ -478,7 +486,7 @@ tr:hover{background:rgba(88,166,255,.04)}
         <select id="ruleScope"><option value="inbound">Inbound only</option><option value="outbound">Outbound only</option><option value="both">Both directions</option></select>
       </div>
       <div class="fg"><label>Priority</label>
-        <select id="rulePriority"><option>0 (Highest)</option><option selected>1</option><option>2</option><option>3</option></select>
+        <select id="rulePriority"><option value="0">0 (Highest)</option><option value="1" selected>1</option><option value="2">2</option><option value="3">3</option></select>
       </div>
     </div>
     <div class="fg cb-group">
@@ -494,15 +502,15 @@ tr:hover{background:rgba(88,166,255,.04)}
   </div>
 </div>
 
-<!-- REGEX TESTER -->
+<!-- ==================== REGEX TESTER ==================== -->
 <div class="view" id="regexTester">
   <div class="tool-box">
     <h2>🔧 Regex Tester</h2>
     <p class="desc">Test regular expressions for email header/body content filtering rules.</p>
-    <div class="fg"><label>Regex Pattern</label><input type="text" id="rxPattern" placeholder="e.g. (?i)urgent.*(?:wire|transfer|payment)" oninput="testRx()"></div>
-    <div class="grid-3" style="margin-bottom:10px">
+    <div class="fg"><label>Regex Pattern</label><input type="text" id="rxPattern" placeholder='e.g. (?i)urgent.*(?:wire|transfer|payment)' oninput="testRx()"></div>
+    <div style="display:flex;gap:18px;margin-bottom:10px">
       <label><input type="checkbox" id="rxG" checked onchange="testRx()"> Global</label>
-      <label><input type="checkbox" id="rxI" checked onchange="testRx()"> Case Insensitive</label>
+      <label><input type="checkbox" id="rxI" checked onchange="testRx()"> Case-Insensitive</label>
       <label><input type="checkbox" id="rxM" onchange="testRx()"> Multiline</label>
     </div>
     <div class="fg"><label>Test String</label><textarea id="rxTest" rows="8" placeholder="Paste email content to test..." oninput="testRx()"></textarea></div>
@@ -511,7 +519,7 @@ tr:hover{background:rgba(88,166,255,.04)}
   </div>
 </div>
 
-<!-- HEADER REGEX LIBRARY -->
+<!-- ==================== HEADER REGEX LIBRARY ==================== -->
 <div class="view" id="headerRegex">
   <div class="tool-box">
     <h2>📚 Email Header Regex Library</h2>
@@ -521,26 +529,26 @@ tr:hover{background:rgba(88,166,255,.04)}
   </div>
 </div>
 
-<!-- SEVERITY CALCULATOR -->
+<!-- ==================== SEVERITY CALC ==================== -->
 <div class="view" id="severityCalc">
   <div class="tool-box">
     <h2>⚠️ Email Incident Severity Calculator</h2>
     <p class="desc">Calculate severity score for email security incidents.</p>
     <div class="grid-2">
       <div class="fg"><label>Incident Type</label>
-        <select id="sevType"><option value="5">BEC / CEO Fraud</option><option value="4">Credential Phishing (w/ submission)</option><option value="3" selected>Credential Phishing (no submission)</option><option value="3">Malware Delivery</option><option value="2">Spam / Bulk Phish</option><option value="1">Spoofed Email</option><option value="2">Account Compromise</option></select>
+        <select id="sevType"><option value="5">BEC / CEO Fraud</option><option value="4">Credential Phishing (submitted)</option><option value="3" selected>Credential Phishing (no submission)</option><option value="3">Malware Delivery</option><option value="2">Spam / Bulk Phish</option><option value="1">Spoofed Email</option></select>
       </div>
       <div class="fg"><label>Users Affected</label>
-        <select id="sevUsers"><option value="1">1 user</option><option value="2" selected>2-10 users</option><option value="3">11-50 users</option><option value="4">51-500 users</option><option value="5">500+ users / Org-wide</option></select>
+        <select id="sevUsers"><option value="1">1 user</option><option value="2" selected>2-10 users</option><option value="3">11-50 users</option><option value="4">51-500 users</option><option value="5">500+ / Org-wide</option></select>
       </div>
       <div class="fg"><label>Credential / Data Exposure</label>
-        <select id="sevExposure"><option value="1" selected>No credentials compromised</option><option value="2">Credentials entered (reset done)</option><option value="3">Credentials entered (not yet reset)</option><option value="4">MFA bypassed / session hijack</option><option value="5">Admin / privileged account compromised</option></select>
+        <select id="sevExposure"><option value="1" selected>No credentials compromised</option><option value="2">Credentials entered (reset done)</option><option value="3">Credentials entered (not reset)</option><option value="4">MFA bypassed / session hijack</option><option value="5">Admin account compromised</option></select>
       </div>
       <div class="fg"><label>Financial Impact</label>
-        <select id="sevFinancial"><option value="1" selected>None</option><option value="2">Potential (wire requested)</option><option value="3">Under $10,000 lost</option><option value="4">$10,000 - $100,000 lost</option><option value="5">Over $100,000 lost</option></select>
+        <select id="sevFinancial"><option value="1" selected>None</option><option value="2">Potential (wire requested)</option><option value="3">Under $10,000</option><option value="4">$10,000 - $100,000</option><option value="5">Over $100,000</option></select>
       </div>
       <div class="fg"><label>Payload Executed</label>
-        <select id="sevPayload"><option value="1" selected>No payload / link only</option><option value="2">Link clicked, no input</option><option value="3">Attachment opened</option><option value="4">Malware executed</option><option value="5">Ransomware / data exfiltrated</option></select>
+        <select id="sevPayload"><option value="1" selected>No payload / link only</option><option value="2">Link clicked, no input</option><option value="3">Attachment opened</option><option value="4">Malware executed</option><option value="5">Ransomware / data exfil</option></select>
       </div>
       <div class="fg"><label>Target Profile</label>
         <select id="sevTarget"><option value="1">General employee</option><option value="2" selected>Manager</option><option value="3">Director / VP</option><option value="4">C-Suite / Finance</option><option value="5">IT Admin / Security</option></select>
@@ -551,19 +559,18 @@ tr:hover{background:rgba(88,166,255,.04)}
   </div>
 </div>
 
-<!-- IR TEMPLATES -->
+<!-- ==================== IR TEMPLATES ==================== -->
 <div class="view" id="irTemplates">
   <div class="tool-box">
     <h2>📑 Incident Response Templates</h2>
-    <p class="desc">Pre-built templates for email security incident documentation and communication.</p>
+    <p class="desc">Pre-built templates for email security incident documentation.</p>
     <div class="fg"><label>Template Type</label>
       <select id="irSelect">
         <option value="phish_report">Phishing Investigation Report</option>
         <option value="user_notify">User Notification (Phish)</option>
-        <option value="user_compromised">Compromised Account Response</option>
+        <option value="user_compromised">Compromised Account Checklist</option>
         <option value="bec_report">BEC Investigation Report</option>
         <option value="exec_summary">Executive Summary</option>
-        <option value="mass_phish">Mass Phishing Campaign Report</option>
       </select>
     </div>
     <div class="btn-group">
@@ -574,7 +581,7 @@ tr:hover{background:rgba(88,166,255,.04)}
   </div>
 </div>
 
-<!-- BEC PLAYBOOK -->
+<!-- ==================== BEC PLAYBOOK ==================== -->
 <div class="view" id="becPlaybook">
   <div class="tool-box">
     <h2>💼 BEC Response Playbook</h2>
@@ -583,7 +590,7 @@ tr:hover{background:rgba(88,166,255,.04)}
   </div>
 </div>
 
-<!-- PHISHING INDICATORS -->
+<!-- ==================== PHISHING INDICATORS ==================== -->
 <div class="view" id="phishIndicators">
   <div class="tool-box">
     <h2>🚩 Phishing Indicators Reference</h2>
@@ -592,7 +599,7 @@ tr:hover{background:rgba(88,166,255,.04)}
   </div>
 </div>
 
-<!-- BEC PATTERNS -->
+<!-- ==================== BEC PATTERNS ==================== -->
 <div class="view" id="becPatterns">
   <div class="tool-box">
     <h2>🎭 BEC Attack Patterns</h2>
@@ -601,7 +608,7 @@ tr:hover{background:rgba(88,166,255,.04)}
   </div>
 </div>
 
-<!-- SMTP CODES -->
+<!-- ==================== SMTP CODES ==================== -->
 <div class="view" id="smtpRef">
   <div class="tool-box">
     <h2>📡 SMTP Response Codes</h2>
@@ -611,7 +618,7 @@ tr:hover{background:rgba(88,166,255,.04)}
   </div>
 </div>
 
-<!-- EMAIL PORTS -->
+<!-- ==================== EMAIL PORTS ==================== -->
 <div class="view" id="portRef">
   <div class="tool-box">
     <h2>🔌 Email Protocol Ports</h2>
@@ -620,7 +627,7 @@ tr:hover{background:rgba(88,166,255,.04)}
   </div>
 </div>
 
-<!-- MIME TYPES -->
+<!-- ==================== MIME TYPES ==================== -->
 <div class="view" id="mimeRef">
   <div class="tool-box">
     <h2>📎 Email MIME Types</h2>
@@ -630,7 +637,7 @@ tr:hover{background:rgba(88,166,255,.04)}
   </div>
 </div>
 
-<!-- RFC REFERENCE -->
+<!-- ==================== RFC REFERENCE ==================== -->
 <div class="view" id="rfcRef">
   <div class="tool-box">
     <h2>📜 Email RFC Reference</h2>
@@ -639,7 +646,7 @@ tr:hover{background:rgba(88,166,255,.04)}
   </div>
 </div>
 
-<!-- GLOSSARY -->
+<!-- ==================== GLOSSARY ==================== -->
 <div class="view" id="glossary">
   <div class="tool-box">
     <h2>📖 Email Security Glossary</h2>
@@ -652,1264 +659,953 @@ tr:hover{background:rgba(88,166,255,.04)}
 </main>
 
 <script>
-// ===== NAV =====
-function go(id,el){document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));document.getElementById(id).classList.add('active');if(el&&el.classList)el.classList.add('active');document.querySelector('.sidebar').classList.remove('open')}
-function sn(id){document.querySelectorAll('.nav-item').forEach(n=>{n.classList.remove('active');if(n.getAttribute('onclick')&&n.getAttribute('onclick').includes("'"+id+"'"))n.classList.add('active')})}
-function filterNav(q){q=q.toLowerCase();document.querySelectorAll('.nav-item').forEach(n=>{n.style.display=n.textContent.toLowerCase().includes(q)?'':'none'})}
-function toast(m){const t=document.getElementById('toast');t.textContent=m||'Copied!';t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2000)}
-function clip(t){navigator.clipboard.writeText(t).then(()=>toast())}
-function copyEl(id){const e=document.getElementById(id);clip(e.value||e.textContent)}
-function esc(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+/* ==========================================================
+   NAVIGATION  — uses data-view attributes instead of inline onclick
+   ========================================================== */
+function navigateTo(viewId) {
+  document.querySelectorAll('.view').forEach(function(v) { v.classList.remove('active'); });
+  document.querySelectorAll('.nav-item').forEach(function(n) { n.classList.remove('active'); });
+  var target = document.getElementById(viewId);
+  if (target) target.classList.add('active');
+  document.querySelectorAll('.nav-item[data-view="' + viewId + '"]').forEach(function(n) { n.classList.add('active'); });
+  document.querySelector('.sidebar').classList.remove('open');
+}
 
-// ===== HEADER ANALYZER =====
-function analyzeHeaders(){
-  const raw=document.getElementById('headerInput').value;
-  if(!raw.trim()){document.getElementById('headerResults').innerHTML='<div class="out-box">Paste email headers above...</div>';return}
-  const lines=raw.split(/\r?\n/);
-  const headers={};let curKey='',curVal='';
-  lines.forEach(l=>{
-    if(/^\s/.test(l)&&curKey){curVal+=' '+l.trim()}
-    else{if(curKey){if(!headers[curKey])headers[curKey]=[];headers[curKey].push(curVal)}
-    const m=l.match(/^([A-Za-z0-9-]+):\s*(.*)/);if(m){curKey=m[1];curVal=m[2]}else{curKey='';curVal=''}}
-  });
-  if(curKey){if(!headers[curKey])headers[curKey]=[];headers[curKey].push(curVal)}
-  let html='<div class="stats-row">';
-  const from=(headers['From']||['N/A'])[0];
-  const to=(headers['To']||['N/A'])[0];
-  const subj=(headers['Subject']||['N/A'])[0];
-  const date=(headers['Date']||['N/A'])[0];
-  const msgId=(headers['Message-ID']||headers['Message-Id']||['N/A'])[0];
-  const returnPath=(headers['Return-Path']||['N/A'])[0];
-  const replyTo=(headers['Reply-To']||['Not set'])[0];
-  const received=headers['Received']||[];
-
-  // Auth results
-  const authRes=(headers['Authentication-Results']||[]).join(' ');
-  const spfR=authRes.match(/spf=(pass|fail|softfail|neutral|none|temperror|permerror)/i);
-  const dkimR=authRes.match(/dkim=(pass|fail|none|neutral|temperror|permerror)/i);
-  const dmarcR=authRes.match(/dmarc=(pass|fail|none|bestguesspass)/i);
-  const spfS=spfR?spfR[1]:'N/A';
-  const dkimS=dkimR?dkimR[1]:'N/A';
-  const dmarcS=dmarcR?dmarcR[1]:'N/A';
-  function authTag(v){v=v.toLowerCase();if(v==='pass')return'tag-green';if(v==='fail')return'tag-red';if(v.includes('soft'))return'tag-yellow';return'tag-orange'}
-
-  html+=`<div class="stat-card"><div class="num" style="font-size:1.1rem;color:${spfS.toLowerCase()==='pass'?'var(--green)':'var(--red)'}">${spfS.toUpperCase()}</div><div class="lbl">SPF</div></div>`;
-  html+=`<div class="stat-card"><div class="num" style="font-size:1.1rem;color:${dkimS.toLowerCase()==='pass'?'var(--green)':'var(--red)'}">${dkimS.toUpperCase()}</div><div class="lbl">DKIM</div></div>`;
-  html+=`<div class="stat-card"><div class="num" style="font-size:1.1rem;color:${dmarcS.toLowerCase()==='pass'?'var(--green)':'var(--red)'}">${dmarcS.toUpperCase()}</div><div class="lbl">DMARC</div></div>`;
-  html+=`<div class="stat-card"><div class="num" style="font-size:1.1rem">${received.length}</div><div class="lbl">Hops</div></div></div>`;
-
-  // Warnings
-  let warnings=[];
-  if(replyTo!=='Not set'&&from!=='N/A'){const fe=from.match(/[\w.+-]+@[\w.-]+/);const re=replyTo.match(/[\w.+-]+@[\w.-]+/);if(fe&&re&&fe[0].toLowerCase()!==re[0].toLowerCase())warnings.push('⚠️ Reply-To differs from From address — possible phishing')}
-  if(returnPath!=='N/A'&&from!=='N/A'){const fe=from.match(/@([\w.-]+)/);const rp=returnPath.match(/@([\w.-]+)/);if(fe&&rp&&fe[1].toLowerCase()!==rp[1].toLowerCase())warnings.push('⚠️ Return-Path domain differs from From domain')}
-  if(spfS.toLowerCase()==='fail')warnings.push('🚨 SPF FAILED — sender IP not authorized');
-  if(dkimS.toLowerCase()==='fail')warnings.push('🚨 DKIM FAILED — message integrity compromised');
-  if(dmarcS.toLowerCase()==='fail')warnings.push('🚨 DMARC FAILED — domain authentication failed');
-  const xMailer=(headers['X-Mailer']||headers['User-Agent']||[''])[0];
-  if(xMailer)warnings.push('ℹ️ Mail client: '+xMailer);
-
-  if(warnings.length){html+='<div class="danger-box" style="margin-bottom:14px"><strong>⚠️ Findings:</strong><br>'+warnings.join('<br>')+'</div>'}
-
-  html+='<table><tr><th>Field</th><th>Value</th></tr>';
-  html+=`<tr><td style="white-space:nowrap">From</td><td>${esc(from)}</td></tr>`;
-  html+=`<tr><td>To</td><td>${esc(to)}</td></tr>`;
-  html+=`<tr><td>Subject</td><td>${esc(subj)}</td></tr>`;
-  html+=`<tr><td>Date</td><td>${esc(date)}</td></tr>`;
-  html+=`<tr><td>Reply-To</td><td>${esc(replyTo)}</td></tr>`;
-  html+=`<tr><td>Return-Path</td><td>${esc(returnPath)}</td></tr>`;
-  html+=`<tr><td>Message-ID</td><td style="word-break:break-all">${esc(msgId)}</td></tr>`;
-  const cc=(headers['Cc']||[''])[0];if(cc)html+=`<tr><td>Cc</td><td>${esc(cc)}</td></tr>`;
-  const contentType=(headers['Content-Type']||[''])[0];if(contentType)html+=`<tr><td>Content-Type</td><td>${esc(contentType)}</td></tr>`;
-  if(xMailer)html+=`<tr><td>X-Mailer</td><td>${esc(xMailer)}</td></tr>`;
-  const xSpam=(headers['X-Spam-Status']||headers['X-Spam-Score']||[''])[0];if(xSpam)html+=`<tr><td>Spam Status</td><td>${esc(xSpam)}</td></tr>`;
-  html+='</table>';
-
-  if(received.length){
-    html+='<h3 style="margin-top:16px;font-size:.95rem">📬 Received Headers (newest first)</h3>';
-    received.forEach((r,i)=>{html+=`<div class="pattern-card"><h4 style="font-size:.82rem;color:var(--cyan)">Hop #${i+1}</h4><code style="font-size:.78rem">${esc(r)}</code></div>`});
+document.addEventListener('click', function(e) {
+  var item = e.target.closest('[data-view]');
+  if (item) { navigateTo(item.getAttribute('data-view')); }
+  var acc = e.target.closest('.acc-header');
+  if (acc) {
+    var body = acc.nextElementSibling;
+    if (body && body.classList.contains('acc-body')) body.classList.toggle('open');
   }
-  if(authRes){html+=`<h3 style="margin-top:16px;font-size:.95rem">🔐 Authentication Results</h3><div class="out-box">${esc(authRes)}</div>`}
+});
 
-  // All headers
-  html+='<h3 style="margin-top:16px;font-size:.95rem">📋 All Parsed Headers</h3><table><tr><th>Header</th><th>Value</th></tr>';
-  Object.keys(headers).forEach(k=>{headers[k].forEach(v=>{html+=`<tr><td style="white-space:nowrap;vertical-align:top">${esc(k)}</td><td style="word-break:break-all;font-size:.8rem">${esc(v)}</td></tr>`})});
-  html+='</table>';
-  document.getElementById('headerResults').innerHTML=html;
+function filterNav(q) {
+  q = q.toLowerCase();
+  document.querySelectorAll('.nav-item').forEach(function(n) {
+    n.style.display = n.textContent.toLowerCase().indexOf(q) > -1 ? '' : 'none';
+  });
 }
 
-// ===== HOP TRACER =====
-function traceHops(){
-  const raw=document.getElementById('hopInput').value;
-  const received=[];let cur='';
-  raw.split(/\r?\n/).forEach(l=>{
-    if(/^Received:/i.test(l)){if(cur)received.push(cur);cur=l}
-    else if(/^\s/.test(l)&&cur){cur+=' '+l.trim()}
-    else{if(cur)received.push(cur);cur=''}
-  });
-  if(cur)received.push(cur);
-  if(!received.length){document.getElementById('hopResults').innerHTML='<div class="out-box">No Received headers found.</div>';return}
-  let html=`<div class="info-box">Found <strong>${received.length}</strong> hops</div>`;
-  html+='<table><tr><th>#</th><th>From</th><th>By</th><th>Protocol</th><th>Timestamp</th></tr>';
-  received.forEach((r,i)=>{
-    const fromM=r.match(/from\s+([\w.-]+)/i);
-    const byM=r.match(/by\s+([\w.-]+)/i);
-    const withM=r.match(/with\s+([\w]+)/i);
-    const dateM=r.match(/;\s*(.+)$/);
-    html+=`<tr><td>${i+1}</td><td>${fromM?esc(fromM[1]):'—'}</td><td>${byM?esc(byM[1]):'—'}</td><td>${withM?esc(withM[1]):'—'}</td><td style="font-size:.78rem">${dateM?esc(dateM[1].trim()):'—'}</td></tr>`;
-  });
-  html+='</table>';
-  document.getElementById('hopResults').innerHTML=html;
-}
+function toast(m) { var t = document.getElementById('toast'); t.textContent = m || 'Copied!'; t.classList.add('show'); setTimeout(function() { t.classList.remove('show'); }, 2000); }
+function clip(t) { navigator.clipboard.writeText(t).then(function() { toast(); }); }
+function copyEl(id) { var e = document.getElementById(id); clip(e.value || e.textContent); }
+function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
 
-// ===== AUTH RESULT CHECKER =====
-function checkAuth(){
-  const raw=document.getElementById('authInput').value;
-  if(!raw.trim())return;
-  const checks=[
-    {name:'SPF',rx:/spf=(pass|fail|softfail|neutral|none|temperror|permerror)/i},
-    {name:'DKIM',rx:/dkim=(pass|fail|none|neutral|temperror|permerror)/i},
-    {name:'DMARC',rx:/dmarc=(pass|fail|none|bestguesspass)/i},
-    {name:'ARC',rx:/arc=(pass|fail|none)/i},
-    {name:'compauth',rx:/compauth=(pass|fail|softpass|none|error)/i}
-  ];
-  let html='<div class="stats-row">';
-  checks.forEach(c=>{
-    const m=raw.match(c.rx);
-    if(m){
-      const v=m[1].toLowerCase();
-      const col=v==='pass'||v==='softpass'?'var(--green)':v==='fail'?'var(--red)':'var(--yellow)';
-      html+=`<div class="stat-card"><div class="num" style="font-size:1.2rem;color:${col}">${m[1].toUpperCase()}</div><div class="lbl">${c.name}</div></div>`;
+/* ==========================================================
+   HEADER ANALYZER
+   ========================================================== */
+function analyzeHeaders() {
+  var raw = document.getElementById('headerInput').value;
+  if (!raw.trim()) { document.getElementById('headerResults').innerHTML = '<div class="out-box">Paste email headers above...</div>'; return; }
+  var lines = raw.split(/\r?\n/);
+  var headers = {};
+  var curKey = '', curVal = '';
+  lines.forEach(function(l) {
+    if (/^\s/.test(l) && curKey) { curVal += ' ' + l.trim(); }
+    else {
+      if (curKey) { if (!headers[curKey]) headers[curKey] = []; headers[curKey].push(curVal); }
+      var m = l.match(/^([A-Za-z0-9-]+):\s*(.*)/);
+      if (m) { curKey = m[1]; curVal = m[2]; } else { curKey = ''; curVal = ''; }
     }
   });
-  html+='</div>';
-  // Extract details
-  const spfDom=raw.match(/smtp\.mailfrom=([\w.@-]+)/i);
-  const dkimDom=raw.match(/header\.d=([\w.-]+)/i);
-  const dkimSel=raw.match(/header\.s=([\w.-]+)/i);
-  const dmarcPol=raw.match(/\(p=(\w+)\)/i);
-  html+='<table><tr><th>Detail</th><th>Value</th></tr>';
-  if(spfDom)html+=`<tr><td>SPF Envelope From</td><td>${esc(spfDom[1])}</td></tr>`;
-  if(dkimDom)html+=`<tr><td>DKIM Domain</td><td>${esc(dkimDom[1])}</td></tr>`;
-  if(dkimSel)html+=`<tr><td>DKIM Selector</td><td>${esc(dkimSel[1])}</td></tr>`;
-  if(dmarcPol)html+=`<tr><td>DMARC Policy</td><td>${esc(dmarcPol[1])}</td></tr>`;
-  const spfIP=raw.match(/designates\s+([\d.]+)\s+as/i);
-  if(spfIP)html+=`<tr><td>Sender IP</td><td>${esc(spfIP[1])}</td></tr>`;
-  html+='</table>';
-  document.getElementById('authResults').innerHTML=html;
+  if (curKey) { if (!headers[curKey]) headers[curKey] = []; headers[curKey].push(curVal); }
+
+  var from = (headers['From'] || ['N/A'])[0];
+  var to = (headers['To'] || ['N/A'])[0];
+  var subj = (headers['Subject'] || ['N/A'])[0];
+  var date = (headers['Date'] || ['N/A'])[0];
+  var msgId = (headers['Message-ID'] || headers['Message-Id'] || ['N/A'])[0];
+  var returnPath = (headers['Return-Path'] || ['N/A'])[0];
+  var replyTo = (headers['Reply-To'] || ['Not set'])[0];
+  var received = headers['Received'] || [];
+
+  var authRes = (headers['Authentication-Results'] || []).join(' ');
+  var spfR = authRes.match(/spf=(pass|fail|softfail|neutral|none|temperror|permerror)/i);
+  var dkimR = authRes.match(/dkim=(pass|fail|none|neutral|temperror|permerror)/i);
+  var dmarcR = authRes.match(/dmarc=(pass|fail|none|bestguesspass)/i);
+  var spfS = spfR ? spfR[1] : 'N/A';
+  var dkimS = dkimR ? dkimR[1] : 'N/A';
+  var dmarcS = dmarcR ? dmarcR[1] : 'N/A';
+
+  var html = '<div class="stats-row">';
+  html += '<div class="stat-card"><div class="num" style="font-size:1.1rem;color:' + (spfS.toLowerCase() === 'pass' ? 'var(--green)' : 'var(--red)') + '">' + spfS.toUpperCase() + '</div><div class="lbl">SPF</div></div>';
+  html += '<div class="stat-card"><div class="num" style="font-size:1.1rem;color:' + (dkimS.toLowerCase() === 'pass' ? 'var(--green)' : 'var(--red)') + '">' + dkimS.toUpperCase() + '</div><div class="lbl">DKIM</div></div>';
+  html += '<div class="stat-card"><div class="num" style="font-size:1.1rem;color:' + (dmarcS.toLowerCase() === 'pass' ? 'var(--green)' : 'var(--red)') + '">' + dmarcS.toUpperCase() + '</div><div class="lbl">DMARC</div></div>';
+  html += '<div class="stat-card"><div class="num" style="font-size:1.1rem">' + received.length + '</div><div class="lbl">Hops</div></div></div>';
+
+  var warnings = [];
+  if (replyTo !== 'Not set' && from !== 'N/A') {
+    var fe = from.match(/[\w.+-]+@[\w.-]+/); var re = replyTo.match(/[\w.+-]+@[\w.-]+/);
+    if (fe && re && fe[0].toLowerCase() !== re[0].toLowerCase()) warnings.push('⚠️ Reply-To differs from From — possible phishing');
+  }
+  if (returnPath !== 'N/A' && from !== 'N/A') {
+    var fd = from.match(/@([\w.-]+)/); var rp = returnPath.match(/@([\w.-]+)/);
+    if (fd && rp && fd[1].toLowerCase() !== rp[1].toLowerCase()) warnings.push('⚠️ Return-Path domain differs from From domain');
+  }
+  if (spfS.toLowerCase() === 'fail') warnings.push('🚨 SPF FAILED — sender IP not authorized');
+  if (dkimS.toLowerCase() === 'fail') warnings.push('🚨 DKIM FAILED — message integrity issue');
+  if (dmarcS.toLowerCase() === 'fail') warnings.push('🚨 DMARC FAILED — domain authentication failed');
+  var xMailer = (headers['X-Mailer'] || headers['User-Agent'] || [''])[0];
+  if (xMailer) warnings.push('ℹ️ Mail client: ' + xMailer);
+
+  if (warnings.length) html += '<div class="danger-box" style="margin-bottom:14px"><strong>⚠️ Findings:</strong><br>' + warnings.join('<br>') + '</div>';
+
+  html += '<table><tr><th>Field</th><th>Value</th></tr>';
+  html += '<tr><td>From</td><td>' + esc(from) + '</td></tr>';
+  html += '<tr><td>To</td><td>' + esc(to) + '</td></tr>';
+  html += '<tr><td>Subject</td><td>' + esc(subj) + '</td></tr>';
+  html += '<tr><td>Date</td><td>' + esc(date) + '</td></tr>';
+  html += '<tr><td>Reply-To</td><td>' + esc(replyTo) + '</td></tr>';
+  html += '<tr><td>Return-Path</td><td>' + esc(returnPath) + '</td></tr>';
+  html += '<tr><td>Message-ID</td><td style="word-break:break-all">' + esc(msgId) + '</td></tr>';
+  if (xMailer) html += '<tr><td>X-Mailer</td><td>' + esc(xMailer) + '</td></tr>';
+  html += '</table>';
+
+  if (received.length) {
+    html += '<h3 style="margin-top:16px;font-size:.95rem">📬 Received Headers</h3>';
+    received.forEach(function(r, i) { html += '<div class="pattern-card"><h4 style="font-size:.82rem;color:var(--cyan)">Hop #' + (i + 1) + '</h4><code style="font-size:.78rem">' + esc(r) + '</code></div>'; });
+  }
+  if (authRes) html += '<h3 style="margin-top:16px;font-size:.95rem">🔐 Auth Results</h3><div class="out-box">' + esc(authRes) + '</div>';
+
+  html += '<h3 style="margin-top:16px;font-size:.95rem">📋 All Parsed Headers</h3><table><tr><th>Header</th><th>Value</th></tr>';
+  Object.keys(headers).forEach(function(k) { headers[k].forEach(function(v) { html += '<tr><td style="white-space:nowrap;vertical-align:top">' + esc(k) + '</td><td style="word-break:break-all;font-size:.8rem">' + esc(v) + '</td></tr>'; }); });
+  html += '</table>';
+  document.getElementById('headerResults').innerHTML = html;
 }
 
-// ===== SPF BUILDER =====
-function buildSPF(){
-  let parts=['v=spf1'];
-  const a=document.getElementById('spfA').value;if(a)parts.push(a);
-  const mx=document.getElementById('spfMx').value;if(mx)parts.push(mx);
-  document.getElementById('spfIp4').value.split('\n').forEach(ip=>{ip=ip.trim();if(ip)parts.push('ip4:'+ip)});
-  document.getElementById('spfIp6').value.split('\n').forEach(ip=>{ip=ip.trim();if(ip)parts.push('ip6:'+ip)});
-  document.getElementById('spfIncludes').value.split('\n').forEach(d=>{d=d.trim();if(d)parts.push('include:'+d)});
+/* ==========================================================
+   HOP TRACER
+   ========================================================== */
+function traceHops() {
+  var raw = document.getElementById('hopInput').value;
+  var received = []; var cur = '';
+  raw.split(/\r?\n/).forEach(function(l) {
+    if (/^Received:/i.test(l)) { if (cur) received.push(cur); cur = l; }
+    else if (/^\s/.test(l) && cur) { cur += ' ' + l.trim(); }
+    else { if (cur) received.push(cur); cur = ''; }
+  });
+  if (cur) received.push(cur);
+  if (!received.length) { document.getElementById('hopResults').innerHTML = '<div class="out-box">No Received headers found.</div>'; return; }
+  var html = '<div class="info-box">Found <strong>' + received.length + '</strong> hops</div>';
+  html += '<table><tr><th>#</th><th>From</th><th>By</th><th>Protocol</th><th>Timestamp</th></tr>';
+  received.forEach(function(r, i) {
+    var fromM = r.match(/from\s+([\w.-]+)/i);
+    var byM = r.match(/by\s+([\w.-]+)/i);
+    var withM = r.match(/with\s+([\w]+)/i);
+    var dateM = r.match(/;\s*(.+)$/);
+    html += '<tr><td>' + (i + 1) + '</td><td>' + (fromM ? esc(fromM[1]) : '—') + '</td><td>' + (byM ? esc(byM[1]) : '—') + '</td><td>' + (withM ? esc(withM[1]) : '—') + '</td><td style="font-size:.78rem">' + (dateM ? esc(dateM[1].trim()) : '—') + '</td></tr>';
+  });
+  html += '</table>';
+  document.getElementById('hopResults').innerHTML = html;
+}
+
+/* ==========================================================
+   AUTH RESULT CHECKER
+   ========================================================== */
+function checkAuth() {
+  var raw = document.getElementById('authInput').value;
+  if (!raw.trim()) return;
+  var checks = [
+    { name: 'SPF', rx: /spf=(pass|fail|softfail|neutral|none|temperror|permerror)/i },
+    { name: 'DKIM', rx: /dkim=(pass|fail|none|neutral|temperror|permerror)/i },
+    { name: 'DMARC', rx: /dmarc=(pass|fail|none|bestguesspass)/i },
+    { name: 'ARC', rx: /arc=(pass|fail|none)/i }
+  ];
+  var html = '<div class="stats-row">';
+  checks.forEach(function(c) {
+    var m = raw.match(c.rx);
+    if (m) {
+      var v = m[1].toLowerCase();
+      var col = (v === 'pass') ? 'var(--green)' : (v === 'fail') ? 'var(--red)' : 'var(--yellow)';
+      html += '<div class="stat-card"><div class="num" style="font-size:1.2rem;color:' + col + '">' + m[1].toUpperCase() + '</div><div class="lbl">' + c.name + '</div></div>';
+    }
+  });
+  html += '</div>';
+  var spfDom = raw.match(/smtp\.mailfrom=([\w.@-]+)/i);
+  var dkimDom = raw.match(/header\.d=([\w.-]+)/i);
+  var dkimSel = raw.match(/header\.s=([\w.-]+)/i);
+  html += '<table><tr><th>Detail</th><th>Value</th></tr>';
+  if (spfDom) html += '<tr><td>SPF Envelope From</td><td>' + esc(spfDom[1]) + '</td></tr>';
+  if (dkimDom) html += '<tr><td>DKIM Domain</td><td>' + esc(dkimDom[1]) + '</td></tr>';
+  if (dkimSel) html += '<tr><td>DKIM Selector</td><td>' + esc(dkimSel[1]) + '</td></tr>';
+  html += '</table>';
+  document.getElementById('authResults').innerHTML = html;
+}
+
+/* ==========================================================
+   SPF BUILDER
+   ========================================================== */
+function buildSPF() {
+  var parts = ['v=spf1'];
+  var a = document.getElementById('spfA').value; if (a) parts.push(a);
+  var mx = document.getElementById('spfMx').value; if (mx) parts.push(mx);
+  document.getElementById('spfIp4').value.split('\n').forEach(function(ip) { ip = ip.trim(); if (ip) parts.push('ip4:' + ip); });
+  document.getElementById('spfIp6').value.split('\n').forEach(function(ip) { ip = ip.trim(); if (ip) parts.push('ip6:' + ip); });
+  document.getElementById('spfIncludes').value.split('\n').forEach(function(d) { d = d.trim(); if (d) parts.push('include:' + d); });
   parts.push(document.getElementById('spfAll').value);
-  const record=parts.join(' ');
-  const domain=document.getElementById('spfDomain').value||'example.com';
-  let out=`DNS TXT Record for: ${domain}\n${'─'.repeat(40)}\n\n${record}\n\n`;
-  out+=`Character count: ${record.length}/255\n`;
-  if(record.length>255)out+=`⚠️ WARNING: SPF record exceeds 255 characters. Consider using includes.\n`;
-  const lookups=(record.match(/include:|a |mx |ptr /g)||[]).length;
-  out+=`DNS lookups: ${lookups}/10\n`;
-  if(lookups>10)out+=`🚨 ERROR: Exceeds 10 DNS lookup limit!\n`;
-  const allMech=document.getElementById('spfAll').value;
-  if(allMech==='+all')out+=`\n🚨 DANGER: +all allows ANY server to send as your domain!\n`;
-  else if(allMech==='?all')out+=`\n⚠️ WARNING: ?all provides no protection. Use -all or ~all.\n`;
-  else if(allMech==='~all')out+=`\nℹ️ NOTE: ~all (softfail) is suitable for testing. Move to -all for production.\n`;
-  else out+=`\n✅ -all (hard fail) provides strongest protection.\n`;
-  document.getElementById('spfResults').textContent=out;
-}
-function validateSPF(){
-  const spf=document.getElementById('spfExisting').value.trim();
-  if(!spf){document.getElementById('spfResults').textContent='Enter an SPF record to validate.';return}
-  let issues=[];let info=[];
-  if(!spf.startsWith('v=spf1'))issues.push('🚨 Must start with "v=spf1"');
-  if(!/([-~?+]all)/.test(spf))issues.push('⚠️ Missing "all" mechanism at end');
-  if(/\+all/.test(spf))issues.push('🚨 +all allows ALL servers to send — INSECURE');
-  const lookups=(spf.match(/\b(include|a|mx|ptr|exists|redirect)\b/gi)||[]).length;
-  if(lookups>10)issues.push(`🚨 ${lookups} DNS lookups exceeds limit of 10`);
-  else info.push(`✅ DNS lookups: ${lookups}/10`);
-  if(spf.length>255)issues.push(`⚠️ Record length ${spf.length} exceeds 255 chars`);
-  else info.push(`✅ Length: ${spf.length}/255 chars`);
-  if(/ptr\b/.test(spf))issues.push('⚠️ "ptr" mechanism is deprecated (RFC 7208)');
-  const includes=(spf.match(/include:([\w.-]+)/g)||[]);
-  if(includes.length)info.push(`ℹ️ Includes: ${includes.join(', ')}`);
-  const ips=spf.match(/ip[46]:[^\s]+/g)||[];
-  if(ips.length)info.push(`ℹ️ IP entries: ${ips.length}`);
-  let out=`SPF Record Validation\n${'─'.repeat(40)}\n\nRecord: ${spf}\n\n`;
-  if(issues.length){out+='ISSUES:\n';issues.forEach(i=>out+=`  ${i}\n`);out+='\n'}
-  if(info.length){out+='INFO:\n';info.forEach(i=>out+=`  ${i}\n`)}
-  if(!issues.length)out+='\n✅ No critical issues found.\n';
-  document.getElementById('spfResults').textContent=out;
+  var record = parts.join(' ');
+  var domain = document.getElementById('spfDomain').value || 'example.com';
+  var out = 'DNS TXT Record for: ' + domain + '\n' + '─'.repeat(40) + '\n\n' + record + '\n\n';
+  out += 'Character count: ' + record.length + '/255\n';
+  if (record.length > 255) out += '⚠️ WARNING: SPF record exceeds 255 characters.\n';
+  var lookups = (record.match(/include:|(?:^|\s)a(?:\s|$)|(?:^|\s)mx(?:\s|$)|ptr /g) || []).length;
+  out += 'DNS lookups: ' + lookups + '/10\n';
+  if (lookups > 10) out += '🚨 ERROR: Exceeds 10 DNS lookup limit!\n';
+  var allMech = document.getElementById('spfAll').value;
+  if (allMech === '+all') out += '\n🚨 DANGER: +all allows ANY server to send as your domain!\n';
+  else if (allMech === '~all') out += '\nℹ️ ~all (softfail) suitable for testing. Move to -all for production.\n';
+  else if (allMech === '-all') out += '\n✅ -all provides strongest protection.\n';
+  document.getElementById('spfResults').textContent = out;
 }
 
-// ===== DKIM ANALYZER =====
-function analyzeDKIM(){
-  const raw=document.getElementById('dkimInput').value;
-  if(!raw.trim())return;
-  const tags={};
-  raw.replace(/DKIM-Signature:\s*/i,'').split(';').forEach(p=>{
-    const m=p.trim().match(/^(\w+)\s*=\s*([\s\S]*)/);
-    if(m)tags[m[1].trim()]=m[2].trim().replace(/\s+/g,'');
+function validateSPF() {
+  var spf = document.getElementById('spfExisting').value.trim();
+  if (!spf) { document.getElementById('spfResults').textContent = 'Enter an SPF record to validate.'; return; }
+  var issues = []; var info = [];
+  if (!spf.startsWith('v=spf1')) issues.push('🚨 Must start with "v=spf1"');
+  if (!/([-~?+]all)/.test(spf)) issues.push('⚠️ Missing "all" mechanism');
+  if (/\+all/.test(spf)) issues.push('🚨 +all allows ALL servers — INSECURE');
+  var lookups = (spf.match(/\b(include|a|mx|ptr|exists|redirect)\b/gi) || []).length;
+  if (lookups > 10) issues.push('🚨 ' + lookups + ' DNS lookups exceeds limit of 10');
+  else info.push('✅ DNS lookups: ' + lookups + '/10');
+  if (spf.length > 255) issues.push('⚠️ Length ' + spf.length + ' exceeds 255 chars');
+  else info.push('✅ Length: ' + spf.length + '/255');
+  if (/ptr\b/.test(spf)) issues.push('⚠️ "ptr" is deprecated (RFC 7208)');
+  var out = 'SPF Validation\n' + '─'.repeat(40) + '\n\nRecord: ' + spf + '\n\n';
+  if (issues.length) { out += 'ISSUES:\n'; issues.forEach(function(i) { out += '  ' + i + '\n'; }); out += '\n'; }
+  if (info.length) { out += 'INFO:\n'; info.forEach(function(i) { out += '  ' + i + '\n'; }); }
+  if (!issues.length) out += '\n✅ No critical issues found.\n';
+  document.getElementById('spfResults').textContent = out;
+}
+
+/* ==========================================================
+   DKIM ANALYZER
+   ========================================================== */
+function analyzeDKIM() {
+  var raw = document.getElementById('dkimInput').value;
+  if (!raw.trim()) return;
+  var tags = {};
+  raw.replace(/DKIM-Signature:\s*/i, '').split(';').forEach(function(p) {
+    var m = p.trim().match(/^(\w+)\s*=\s*([\s\S]*)/);
+    if (m) tags[m[1].trim()] = m[2].trim().replace(/\s+/g, '');
   });
-  const fields={v:'Version',a:'Algorithm',c:'Canonicalization',d:'Signing Domain',s:'Selector',h:'Signed Headers',bh:'Body Hash',b:'Signature',t:'Timestamp',x:'Expiration',l:'Body Length',q:'Query Method',i:'Agent/Identity'};
-  let html='<table><tr><th>Tag</th><th>Field</th><th>Value</th><th>Notes</th></tr>';
-  Object.keys(tags).forEach(k=>{
-    let note='';
-    if(k==='a'&&tags[k]==='rsa-sha1')note='<span class="tag tag-red">Weak — use rsa-sha256</span>';
-    if(k==='a'&&tags[k]==='rsa-sha256')note='<span class="tag tag-green">Recommended</span>';
-    if(k==='l')note='<span class="tag tag-yellow">Body length limit — can be abused</span>';
-    if(k==='c'){const parts=tags[k].split('/');note=parts.length===2?`Header: ${parts[0]}, Body: ${parts[1]}`:''}
-    if(k==='t'&&tags[k]){const d=new Date(parseInt(tags[k])*1000);note=d.toISOString()}
-    if(k==='x'&&tags[k]){const d=new Date(parseInt(tags[k])*1000);note=d<new Date()?'<span class="tag tag-red">EXPIRED</span>':d.toISOString()}
-    html+=`<tr><td style="font-family:monospace;font-weight:700">${k}</td><td>${fields[k]||k}</td><td style="word-break:break-all;max-width:300px;font-size:.78rem">${esc(tags[k])}</td><td>${note}</td></tr>`;
+  var fields = { v: 'Version', a: 'Algorithm', c: 'Canonicalization', d: 'Signing Domain', s: 'Selector', h: 'Signed Headers', bh: 'Body Hash', b: 'Signature', t: 'Timestamp', x: 'Expiration', l: 'Body Length', q: 'Query Method', i: 'Identity' };
+  var html = '<table><tr><th>Tag</th><th>Field</th><th>Value</th><th>Notes</th></tr>';
+  Object.keys(tags).forEach(function(k) {
+    var note = '';
+    if (k === 'a' && tags[k] === 'rsa-sha1') note = '<span class="tag tag-red">Weak — use rsa-sha256</span>';
+    if (k === 'a' && tags[k] === 'rsa-sha256') note = '<span class="tag tag-green">Recommended</span>';
+    if (k === 'l') note = '<span class="tag tag-yellow">Body length limit — can be abused</span>';
+    if (k === 't' && tags[k]) { var d = new Date(parseInt(tags[k]) * 1000); note = d.toISOString(); }
+    if (k === 'x' && tags[k]) { var d2 = new Date(parseInt(tags[k]) * 1000); note = d2 < new Date() ? '<span class="tag tag-red">EXPIRED</span>' : d2.toISOString(); }
+    html += '<tr><td style="font-family:monospace;font-weight:700">' + k + '</td><td>' + (fields[k] || k) + '</td><td style="word-break:break-all;max-width:300px;font-size:.78rem">' + esc(tags[k]) + '</td><td>' + note + '</td></tr>';
   });
-  html+='</table>';
-  if(tags.d&&tags.s){html+=`<div class="info-box" style="margin-top:12px">📋 DNS lookup: <code>${tags.s}._domainkey.${tags.d}</code> (TXT record)</div>`}
-  const signedH=(tags.h||'').split(':');
-  const important=['from','to','subject','date','message-id'];
-  const missing=important.filter(h=>!signedH.map(s=>s.toLowerCase()).includes(h));
-  if(missing.length){html+=`<div class="warn-box">⚠️ Important unsigned headers: ${missing.join(', ')}. These can be modified without breaking DKIM.</div>`}
-  document.getElementById('dkimResults').innerHTML=html;
+  html += '</table>';
+  if (tags.d && tags.s) html += '<div class="info-box" style="margin-top:12px">📋 DNS lookup: <code>' + tags.s + '._domainkey.' + tags.d + '</code></div>';
+  var signedH = (tags.h || '').split(':');
+  var important = ['from', 'to', 'subject', 'date'];
+  var missing = important.filter(function(h) { return signedH.map(function(s) { return s.toLowerCase(); }).indexOf(h) === -1; });
+  if (missing.length) html += '<div class="warn-box">⚠️ Unsigned critical headers: ' + missing.join(', ') + '</div>';
+  document.getElementById('dkimResults').innerHTML = html;
 }
 
-// ===== DMARC BUILDER =====
-function buildDMARC(){
-  let parts=['v=DMARC1'];
-  parts.push('p='+document.getElementById('dmarcP').value);
-  const sp=document.getElementById('dmarcSP').value;if(sp)parts.push('sp='+sp);
-  const rua=document.getElementById('dmarcRua').value.trim();if(rua)parts.push('rua=mailto:'+rua);
-  const ruf=document.getElementById('dmarcRuf').value.trim();if(ruf)parts.push('ruf=mailto:'+ruf);
-  const pct=document.getElementById('dmarcPct').value;if(pct!=='100')parts.push('pct='+pct);
-  parts.push('adkim='+document.getElementById('dmarcAdkim').value);
-  parts.push('aspf='+document.getElementById('dmarcAspf').value);
-  parts.push('fo='+document.getElementById('dmarcFo').value);
-  const record=parts.join('; ');
-  let out=`DNS TXT Record\n${'─'.repeat(40)}\nHost: _dmarc.yourdomain.com\nType: TXT\nValue:\n\n${record}\n\n`;
-  const pol=document.getElementById('dmarcP').value;
-  if(pol==='none')out+=`ℹ️ Monitor-only mode. Useful for initial deployment and reviewing reports before enforcement.\n`;
-  if(pol==='quarantine')out+=`⚠️ Quarantine mode. Failed messages will be sent to spam/junk folders.\n`;
-  if(pol==='reject')out+=`✅ Reject mode. Maximum protection — failed messages are blocked entirely.\n`;
-  if(!rua)out+=`\n⚠️ No aggregate report email (rua) configured. You won't receive DMARC reports.\n`;
-  out+=`\n📋 Recommended DMARC deployment path:\n  1. p=none (monitor) → collect reports for 2-4 weeks\n  2. p=quarantine; pct=25 → gradually increase pct\n  3. p=reject → full enforcement\n`;
-  document.getElementById('dmarcResults').textContent=out;
+/* ==========================================================
+   DMARC BUILDER
+   ========================================================== */
+function buildDMARC() {
+  var parts = ['v=DMARC1'];
+  parts.push('p=' + document.getElementById('dmarcP').value);
+  var sp = document.getElementById('dmarcSP').value; if (sp) parts.push('sp=' + sp);
+  var rua = document.getElementById('dmarcRua').value.trim(); if (rua) parts.push('rua=mailto:' + rua);
+  var ruf = document.getElementById('dmarcRuf').value.trim(); if (ruf) parts.push('ruf=mailto:' + ruf);
+  var pct = document.getElementById('dmarcPct').value; if (pct !== '100') parts.push('pct=' + pct);
+  parts.push('adkim=' + document.getElementById('dmarcAdkim').value);
+  parts.push('aspf=' + document.getElementById('dmarcAspf').value);
+  parts.push('fo=' + document.getElementById('dmarcFo').value);
+  var record = parts.join('; ');
+  var out = 'DNS TXT Record\n' + '─'.repeat(40) + '\nHost: _dmarc.yourdomain.com\nType: TXT\nValue:\n\n' + record + '\n\n';
+  var pol = document.getElementById('dmarcP').value;
+  if (pol === 'none') out += 'ℹ️ Monitor-only. Review reports before enforcement.\n';
+  if (pol === 'quarantine') out += '⚠️ Quarantine mode. Failed messages go to spam.\n';
+  if (pol === 'reject') out += '✅ Reject mode. Maximum protection.\n';
+  if (!rua) out += '\n⚠️ No rua configured. You won\'t receive reports.\n';
+  out += '\n📋 Recommended path:\n  1. p=none → monitor 2-4 weeks\n  2. p=quarantine; pct=25 → increase gradually\n  3. p=reject → full enforcement\n';
+  document.getElementById('dmarcResults').textContent = out;
 }
 
-// ===== AUTH FLOW =====
-function loadAuthFlow(){
-  document.getElementById('authFlowContent').innerHTML=`
-    <h3 style="margin-bottom:10px">SPF (Sender Policy Framework)</h3>
-    <div class="pattern-card" style="border-left:4px solid var(--green)">
-      <h4>How it works</h4>
-      <p class="meta" style="margin-top:6px;line-height:1.6">1. Sender sends email from IP address<br>2. Receiving server checks DNS TXT record of sender domain<br>3. SPF record lists authorized IPs/servers<br>4. If sending IP matches → SPF PASS, otherwise → FAIL</p>
-      <code>v=spf1 include:_spf.google.com ip4:192.0.2.1 -all</code>
-      <p class="meta" style="margin-top:6px"><strong>Protects against:</strong> Direct domain spoofing from unauthorized servers<br><strong>Limitation:</strong> Doesn't protect against display name spoofing. Only checks envelope FROM (MAIL FROM), not header FROM.</p>
-    </div>
-    <h3 style="margin:16px 0 10px">DKIM (DomainKeys Identified Mail)</h3>
-    <div class="pattern-card" style="border-left:4px solid var(--accent)">
-      <h4>How it works</h4>
-      <p class="meta" style="margin-top:6px;line-height:1.6">1. Sending server signs message with private key<br>2. Signature added as DKIM-Signature header<br>3. Receiving server retrieves public key from DNS (selector._domainkey.domain)<br>4. Verifies signature matches message content → PASS/FAIL</p>
-      <code>selector._domainkey.example.com → v=DKIM1; k=rsa; p=MIGfMA0...</code>
-      <p class="meta" style="margin-top:6px"><strong>Protects against:</strong> Message tampering in transit. Proves message integrity.<br><strong>Limitation:</strong> Doesn't prevent spoofing by itself. Only proves the signer, not alignment with From.</p>
-    </div>
-    <h3 style="margin:16px 0 10px">DMARC (Domain-based Message Authentication, Reporting, and Conformance)</h3>
-    <div class="pattern-card" style="border-left:4px solid var(--purple)">
-      <h4>How it works</h4>
-      <p class="meta" style="margin-top:6px;line-height:1.6">1. Receiving server checks if SPF and/or DKIM pass<br>2. Checks <strong>alignment</strong> — does the authenticated domain match the header From domain?<br>3. Applies domain owner's policy: none (monitor), quarantine, or reject<br>4. Sends aggregate/forensic reports back to domain owner</p>
-      <code>_dmarc.example.com → v=DMARC1; p=reject; rua=mailto:reports@example.com</code>
-      <p class="meta" style="margin-top:6px"><strong>Protects against:</strong> Domain spoofing by combining SPF+DKIM with alignment checks.<br><strong>Key concept:</strong> DMARC passes if EITHER SPF or DKIM passes AND aligns with the From domain.</p>
-    </div>
-    <h3 style="margin:16px 0 10px">Additional: BIMI & MTA-STS</h3>
-    <div class="pattern-card" style="border-left:4px solid var(--cyan)">
-      <h4>BIMI (Brand Indicators for Message Identification)</h4>
-      <p class="meta" style="margin-top:6px">Displays verified brand logo next to authenticated emails. Requires DMARC enforcement (p=quarantine or reject) plus a Verified Mark Certificate (VMC).</p>
-      <code>default._bimi.example.com → v=BIMI1; l=https://example.com/logo.svg; a=https://example.com/cert.pem</code>
-    </div>
-    <div class="pattern-card" style="border-left:4px solid var(--orange);margin-top:8px">
-      <h4>MTA-STS (Mail Transfer Agent Strict Transport Security)</h4>
-      <p class="meta" style="margin-top:6px">Enforces TLS encryption for email in transit. Prevents downgrade attacks and MITM interception. Published via DNS TXT + HTTPS well-known file.</p>
-      <code>_mta-sts.example.com → v=STSv1; id=20240101</code>
-    </div>`;
-}
-loadAuthFlow();
+/* ==========================================================
+   AUTH FLOW VISUALIZER
+   ========================================================== */
+(function loadAuthFlow() {
+  document.getElementById('authFlowContent').innerHTML =
+    '<h3 style="margin-bottom:10px">SPF (Sender Policy Framework)</h3>' +
+    '<div class="pattern-card" style="border-left:4px solid var(--green)"><h4>How it works</h4><p class="meta" style="margin-top:6px;line-height:1.6">1. Sender sends email from IP address<br>2. Receiver checks DNS TXT record of sender domain<br>3. SPF record lists authorized IPs/servers<br>4. If sending IP matches → PASS, otherwise → FAIL</p><code>v=spf1 include:_spf.google.com ip4:192.0.2.1 -all</code><p class="meta" style="margin-top:6px"><strong>Limitation:</strong> Only checks envelope FROM, not header FROM.</p></div>' +
+    '<h3 style="margin:16px 0 10px">DKIM (DomainKeys Identified Mail)</h3>' +
+    '<div class="pattern-card" style="border-left:4px solid var(--accent)"><h4>How it works</h4><p class="meta" style="margin-top:6px;line-height:1.6">1. Sending server signs message with private key<br>2. Signature added as DKIM-Signature header<br>3. Receiver retrieves public key from DNS<br>4. Verifies signature matches content → PASS/FAIL</p><code>selector._domainkey.example.com → v=DKIM1; k=rsa; p=MIGf…</code><p class="meta" style="margin-top:6px"><strong>Limitation:</strong> Proves the signer, not alignment with From.</p></div>' +
+    '<h3 style="margin:16px 0 10px">DMARC</h3>' +
+    '<div class="pattern-card" style="border-left:4px solid var(--purple)"><h4>How it works</h4><p class="meta" style="margin-top:6px;line-height:1.6">1. Receiver checks if SPF and/or DKIM pass<br>2. Checks <strong>alignment</strong> with header From domain<br>3. Applies policy: none / quarantine / reject<br>4. Sends reports to domain owner</p><code>_dmarc.example.com → v=DMARC1; p=reject; rua=mailto:reports@example.com</code><p class="meta" style="margin-top:6px"><strong>Key:</strong> Passes if EITHER SPF or DKIM passes AND aligns.</p></div>';
+})();
 
-// ===== PHISHING ANALYZER =====
-function analyzePhish(){
-  const text=document.getElementById('phishInput').value;
-  if(!text.trim())return;
-  const tl=text.toLowerCase();
-  const checks=[
-    {name:'Urgency Language',rx:/\b(urgent|immediate(ly)?|act now|expire|suspend|deactivat|terminat|locked|compromised|unauthorized|verify.*(now|immediately)|last chance|final warning)\b/gi,sev:3,cat:'Social Engineering'},
-    {name:'Threat Language',rx:/\b(will be (closed|suspended|terminated|locked)|lose access|legal action|report to|arrest|fine|penalty|prosecut)\b/gi,sev:3,cat:'Social Engineering'},
-    {name:'Authority Impersonation',rx:/\b(CEO|CFO|CTO|president|director|HR department|IT department|helpdesk|support team|security team|payroll|accounting|legal department)\b/gi,sev:2,cat:'Impersonation'},
-    {name:'Brand Impersonation',rx:/\b(Microsoft|Office\s?365|Google|Apple|Amazon|PayPal|Netflix|Facebook|Instagram|WhatsApp|LinkedIn|Dropbox|DocuSign|Adobe|DHL|FedEx|UPS|USPS|IRS|bank of)\b/gi,sev:2,cat:'Impersonation'},
-    {name:'Credential Request',rx:/\b(password|username|login|sign.?in|credentials|verify your (account|identity|email)|confirm your|update your (information|payment|billing|account))\b/gi,sev:4,cat:'Credential Harvest'},
-    {name:'Suspicious URLs',rx:/(https?:\/\/\d+\.\d+\.\d+\.\d+|https?:\/\/[^\s]*@[^\s]*|https?:\/\/[^\s]*\.(tk|ml|ga|cf|gq|xyz|top|buzz|click|link|info|biz|work|date|racing|download|stream|win)\b)/gi,sev:4,cat:'Suspicious Link'},
-    {name:'Shortened URLs',rx:/\b(bit\.ly|goo\.gl|tinyurl|t\.co|short\.to|cutt\.ly|rb\.gy|is\.gd|v\.gd|shorte\.st|adf\.ly)\b/gi,sev:3,cat:'Obfuscation'},
-    {name:'Encoded URLs',rx:/%[0-9a-f]{2}/gi,sev:1,cat:'Obfuscation'},
-    {name:'HTML Form/Input',rx:/<(form|input|button)[^>]*>/gi,sev:3,cat:'Credential Harvest'},
-    {name:'Base64 Content',rx:/[A-Za-z0-9+\/]{40,}={0,2}/g,sev:2,cat:'Obfuscation'},
-    {name:'Mismatched Links',rx/href\s*=\s*["'][^"']*["'][^>]*>[^<]*(?:click|here|verify|login|update|confirm)/gi,sev:3,cat:'Deception'},
-    {name:'Reply-To Mismatch',rx:/Reply-To:\s*[^\n]+/gi,sev:2,cat:'Header Anomaly'},
-    {name:'Greeting Generic',rx:/\b(dear (customer|user|member|valued|sir|madam|account holder)|dear\s*,)/gi,sev:2,cat:'Social Engineering'},
-    {name:'Attachment Risky',rx:/\.(exe|bat|cmd|scr|pif|js|vbs|wsf|ps1|hta|lnk|iso|img|docm|xlsm|pptm)\b/gi,sev:4,cat:'Malware Delivery'},
-    {name:'Financial Request',rx:/\b(wire transfer|bank transfer|gift card|bitcoin|crypto|routing number|account number|payment|invoice|overdue|outstanding balance)\b/gi,sev:3,cat:'Financial Fraud'},
-    {name:'Typo/Grammar Indicators',rx:/\b(kindly|do the needful|revert back|prepone|updation)\b/gi,sev:1,cat:'Language'},
-    {name:'Display Name vs From Mismatch',rx:/From:\s*"?([^"<]+)"?\s*<([^>]+)>/gi,sev:2,cat:'Header Anomaly'}
+/* ==========================================================
+   PHISHING ANALYZER
+   ========================================================== */
+function analyzePhish() {
+  var text = document.getElementById('phishInput').value;
+  if (!text.trim()) return;
+  var checks = [
+    { name: 'Urgency Language', rx: /\b(urgent|immediate(?:ly)?|act now|expire|suspend|deactivat|terminat|locked|compromised|unauthorized|verify.{0,10}(?:now|immediately)|last chance|final warning)\b/gi, sev: 3, cat: 'Social Engineering' },
+    { name: 'Threat Language', rx: /\b(will be (?:closed|suspended|terminated|locked)|lose access|legal action|report to|arrest|fine|penalty|prosecut)\b/gi, sev: 3, cat: 'Social Engineering' },
+    { name: 'Authority Impersonation', rx: /\b(CEO|CFO|CTO|president|director|HR department|IT department|helpdesk|support team|security team|payroll)\b/gi, sev: 2, cat: 'Impersonation' },
+    { name: 'Brand Impersonation', rx: /\b(Microsoft|Office\s?365|Google|Apple|Amazon|PayPal|Netflix|Facebook|LinkedIn|Dropbox|DocuSign|Adobe|DHL|FedEx|UPS|IRS)\b/gi, sev: 2, cat: 'Impersonation' },
+    { name: 'Credential Request', rx: /\b(password|username|login|sign.?in|credentials|verify your (?:account|identity|email)|confirm your|update your (?:information|payment|billing|account))\b/gi, sev: 4, cat: 'Credential Harvest' },
+    { name: 'Suspicious URL (IP-based)', rx: /https?:\/\/\d+\.\d+\.\d+\.\d+/gi, sev: 4, cat: 'Suspicious Link' },
+    { name: 'Suspicious TLD', rx: /https?:\/\/[^\s]*\.(?:tk|ml|ga|cf|gq|xyz|top|buzz|click|link|work|date|stream|download|win)\b/gi, sev: 3, cat: 'Suspicious Link' },
+    { name: 'Shortened URLs', rx: /\b(?:bit\.ly|goo\.gl|tinyurl|t\.co|cutt\.ly|rb\.gy|is\.gd)\b/gi, sev: 3, cat: 'Obfuscation' },
+    { name: 'HTML Form/Input', rx: /<(?:form|input|button)[^>]*>/gi, sev: 3, cat: 'Credential Harvest' },
+    { name: 'Base64 Blob', rx: /[A-Za-z0-9+\/]{40,}={0,2}/g, sev: 2, cat: 'Obfuscation' },
+    { name: 'Mismatched Link Text', rx: /href\s*=\s*["'][^"']*["'][^>]*>[^<]*(?:click|here|verify|login|update|confirm)/gi, sev: 3, cat: 'Deception' },
+    { name: 'Generic Greeting', rx: /\b(?:dear (?:customer|user|member|valued|sir|madam|account holder)|dear\s*,)/gi, sev: 2, cat: 'Social Engineering' },
+    { name: 'Risky Attachment Ext', rx: /\.(?:exe|bat|cmd|scr|pif|js|vbs|wsf|ps1|hta|lnk|iso|img|docm|xlsm|pptm)\b/gi, sev: 4, cat: 'Malware Delivery' },
+    { name: 'Financial Request', rx: /\b(?:wire transfer|bank transfer|gift card|bitcoin|crypto|routing number|account number|overdue|outstanding balance)\b/gi, sev: 3, cat: 'Financial Fraud' },
+    { name: 'Display Name Spoof', rx: /From:\s*"?([^"<]+)"?\s*<([^>]+)>/gi, sev: 2, cat: 'Header Anomaly' }
   ];
-  let findings=[];let totalScore=0;
-  checks.forEach(c=>{
-    // Fix regex if it was malformed
-    let rx;
-    try{rx=c.rx}catch(e){return}
-    const matches=text.match(rx);
-    if(matches&&matches.length>0){
-      findings.push({name:c.name,cat:c.cat,sev:c.sev,count:matches.length,samples:matches.slice(0,5)});
-      totalScore+=c.sev*Math.min(matches.length,5);
+  var findings = []; var totalScore = 0;
+  checks.forEach(function(c) {
+    var matches = text.match(c.rx);
+    if (matches && matches.length > 0) {
+      findings.push({ name: c.name, cat: c.cat, sev: c.sev, count: matches.length, samples: matches.slice(0, 5) });
+      totalScore += c.sev * Math.min(matches.length, 5);
     }
   });
-  let riskLevel,riskColor;
-  if(totalScore>=25){riskLevel='CRITICAL';riskColor='var(--red)'}
-  else if(totalScore>=15){riskLevel='HIGH';riskColor='var(--orange)'}
-  else if(totalScore>=8){riskLevel='MEDIUM';riskColor='var(--yellow)'}
-  else if(totalScore>=3){riskLevel='LOW';riskColor='var(--cyan)'}
-  else{riskLevel='CLEAN';riskColor='var(--green)'}
-  const pct=Math.min(totalScore*3,100);
-  let html=`<div class="stat-card" style="margin-top:14px;border-color:${riskColor};text-align:center">
-    <div style="font-size:2.2rem;font-weight:700;color:${riskColor}">🎣 ${riskLevel}</div>
-    <div class="lbl">Phishing Risk Score: ${totalScore} | ${findings.length} indicator(s) found</div>
-    <div class="risk-meter" style="margin-top:10px"><div class="risk-meter-fill" style="width:${pct}%;background:${riskColor}"></div></div>
-  </div>`;
-  if(findings.length){
-    html+='<table style="margin-top:14px"><tr><th>Indicator</th><th>Category</th><th>Hits</th><th>Severity</th><th>Samples</th></tr>';
-    findings.sort((a,b)=>b.sev-a.sev).forEach(f=>{
-      const sevCl=f.sev>=4?'tag-red':f.sev>=3?'tag-orange':f.sev>=2?'tag-yellow':'tag-cyan';
-      html+=`<tr><td>${f.name}</td><td><span class="tag tag-purple">${f.cat}</span></td><td>${f.count}</td><td><span class="tag ${sevCl}">${f.sev}/4</span></td><td style="font-size:.78rem;max-width:200px;word-break:break-all">${f.samples.map(s=>esc(s)).join(', ')}</td></tr>`;
+  var riskLevel, riskColor;
+  if (totalScore >= 25) { riskLevel = 'CRITICAL'; riskColor = 'var(--red)'; }
+  else if (totalScore >= 15) { riskLevel = 'HIGH'; riskColor = 'var(--orange)'; }
+  else if (totalScore >= 8) { riskLevel = 'MEDIUM'; riskColor = 'var(--yellow)'; }
+  else if (totalScore >= 3) { riskLevel = 'LOW'; riskColor = 'var(--cyan)'; }
+  else { riskLevel = 'CLEAN'; riskColor = 'var(--green)'; }
+  var pct = Math.min(totalScore * 3, 100);
+  var html = '<div class="stat-card" style="margin-top:14px;border-color:' + riskColor + ';text-align:center"><div style="font-size:2.2rem;font-weight:700;color:' + riskColor + '">🎣 ' + riskLevel + '</div><div class="lbl">Score: ' + totalScore + ' | ' + findings.length + ' indicator(s)</div><div class="risk-meter" style="margin-top:10px"><div class="risk-meter-fill" style="width:' + pct + '%;background:' + riskColor + '"></div></div></div>';
+  if (findings.length) {
+    html += '<table style="margin-top:14px"><tr><th>Indicator</th><th>Category</th><th>Hits</th><th>Sev</th><th>Samples</th></tr>';
+    findings.sort(function(a, b) { return b.sev - a.sev; }).forEach(function(f) {
+      var sevCl = f.sev >= 4 ? 'tag-red' : f.sev >= 3 ? 'tag-orange' : f.sev >= 2 ? 'tag-yellow' : 'tag-cyan';
+      html += '<tr><td>' + f.name + '</td><td><span class="tag tag-purple">' + f.cat + '</span></td><td>' + f.count + '</td><td><span class="tag ' + sevCl + '">' + f.sev + '/4</span></td><td style="font-size:.78rem;max-width:200px;word-break:break-all">' + f.samples.map(function(s) { return esc(s); }).join(', ') + '</td></tr>';
     });
-    html+='</table>';
-  }else{html+='<div class="info-box" style="margin-top:14px">✅ No obvious phishing indicators detected. Always exercise caution.</div>'}
-  document.getElementById('phishResults').innerHTML=html;
+    html += '</table>';
+  } else { html += '<div class="info-box" style="margin-top:14px">✅ No obvious phishing indicators detected.</div>'; }
+  document.getElementById('phishResults').innerHTML = html;
 }
 
-// ===== URL ANALYZER =====
-function analyzeURLs(){
-  const lines=document.getElementById('urlInput').value.split('\n').filter(l=>l.trim());
-  if(!lines.length)return;
-  let html='';
-  lines.forEach(u=>{
-    u=u.trim();
-    let risks=[];let info=[];
-    try{
-      const url=new URL(u);
-      info.push(`Protocol: ${url.protocol}`);
-      info.push(`Hostname: ${url.hostname}`);
-      info.push(`Path: ${url.pathname}`);
-      if(url.search)info.push(`Query: ${url.search}`);
-      if(url.port)info.push(`Port: ${url.port}`);
-      if(url.username)risks.push('🚨 Contains embedded username — possible credential phishing');
-      if(/^\d+\.\d+\.\d+\.\d+$/.test(url.hostname))risks.push('⚠️ Uses IP address instead of domain name');
-      if(url.hostname.length>50)risks.push('⚠️ Unusually long hostname');
-      if((url.hostname.match(/-/g)||[]).length>3)risks.push('⚠️ Multiple hyphens in domain');
-      if((url.hostname.match(/\./g)||[]).length>4)risks.push('⚠️ Many subdomains — possible evasion');
-      const riskyTLDs=['.tk','.ml','.ga','.cf','.gq','.xyz','.top','.buzz','.click','.work','.date','.stream','.download'];
-      if(riskyTLDs.some(t=>url.hostname.endsWith(t)))risks.push('🚨 High-risk TLD');
-      if(url.protocol==='http:')risks.push('⚠️ Not using HTTPS');
-      if(/\.(exe|bat|scr|cmd|msi|ps1|vbs|js|hta|dll|iso|img)$/i.test(url.pathname))risks.push('🚨 Links to executable/risky file type');
-      if(url.search.includes('redirect')||url.search.includes('url=')||url.search.includes('next='))risks.push('⚠️ Contains redirect parameter');
-      const lookalikes={'paypal':'paypa1 paypai paypaI','google':'goog1e googie go0gle','microsoft':'rnicrosoft micros0ft mlcrosoft','apple':'app1e appIe','amazon':'amaz0n arnazon'};
-      Object.keys(lookalikes).forEach(brand=>{if(url.hostname.includes(brand.slice(0,-1))&&!url.hostname.includes(brand))risks.push(`🚨 Possible ${brand} impersonation`)});
-    }catch(e){risks.push('⚠️ Invalid URL format: '+e.message)}
-    const riskLvl=risks.length===0?'Low':risks.some(r=>r.startsWith('🚨'))?'High':'Medium';
-    const rCol=riskLvl==='High'?'tag-red':riskLvl==='Medium'?'tag-yellow':'tag-green';
-    html+=`<div class="pattern-card"><h4 style="word-break:break-all;font-size:.82rem">${esc(u)}</h4><span class="tag ${rCol}">${riskLvl} Risk</span>`;
-    if(info.length){html+='<div style="margin-top:8px;font-size:.8rem;color:var(--text-secondary)">';info.forEach(i=>html+=`${esc(i)}<br>`);html+='</div>'}
-    if(risks.length){html+='<div style="margin-top:6px;font-size:.82rem">';risks.forEach(r=>html+=`${r}<br>`);html+='</div>'}
-    html+='</div>';
+/* ==========================================================
+   URL ANALYZER
+   ========================================================== */
+function analyzeURLs() {
+  var lines = document.getElementById('urlInput').value.split('\n').filter(function(l) { return l.trim(); });
+  if (!lines.length) return;
+  var html = '';
+  lines.forEach(function(u) {
+    u = u.trim(); var risks = []; var info = [];
+    try {
+      var url = new URL(u);
+      info.push('Protocol: ' + url.protocol);
+      info.push('Hostname: ' + url.hostname);
+      info.push('Path: ' + url.pathname);
+      if (url.search) info.push('Query: ' + url.search);
+      if (url.username) risks.push('🚨 Contains embedded username');
+      if (/^\d+\.\d+\.\d+\.\d+$/.test(url.hostname)) risks.push('⚠️ Uses IP address instead of domain');
+      if (url.hostname.length > 50) risks.push('⚠️ Unusually long hostname');
+      if ((url.hostname.match(/\./g) || []).length > 4) risks.push('⚠️ Many subdomains');
+      var riskyTLDs = ['.tk', '.ml', '.ga', '.cf', '.gq', '.xyz', '.top', '.buzz', '.click'];
+      if (riskyTLDs.some(function(t) { return url.hostname.endsWith(t); })) risks.push('🚨 High-risk TLD');
+      if (url.protocol === 'http:') risks.push('⚠️ Not using HTTPS');
+      if (/\.(exe|bat|scr|cmd|msi|ps1|vbs|js|hta|dll|iso)$/i.test(url.pathname)) risks.push('🚨 Links to executable file');
+      if (url.search.indexOf('redirect') > -1 || url.search.indexOf('url=') > -1) risks.push('⚠️ Contains redirect parameter');
+    } catch (e) { risks.push('⚠️ Invalid URL format'); }
+    var riskLvl = risks.length === 0 ? 'Low' : risks.some(function(r) { return r.indexOf('🚨') > -1; }) ? 'High' : 'Medium';
+    var rCol = riskLvl === 'High' ? 'tag-red' : riskLvl === 'Medium' ? 'tag-yellow' : 'tag-green';
+    html += '<div class="pattern-card"><h4 style="word-break:break-all;font-size:.82rem">' + esc(u) + '</h4><span class="tag ' + rCol + '">' + riskLvl + ' Risk</span>';
+    if (info.length) { html += '<div style="margin-top:8px;font-size:.8rem;color:var(--text-secondary)">'; info.forEach(function(i) { html += esc(i) + '<br>'; }); html += '</div>'; }
+    if (risks.length) { html += '<div style="margin-top:6px;font-size:.82rem">'; risks.forEach(function(r) { html += r + '<br>'; }); html += '</div>'; }
+    html += '</div>';
   });
-  document.getElementById('urlResults').innerHTML=html;
+  document.getElementById('urlResults').innerHTML = html;
 }
 
-// ===== HOMOGLYPH DETECTOR =====
-const homoMap={'a':['а','ɑ','α'],'c':['с','ϲ'],'d':['ԁ','ⅾ'],'e':['е','ё','ε'],'g':['ɡ','ց'],'h':['һ','ℎ'],'i':['і','ⅰ','ı'],'j':['ϳ','ј'],'k':['κ','к'],'l':['ⅼ','ⅰ','1','|','I'],'m':['ⅿ','м'],'n':['ո','ν'],'o':['о','ο','0','O'],'p':['р','ρ'],'q':['ԛ','ɋ'],'r':['г','ɾ'],'s':['ѕ','ꮪ'],'t':['τ','т'],'u':['υ','ս'],'v':['ν','ⅴ'],'w':['ω','ԝ'],'x':['х','ⅹ'],'y':['у','ỿ'],'z':['ᴢ','ꮓ'],'rn':['m'],'cl':['d'],'vv':['w']};
-function detectHomoglyphs(){
-  const sus=document.getElementById('homoSuspect').value.trim().toLowerCase();
-  const leg=document.getElementById('homoLegit').value.trim().toLowerCase();
-  if(!sus||!leg){document.getElementById('homoResults').innerHTML='<div class="out-box">Enter both domains to compare.</div>';return}
-  let html=`<h3 style="margin-top:14px">Character-by-Character Comparison</h3><table><tr><th>#</th><th>Suspicious</th><th>Legitimate</th><th>Match?</th><th>Code Points</th></tr>`;
-  const maxLen=Math.max(sus.length,leg.length);
-  let diffs=0;
-  for(let i=0;i<maxLen;i++){
-    const sc=sus[i]||'—';const lc=leg[i]||'—';
-    const match=sc===lc;
-    if(!match)diffs++;
-    const sCode=sus[i]?'U+'+sus.charCodeAt(i).toString(16).toUpperCase().padStart(4,'0'):'—';
-    const lCode=leg[i]?'U+'+leg.charCodeAt(i).toString(16).toUpperCase().padStart(4,'0'):'—';
-    html+=`<tr style="${!match?'background:rgba(248,81,73,.1)':''}"><td>${i+1}</td><td style="font-size:1.2rem;text-align:center">${esc(sc)}</td><td style="font-size:1.2rem;text-align:center">${esc(lc)}</td><td>${match?'<span class="tag tag-green">✓</span>':'<span class="tag tag-red">✗</span>'}</td><td style="font-size:.78rem;font-family:monospace">${sCode} vs ${lCode}</td></tr>`;
+/* ==========================================================
+   HOMOGLYPH DETECTOR
+   ========================================================== */
+function detectHomoglyphs() {
+  var sus = document.getElementById('homoSuspect').value.trim().toLowerCase();
+  var leg = document.getElementById('homoLegit').value.trim().toLowerCase();
+  if (!sus || !leg) { document.getElementById('homoResults').innerHTML = '<div class="out-box">Enter both domains.</div>'; return; }
+  var maxLen = Math.max(sus.length, leg.length);
+  var diffs = 0;
+  var html = '<table><tr><th>#</th><th>Suspicious</th><th>Legitimate</th><th>Match?</th><th>Code Points</th></tr>';
+  for (var i = 0; i < maxLen; i++) {
+    var sc = sus[i] || '—'; var lc = leg[i] || '—';
+    var match = sc === lc; if (!match) diffs++;
+    var sCode = sus[i] ? 'U+' + sus.charCodeAt(i).toString(16).toUpperCase().padStart(4, '0') : '—';
+    var lCode = leg[i] ? 'U+' + leg.charCodeAt(i).toString(16).toUpperCase().padStart(4, '0') : '—';
+    html += '<tr style="' + (!match ? 'background:rgba(248,81,73,.1)' : '') + '"><td>' + (i + 1) + '</td><td style="font-size:1.2rem;text-align:center">' + esc(sc) + '</td><td style="font-size:1.2rem;text-align:center">' + esc(lc) + '</td><td>' + (match ? '<span class="tag tag-green">✓</span>' : '<span class="tag tag-red">✗</span>') + '</td><td style="font-size:.78rem;font-family:monospace">' + sCode + ' vs ' + lCode + '</td></tr>';
   }
-  html+='</table>';
-  const simPct=((1-diffs/maxLen)*100).toFixed(0);
-  const isRisky=simPct>=70&&simPct<100;
-  html=`<div class="stat-card" style="margin-top:14px;border-color:${isRisky?'var(--red)':simPct==='100'?'var(--green)':'var(--yellow)'}">
-    <div class="num" style="color:${isRisky?'var(--red)':simPct==='100'?'var(--green)':'var(--yellow)'}">${simPct}%</div>
-    <div class="lbl">Visual Similarity | ${diffs} character difference(s)</div>
-    ${isRisky?'<div style="color:var(--red);margin-top:6px;font-weight:700">🚨 HIGH RISK — Likely homoglyph/impersonation domain</div>':''}
-  </div>`+html;
-  document.getElementById('homoResults').innerHTML=html;
+  html += '</table>';
+  var simPct = ((1 - diffs / maxLen) * 100).toFixed(0);
+  var isRisky = simPct >= 70 && simPct < 100;
+  html = '<div class="stat-card" style="margin-top:14px;border-color:' + (isRisky ? 'var(--red)' : simPct === '100' ? 'var(--green)' : 'var(--yellow)') + '"><div class="num" style="color:' + (isRisky ? 'var(--red)' : simPct === '100' ? 'var(--green)' : 'var(--yellow)') + '">' + simPct + '%</div><div class="lbl">Similarity | ' + diffs + ' difference(s)</div>' + (isRisky ? '<div style="color:var(--red);margin-top:6px;font-weight:700">🚨 Likely impersonation domain</div>' : '') + '</div>' + html;
+  document.getElementById('homoResults').innerHTML = html;
 }
-function generateHomoglyphs(){
-  const leg=document.getElementById('homoLegit').value.trim().toLowerCase();
-  if(!leg){document.getElementById('homoResults').innerHTML='<div class="out-box">Enter a legitimate domain first.</div>';return}
-  const variants=new Set();
-  for(let i=0;i<leg.length;i++){
-    const c=leg[i];
-    if(homoMap[c]){homoMap[c].forEach(r=>{variants.add(leg.slice(0,i)+r+leg.slice(i+1))})}
-    // Common swaps
-    if(i<leg.length-1){
-      const pair=leg.slice(i,i+2);
-      if(homoMap[pair]){homoMap[pair].forEach(r=>{variants.add(leg.slice(0,i)+r+leg.slice(i+2))})}
-      // Transposition
-      variants.add(leg.slice(0,i)+leg[i+1]+leg[i]+leg.slice(i+2));
-    }
-    // Omission
-    if(leg.length>4)variants.add(leg.slice(0,i)+leg.slice(i+1));
-    // Doubling
-    variants.add(leg.slice(0,i)+leg[i]+leg[i]+leg.slice(i+1));
+
+function generateHomoglyphs() {
+  var leg = document.getElementById('homoLegit').value.trim().toLowerCase();
+  if (!leg) { document.getElementById('homoResults').innerHTML = '<div class="out-box">Enter a legitimate domain first.</div>'; return; }
+  var common = { i: '1', l: '1', o: '0', s: '5', a: '4', e: '3', t: '7' };
+  var variants = new Set();
+  for (var i = 0; i < leg.length; i++) {
+    if (common[leg[i]]) variants.add(leg.slice(0, i) + common[leg[i]] + leg.slice(i + 1));
+    if (i < leg.length - 1) variants.add(leg.slice(0, i) + leg[i + 1] + leg[i] + leg.slice(i + 2));
+    if (leg.length > 4) variants.add(leg.slice(0, i) + leg.slice(i + 1));
+    variants.add(leg.slice(0, i) + leg[i] + leg[i] + leg.slice(i + 1));
   }
-  // Bit-squatting style
-  const common={'i':'1','l':'1','o':'0','s':'5','a':'4','e':'3','t':'7'};
-  for(let i=0;i<leg.length;i++){if(common[leg[i]])variants.add(leg.slice(0,i)+common[leg[i]]+leg.slice(i+1))}
+  if (leg.indexOf('rn') > -1) variants.add(leg.replace('rn', 'm'));
+  if (leg.indexOf('m') > -1) variants.add(leg.replace('m', 'rn'));
+  if (leg.indexOf('cl') > -1) variants.add(leg.replace('cl', 'd'));
+  if (leg.indexOf('d') > -1) variants.add(leg.replace('d', 'cl'));
   variants.delete(leg);
-  let html=`<div class="info-box" style="margin-top:14px">Generated <strong>${variants.size}</strong> potential lookalike variants for <strong>${esc(leg)}</strong></div>`;
-  html+='<div class="out-box" style="max-height:300px">';
-  [...variants].slice(0,100).forEach(v=>html+=esc(v)+'\n');
-  if(variants.size>100)html+=`\n... and ${variants.size-100} more\n`;
-  html+='</div>';
-  document.getElementById('homoResults').innerHTML=html;
+  var arr = Array.from(variants);
+  var html = '<div class="info-box" style="margin-top:14px">Generated <strong>' + arr.length + '</strong> lookalike variants for <strong>' + esc(leg) + '</strong></div>';
+  html += '<div class="out-box" style="max-height:300px">';
+  arr.slice(0, 100).forEach(function(v) { html += esc(v) + '\n'; });
+  if (arr.length > 100) html += '\n... and ' + (arr.length - 100) + ' more\n';
+  html += '</div>';
+  document.getElementById('homoResults').innerHTML = html;
 }
 
-// ===== IOC EXTRACTOR =====
-function extractIOCs(){
-  const text=document.getElementById('iocInput').value;
-  if(!text.trim())return;
-  const defangChecked=document.getElementById('iocDefang').checked;
-  const ips=[...new Set((text.match(/\b(?:\d{1,3}\.){3}\d{1,3}\b/g)||[]).filter(ip=>!ip.startsWith('0.')&&!ip.startsWith('10.')&&!ip.startsWith('127.')))];
-  const domains=[...new Set((text.match(/\b(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:com|net|org|edu|gov|mil|io|co|us|uk|de|fr|ru|cn|br|in|au|ca|info|biz|me|xyz|top|site|online|club|app|dev|tech)\b/gi)||[]))];
-  const urls=[...new Set((text.match(/https?:\/\/[^\s<>"{}|\\^`\[\]]+/gi)||[]))];
-  const emails=[...new Set((text.match(/\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/g)||[]))];
-  const md5=[...new Set((text.match(/\b[a-fA-F0-9]{32}\b/g)||[]))];
-  const sha1=[...new Set((text.match(/\b[a-fA-F0-9]{40}\b/g)||[]))];
-  const sha256=[...new Set((text.match(/\b[a-fA-F0-9]{64}\b/g)||[]))];
-  function df(s){if(!defangChecked)return s;return s.replace(/\./g,'[.]').replace(/https?:\/\//g,m=>m.replace('http','hxxp'))}
-  let out='🧲 EXTRACTED IOCs\n'+'═'.repeat(40)+'\n\n';
-  if(urls.length){out+=`🔗 URLs (${urls.length}):\n`;urls.forEach(u=>out+=`  ${df(u)}\n`);out+='\n'}
-  if(domains.length){out+=`🌐 Domains (${domains.length}):\n`;domains.forEach(d=>out+=`  ${df(d)}\n`);out+='\n'}
-  if(ips.length){out+=`📡 IP Addresses (${ips.length}):\n`;ips.forEach(ip=>out+=`  ${df(ip)}\n`);out+='\n'}
-  if(emails.length){out+=`📧 Email Addresses (${emails.length}):\n`;emails.forEach(e=>out+=`  ${df(e)}\n`);out+='\n'}
-  if(sha256.length){out+=`🔑 SHA-256 (${sha256.length}):\n`;sha256.forEach(h=>out+=`  ${h}\n`);out+='\n'}
-  if(sha1.length){out+=`🔑 SHA-1 (${sha1.length}):\n`;sha1.forEach(h=>out+=`  ${h}\n`);out+='\n'}
-  if(md5.length){out+=`🔑 MD5 (${md5.length}):\n`;md5.forEach(h=>out+=`  ${h}\n`);out+='\n'}
-  const total=urls.length+domains.length+ips.length+emails.length+md5.length+sha1.length+sha256.length;
-  if(!total)out+='No IOCs found in the provided text.\n';
-  else out+=`\nTotal: ${total} IOC(s) extracted\n`;
-  document.getElementById('iocOutput').textContent=out;
+/* ==========================================================
+   IOC EXTRACTOR
+   ========================================================== */
+function extractIOCs() {
+  var text = document.getElementById('iocInput').value;
+  if (!text.trim()) return;
+  var shouldDefang = document.getElementById('iocDefang').checked;
+  var ips = []; var seen = {};
+  (text.match(/\b(?:\d{1,3}\.){3}\d{1,3}\b/g) || []).forEach(function(ip) { if (!seen[ip] && !ip.startsWith('0.') && !ip.startsWith('127.')) { ips.push(ip); seen[ip] = 1; } });
+  seen = {};
+  var domains = [];
+  (text.match(/\b(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:com|net|org|edu|gov|io|co|us|uk|de|fr|ru|cn|info|biz|me|xyz|top|app|dev|tech)\b/gi || []).forEach(function(d) { var dl = d.toLowerCase(); if (!seen[dl]) { domains.push(d); seen[dl] = 1; } });
+  seen = {};
+  var urls = [];
+  (text.match(/https?:\/\/[^\s<>"{}|\\^`\[\]]+/gi) || []).forEach(function(u) { if (!seen[u]) { urls.push(u); seen[u] = 1; } });
+  seen = {};
+  var emails = [];
+  (text.match(/\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/g) || []).forEach(function(e) { if (!seen[e]) { emails.push(e); seen[e] = 1; } });
+  var md5 = []; seen = {};
+  (text.match(/\b[a-fA-F0-9]{32}\b/g) || []).forEach(function(h) { if (!seen[h]) { md5.push(h); seen[h] = 1; } });
+  var sha1 = []; seen = {};
+  (text.match(/\b[a-fA-F0-9]{40}\b/g) || []).forEach(function(h) { if (!seen[h]) { sha1.push(h); seen[h] = 1; } });
+  var sha256 = []; seen = {};
+  (text.match(/\b[a-fA-F0-9]{64}\b/g) || []).forEach(function(h) { if (!seen[h]) { sha256.push(h); seen[h] = 1; } });
+  function df(s) { if (!shouldDefang) return s; return s.replace(/\./g, '[.]').replace(/https?:\/\//g, function(m) { return m.replace('http', 'hxxp'); }); }
+  var out = '🧲 EXTRACTED IOCs\n' + '═'.repeat(40) + '\n\n';
+  if (urls.length) { out += '🔗 URLs (' + urls.length + '):\n'; urls.forEach(function(u) { out += '  ' + df(u) + '\n'; }); out += '\n'; }
+  if (domains.length) { out += '🌐 Domains (' + domains.length + '):\n'; domains.forEach(function(d) { out += '  ' + df(d) + '\n'; }); out += '\n'; }
+  if (ips.length) { out += '📡 IPs (' + ips.length + '):\n'; ips.forEach(function(ip) { out += '  ' + df(ip) + '\n'; }); out += '\n'; }
+  if (emails.length) { out += '📧 Emails (' + emails.length + '):\n'; emails.forEach(function(e) { out += '  ' + df(e) + '\n'; }); out += '\n'; }
+  if (sha256.length) { out += '🔑 SHA-256 (' + sha256.length + '):\n'; sha256.forEach(function(h) { out += '  ' + h + '\n'; }); out += '\n'; }
+  if (sha1.length) { out += '🔑 SHA-1 (' + sha1.length + '):\n'; sha1.forEach(function(h) { out += '  ' + h + '\n'; }); out += '\n'; }
+  if (md5.length) { out += '🔑 MD5 (' + md5.length + '):\n'; md5.forEach(function(h) { out += '  ' + h + '\n'; }); out += '\n'; }
+  var total = urls.length + domains.length + ips.length + emails.length + md5.length + sha1.length + sha256.length;
+  if (!total) out += 'No IOCs found.\n'; else out += 'Total: ' + total + ' IOC(s)\n';
+  document.getElementById('iocOutput').textContent = out;
 }
 
-// ===== ATTACHMENT ANALYZER =====
-function analyzeAttach(){
-  const lines=document.getElementById('attachInput').value.split('\n').filter(l=>l.trim());
-  if(!lines.length)return;
-  const riskDB={
-    critical:{exts:['exe','scr','pif','com','bat','cmd','msi','ps1','vbs','vbe','js','jse','wsf','wsh','hta','cpl','reg','inf','lnk'],reason:'Executable/script — can directly run malware'},
-    high:{exts:['docm','xlsm','pptm','dotm','xltm','potm','xlam','ppam','sldm','doc','xls','ppt','rtf','pub','mht','mhtml','iso','img','vhd','vhdx'],reason:'Macro-enabled or legacy format — commonly used for malware delivery'},
-    medium:{exts:['zip','rar','7z','tar','gz','cab','arj','ace','jar','war'],reason:'Archive — can contain any file type, may bypass scanning'},
-    low:{exts:['pdf','docx','xlsx','pptx','csv','txt','jpg','jpeg','png','gif','bmp','svg','mp3','mp4','avi','mov','html','htm','xml','json'],reason:'Common format — lower risk but can still contain exploits'}
+/* ==========================================================
+   ATTACHMENT ANALYZER
+   ========================================================== */
+function analyzeAttach() {
+  var lines = document.getElementById('attachInput').value.split('\n').filter(function(l) { return l.trim(); });
+  if (!lines.length) return;
+  var riskDB = {
+    critical: { exts: ['exe', 'scr', 'pif', 'com', 'bat', 'cmd', 'msi', 'ps1', 'vbs', 'vbe', 'js', 'jse', 'wsf', 'wsh', 'hta', 'cpl', 'reg', 'inf', 'lnk'], reason: 'Executable/script — can run malware' },
+    high: { exts: ['docm', 'xlsm', 'pptm', 'dotm', 'xltm', 'potm', 'doc', 'xls', 'ppt', 'rtf', 'iso', 'img', 'vhd'], reason: 'Macro-enabled or legacy — common malware vector' },
+    medium: { exts: ['zip', 'rar', '7z', 'tar', 'gz', 'cab', 'jar'], reason: 'Archive — can contain any file type' },
+    low: { exts: ['pdf', 'docx', 'xlsx', 'pptx', 'csv', 'txt', 'jpg', 'jpeg', 'png', 'gif', 'bmp', 'mp3', 'mp4', 'html', 'xml', 'json'], reason: 'Common format — lower risk' }
   };
-  let html='<table><tr><th>File</th><th>Extension</th><th>Risk</th><th>Analysis</th></tr>';
-  lines.forEach(f=>{
-    f=f.trim();
-    const parts=f.split('.');
-    const ext=parts.length>1?parts.pop().toLowerCase():'';
-    let risk='Unknown';let riskTag='tag-yellow';let reason='Extension not in database';
-    // Check double extension
-    let doubleExt=false;
-    if(parts.length>1){const prevExt=parts[parts.length-1].toLowerCase();if(riskDB.critical.exts.includes(ext)&&riskDB.low.exts.includes(prevExt)){doubleExt=true;risk='CRITICAL';riskTag='tag-red';reason='🚨 DOUBLE EXTENSION — Disguised executable!'}}
-    if(!doubleExt){
-      if(riskDB.critical.exts.includes(ext)){risk='CRITICAL';riskTag='tag-red';reason=riskDB.critical.reason}
-      else if(riskDB.high.exts.includes(ext)){risk='HIGH';riskTag='tag-red';reason=riskDB.high.reason}
-      else if(riskDB.medium.exts.includes(ext)){risk='MEDIUM';riskTag='tag-orange';reason=riskDB.medium.reason}
-      else if(riskDB.low.exts.includes(ext)){risk='LOW';riskTag='tag-green';reason=riskDB.low.reason}
+  var html = '<table><tr><th>File</th><th>Extension</th><th>Risk</th><th>Analysis</th></tr>';
+  lines.forEach(function(f) {
+    f = f.trim();
+    var parts = f.split('.');
+    var ext = parts.length > 1 ? parts.pop().toLowerCase() : '';
+    var risk = 'Unknown'; var riskTag = 'tag-yellow'; var reason = 'Extension not in database';
+    var doubleExt = false;
+    if (parts.length > 1) {
+      var prevExt = parts[parts.length - 1].toLowerCase();
+      if (riskDB.critical.exts.indexOf(ext) > -1 && riskDB.low.exts.indexOf(prevExt) > -1) {
+        doubleExt = true; risk = 'CRITICAL'; riskTag = 'tag-red'; reason = '🚨 DOUBLE EXTENSION — Disguised executable!';
+      }
     }
-    html+=`<tr><td>${esc(f)}</td><td style="font-family:monospace">.${ext}</td><td><span class="tag ${riskTag}">${risk}</span></td><td style="font-size:.82rem">${reason}</td></tr>`;
+    if (!doubleExt) {
+      if (riskDB.critical.exts.indexOf(ext) > -1) { risk = 'CRITICAL'; riskTag = 'tag-red'; reason = riskDB.critical.reason; }
+      else if (riskDB.high.exts.indexOf(ext) > -1) { risk = 'HIGH'; riskTag = 'tag-red'; reason = riskDB.high.reason; }
+      else if (riskDB.medium.exts.indexOf(ext) > -1) { risk = 'MEDIUM'; riskTag = 'tag-orange'; reason = riskDB.medium.reason; }
+      else if (riskDB.low.exts.indexOf(ext) > -1) { risk = 'LOW'; riskTag = 'tag-green'; reason = riskDB.low.reason; }
+    }
+    html += '<tr><td>' + esc(f) + '</td><td style="font-family:monospace">.' + ext + '</td><td><span class="tag ' + riskTag + '">' + risk + '</span></td><td style="font-size:.82rem">' + reason + '</td></tr>';
   });
-  html+='</table>';
-  document.getElementById('attachResults').innerHTML=html;
+  html += '</table>';
+  document.getElementById('attachResults').innerHTML = html;
 }
 
-// ===== BASE64 =====
-function b64Decode(){try{document.getElementById('b64Output').textContent=atob(document.getElementById('b64Input').value.trim())}catch(e){document.getElementById('b64Output').innerHTML='<span style="color:var(--red)">Invalid Base64</span>'}}
-function b64Encode(){document.getElementById('b64Output').textContent=btoa(document.getElementById('b64Input').value)}
-function b64Detect(){
-  const text=document.getElementById('b64Input').value;
-  const matches=text.match(/[A-Za-z0-9+\/]{30,}={0,2}/g);
-  if(!matches){document.getElementById('b64Output').textContent='No Base64 strings detected.';return}
-  let out=`Found ${matches.length} potential Base64 string(s):\n\n`;
-  matches.forEach((m,i)=>{out+=`#${i+1}: ${m.slice(0,60)}${m.length>60?'...':''}\n`;try{out+=`  → ${atob(m).slice(0,100)}\n\n`}catch(e){out+=`  → Could not decode\n\n`}});
-  document.getElementById('b64Output').textContent=out;
-}
-
-// ===== QUOTED-PRINTABLE =====
-function decodeQP(){const input=document.getElementById('qpInput').value;document.getElementById('qpOutput').textContent=input.replace(/=\r?\n/g,'').replace(/=([0-9A-Fa-f]{2})/g,(m,h)=>String.fromCharCode(parseInt(h,16)))}
-function encodeQP(){const input=document.getElementById('qpInput').value;let out='';for(let i=0;i<input.length;i++){const c=input.charCodeAt(i);if(c>=33&&c<=126&&c!==61)out+=input[i];else out+='='+c.toString(16).toUpperCase().padStart(2,'0')}document.getElementById('qpOutput').textContent=out}
-
-// ===== URL / SAFELINK DECODER =====
-function decodeSafeLinks(){
-  const lines=document.getElementById('safeLinkInput').value.split('\n');
-  let out='';
-  lines.forEach(l=>{
-    l=l.trim();if(!l)return;
-    let decoded=l;
-    // Microsoft SafeLinks
-    const slMatch=l.match(/[?&]url=([^&]+)/i);
-    if(slMatch)decoded=decodeURIComponent(slMatch[1]);
-    // Proofpoint
-    const ppMatch=l.match(/[?&]u=([^&]+)/i);
-    if(ppMatch)decoded=ppMatch[1].replace(/-3A/g,':').replace(/-2F/g,'/').replace(/-2E/g,'.').replace(/_/g,'/').replace(/-/g,'');
-    // General URL decode
-    try{decoded=decodeURIComponent(decoded)}catch(e){}
-    try{decoded=decodeURIComponent(decoded)}catch(e){} // Double decode
-    out+=`Input:   ${l}\nDecoded: ${decoded}\n\n`;
+/* ==========================================================
+   BASE64
+   ========================================================== */
+function b64Decode() { try { document.getElementById('b64Output').textContent = atob(document.getElementById('b64Input').value.trim()); } catch (e) { document.getElementById('b64Output').innerHTML = '<span style="color:var(--red)">Invalid Base64</span>'; } }
+function b64Encode() { try { document.getElementById('b64Output').textContent = btoa(document.getElementById('b64Input').value); } catch(e) { document.getElementById('b64Output').innerHTML = '<span style="color:var(--red)">Error encoding</span>'; } }
+function b64Detect() {
+  var text = document.getElementById('b64Input').value;
+  var matches = text.match(/[A-Za-z0-9+\/]{30,}={0,2}/g);
+  if (!matches) { document.getElementById('b64Output').textContent = 'No Base64 strings detected.'; return; }
+  var out = 'Found ' + matches.length + ' potential Base64 string(s):\n\n';
+  matches.forEach(function(m, i) {
+    out += '#' + (i + 1) + ': ' + m.slice(0, 60) + (m.length > 60 ? '...' : '') + '\n';
+    try { out += '  → ' + atob(m).slice(0, 100) + '\n\n'; } catch (e) { out += '  → Could not decode\n\n'; }
   });
-  document.getElementById('safeLinkOutput').textContent=out;
+  document.getElementById('b64Output').textContent = out;
 }
 
-// ===== DEFANG / REFANG =====
-function defang(){const t=document.getElementById('defangInput').value;document.getElementById('defangOutput').textContent=t.replace(/\./g,'[.]').replace(/https?:\/\//gi,m=>m.replace('http','hxxp')).replace(/@/g,'[@]')}
-function refang(){const t=document.getElementById('defangInput').value;document.getElementById('defangOutput').textContent=t.replace(/\[\.\]/g,'.').replace(/hxxps?/gi,m=>m.replace('hxxp','http')).replace(/\[@\]/g,'@')}
-
-// ===== RULE BUILDER =====
-function buildRule(){
-  const name=document.getElementById('ruleName').value||'Untitled Rule';
-  const cond=document.getElementById('ruleCondition').value;
-  const action=document.getElementById('ruleAction').value;
-  const val=document.getElementById('ruleValue').value;
-  const scope=document.getElementById('ruleScope').value;
-  const priority=document.getElementById('rulePriority').value;
-  const except=document.getElementById('ruleExcept').checked;
-  const audit=document.getElementById('ruleAudit').checked;
-  const notify=document.getElementById('ruleNotify').checked;
-  const condMap={
-    'attachment_ext':'Attachment file extension matches',
-    'subject_contains':'Subject line contains words',
-    'header_matches':'Message header matches pattern',
-    'sender_domain':'Sender domain is',
-    'body_contains':'Message body contains',
-    'external_sender':'Message is from outside the organization',
-    'spf_fail':'SPF authentication failed',
-    'no_auth':'Message has no authentication results',
-    'display_name_spoof':'Sender display name matches internal user'
-  };
-  const actionMap={
-    'block':'Reject the message with explanation',
-    'quarantine':'Deliver to quarantine',
-    'redirect':'Redirect to security admin for review',
-    'prepend_subject':'Prepend subject with warning tag',
-    'add_header':'Add custom X-Header for tracking',
-    'disclaimer':'Append security disclaimer',
-    'encrypt':'Apply message encryption',
-    'strip_attachment':'Remove attachment and notify recipient'
-  };
-  let rule=`# ═══════════════════════════════════════════
-# EMAIL TRANSPORT RULE CONFIGURATION
-# Generated: ${new Date().toISOString()}
-# ═══════════════════════════════════════════
-
-Rule Name:        ${name}
-Priority:         ${priority}
-Status:           Enabled
-Mode:             ${audit?'Enforce + Audit':'Enforce'}
-Direction:        ${scope==='inbound'?'Inbound':'scope'==='outbound'?'Outbound':'Both'}
-
-# ── CONDITION ──────────────────────────────
-Condition Type:   ${condMap[cond]||cond}
-Condition Value:  ${val||'[Not specified]'}
-
-# ── ACTION ─────────────────────────────────
-Action:           ${actionMap[action]||action}`;
-
-  if(action==='prepend_subject')rule+=`\nSubject Prefix:   [⚠️ EXTERNAL] `;
-  if(action==='block')rule+=`\nReject Message:   "This message was blocked by security policy. Contact IT if you believe this is an error."`;
-  if(action==='add_header')rule+=`\nHeader Name:      X-Security-Flag\nHeader Value:     Matched-Rule-${name.replace(/\s/g,'-')}`;
-  if(action==='redirect')rule+=`\nRedirect To:      security-review@company.com`;
-
-  rule+='\n\n# ── EXCEPTIONS ─────────────────────────────';
-  if(except)rule+=`\nExcept If:        Sender is member of "IT-Security-Team" group\n                  OR sender domain is "trusted-partner.com"`;
-  else rule+='\nExceptions:       None';
-
-  rule+='\n\n# ── NOTIFICATIONS ──────────────────────────';
-  if(notify)rule+='\nNotify:           security-alerts@company.com\nInclude:          Original message headers, matched condition';
-  else rule+='\nNotify:           Disabled';
-
-  rule+=`\n\n# ── AUDIT ──────────────────────────────────
-Audit Logging:    ${audit?'Enabled':'Disabled'}
-${audit?'Log Severity:     Medium\nLog Details:      Sender, recipient, subject, matched condition':''}`;
-
-  // PowerShell equivalent
-  rule+=`\n\n# ── POWERSHELL (Exchange Online) ───────────
-# New-TransportRule -Name "${name}" \\`;
-  if(cond==='attachment_ext')rule+=`\n#   -AttachmentExtensionMatchesWords ${val.split(',').map(v=>`"${v.trim()}"`).join(',')} \\`;
-  else if(cond==='subject_contains')rule+=`\n#   -SubjectContainsWords ${val.split(',').map(v=>`"${v.trim()}"`).join(',')} \\`;
-  else if(cond==='sender_domain')rule+=`\n#   -SenderDomainIs ${val.split(',').map(v=>`"${v.trim()}"`).join(',')} \\`;
-  else if(cond==='external_sender')rule+=`\n#   -FromScope "NotInOrganization" \\`;
-  if(action==='block')rule+=`\n#   -RejectMessageReasonText "Blocked by security policy" \\`;
-  else if(action==='quarantine')rule+=`\n#   -Quarantine $true \\`;
-  else if(action==='prepend_subject')rule+=`\n#   -PrependSubject "[⚠️ EXTERNAL] " \\`;
-  else if(action==='redirect')rule+=`\n#   -RedirectMessageTo "security-review@company.com" \\`;
-  rule+=`\n#   -Priority ${priority.charAt(0)}\n`;
-
-  const out=document.getElementById('ruleOutput');
-  out.value=rule;out.style.display='block';
+/* ==========================================================
+   QUOTED-PRINTABLE
+   ========================================================== */
+function decodeQP() {
+  var input = document.getElementById('qpInput').value;
+  document.getElementById('qpOutput').textContent = input.replace(/=\r?\n/g, '').replace(/=([0-9A-Fa-f]{2})/g, function(m, h) { return String.fromCharCode(parseInt(h, 16)); });
+}
+function encodeQP() {
+  var input = document.getElementById('qpInput').value;
+  var out = '';
+  for (var i = 0; i < input.length; i++) {
+    var c = input.charCodeAt(i);
+    if (c >= 33 && c <= 126 && c !== 61) out += input[i];
+    else out += '=' + c.toString(16).toUpperCase().padStart(2, '0');
+  }
+  document.getElementById('qpOutput').textContent = out;
 }
 
-// ===== REGEX TESTER =====
-function testRx(){
-  const p=document.getElementById('rxPattern').value;
-  const t=document.getElementById('rxTest').value;
-  const res=document.getElementById('rxResults');
-  const cnt=document.getElementById('rxCount');
-  if(!p||!t){res.textContent='Enter pattern and test string...';cnt.textContent='';return}
-  let flags='';
-  if(document.getElementById('rxG').checked)flags+='g';
-  if(document.getElementById('rxI').checked)flags+='i';
-  if(document.getElementById('rxM').checked)flags+='m';
-  try{
-    const matches=[...t.matchAll(new RegExp(p,flags.includes('g')?flags:flags+'g'))];
-    if(!matches.length){res.innerHTML='<span style="color:var(--red)">No matches</span>';cnt.textContent='0 matches';return}
-    let ht=t;
-    matches.map(m=>({i:m.index,l:m[0].length,v:m[0]})).sort((a,b)=>b.i-a.i).forEach(m=>{
-      ht=ht.slice(0,m.i)+'⟨⟨⟨'+ht.slice(m.i,m.i+m.l)+'⟩⟩⟩'+ht.slice(m.i+m.l)
+/* ==========================================================
+   URL / SAFELINK DECODER
+   ========================================================== */
+function decodeSafeLinks() {
+  var lines = document.getElementById('safeLinkInput').value.split('\n');
+  var out = '';
+  lines.forEach(function(l) {
+    l = l.trim(); if (!l) return;
+    var decoded = l;
+    var slMatch = l.match(/[?&]url=([^&]+)/i);
+    if (slMatch) decoded = decodeURIComponent(slMatch[1]);
+    var ppMatch = l.match(/[?&]u=([^&]+)/i);
+    if (ppMatch && !slMatch) decoded = ppMatch[1].replace(/-3A/g, ':').replace(/-2F/g, '/').replace(/-2E/g, '.').replace(/_/g, '/');
+    try { decoded = decodeURIComponent(decoded); } catch (e) {}
+    try { decoded = decodeURIComponent(decoded); } catch (e) {}
+    out += 'Input:   ' + l + '\nDecoded: ' + decoded + '\n\n';
+  });
+  document.getElementById('safeLinkOutput').textContent = out;
+}
+
+/* ==========================================================
+   DEFANG / REFANG
+   ========================================================== */
+function defang() {
+  var t = document.getElementById('defangInput').value;
+  document.getElementById('defangOutput').textContent = t.replace(/\./g, '[.]').replace(/https?:\/\//gi, function(m) { return m.replace('http', 'hxxp'); }).replace(/@/g, '[@]');
+}
+function refang() {
+  var t = document.getElementById('defangInput').value;
+  document.getElementById('defangOutput').textContent = t.replace(/\[\.\]/g, '.').replace(/hxxps?/gi, function(m) { return m.replace('hxxp', 'http'); }).replace(/\[@\]/g, '@');
+}
+
+/* ==========================================================
+   TRANSPORT RULE BUILDER
+   ========================================================== */
+function buildRule() {
+  var name = document.getElementById('ruleName').value || 'Untitled Rule';
+  var cond = document.getElementById('ruleCondition').value;
+  var action = document.getElementById('ruleAction').value;
+  var val = document.getElementById('ruleValue').value;
+  var scope = document.getElementById('ruleScope').value;
+  var priority = document.getElementById('rulePriority').value;
+  var except = document.getElementById('ruleExcept').checked;
+  var audit = document.getElementById('ruleAudit').checked;
+  var notify = document.getElementById('ruleNotify').checked;
+  var condMap = {
+    attachment_ext: 'Attachment file extension matches',
+    subject_contains: 'Subject contains words',
+    header_matches: 'Header matches pattern',
+    sender_domain: 'Sender domain is',
+    body_contains: 'Body contains',
+    external_sender: 'External sender',
+    spf_fail: 'SPF failed',
+    no_auth: 'Missing authentication',
+    display_name_spoof: 'Display name impersonation'
+  };
+  var actionMap = {
+    block: 'Reject the message',
+    quarantine: 'Deliver to quarantine',
+    redirect: 'Redirect to admin',
+    prepend_subject: 'Prepend subject warning',
+    add_header: 'Add custom X-Header',
+    disclaimer: 'Append disclaimer',
+    encrypt: 'Encrypt message',
+    strip_attachment: 'Remove attachment'
+  };
+  var dir = scope === 'inbound' ? 'Inbound' : scope === 'outbound' ? 'Outbound' : 'Both';
+  var rule = '# EMAIL TRANSPORT RULE\n# Generated: ' + new Date().toISOString() + '\n# ' + '═'.repeat(44) + '\n\n';
+  rule += 'Rule Name:   ' + name + '\nPriority:    ' + priority + '\nDirection:   ' + dir + '\nMode:        ' + (audit ? 'Enforce + Audit' : 'Enforce') + '\n\n';
+  rule += '# CONDITION\nType:        ' + (condMap[cond] || cond) + '\nValue:       ' + (val || '[Not specified]') + '\n\n';
+  rule += '# ACTION\nAction:      ' + (actionMap[action] || action) + '\n';
+  if (action === 'prepend_subject') rule += 'Prefix:      [⚠️ EXTERNAL] \n';
+  if (action === 'block') rule += 'Message:     "Blocked by security policy."\n';
+  if (action === 'redirect') rule += 'Redirect To: security-review@company.com\n';
+  if (action === 'add_header') rule += 'Header:      X-Security-Flag: Matched-' + name.replace(/\s/g, '-') + '\n';
+  rule += '\n# EXCEPTIONS\n';
+  if (except) rule += 'Except:      Members of "IT-Security-Team"\n'; else rule += 'Exceptions:  None\n';
+  rule += '\n# NOTIFICATIONS\n';
+  if (notify) rule += 'Notify:      security-alerts@company.com\n'; else rule += 'Notify:      Disabled\n';
+  rule += 'Audit Log:   ' + (audit ? 'Enabled' : 'Disabled') + '\n';
+  rule += '\n# POWERSHELL (Exchange Online)\n';
+  rule += '# New-TransportRule -Name "' + name + '" \\\n';
+  if (cond === 'attachment_ext') rule += '#   -AttachmentExtensionMatchesWords ' + val.split(',').map(function(v) { return '"' + v.trim() + '"'; }).join(',') + ' \\\n';
+  else if (cond === 'subject_contains') rule += '#   -SubjectContainsWords ' + val.split(',').map(function(v) { return '"' + v.trim() + '"'; }).join(',') + ' \\\n';
+  else if (cond === 'sender_domain') rule += '#   -SenderDomainIs ' + val.split(',').map(function(v) { return '"' + v.trim() + '"'; }).join(',') + ' \\\n';
+  else if (cond === 'external_sender') rule += '#   -FromScope "NotInOrganization" \\\n';
+  if (action === 'block') rule += '#   -RejectMessageReasonText "Blocked by policy" \\\n';
+  else if (action === 'quarantine') rule += '#   -Quarantine $true \\\n';
+  else if (action === 'prepend_subject') rule += '#   -PrependSubject "[EXTERNAL] " \\\n';
+  else if (action === 'redirect') rule += '#   -RedirectMessageTo "security-review@company.com" \\\n';
+  rule += '#   -Priority ' + priority + '\n';
+  var out = document.getElementById('ruleOutput');
+  out.value = rule; out.style.display = 'block';
+}
+
+/* ==========================================================
+   REGEX TESTER
+   ========================================================== */
+function testRx() {
+  var p = document.getElementById('rxPattern').value;
+  var t = document.getElementById('rxTest').value;
+  var res = document.getElementById('rxResults');
+  var cnt = document.getElementById('rxCount');
+  if (!p || !t) { res.textContent = 'Enter pattern and test string...'; cnt.textContent = ''; return; }
+  var flags = '';
+  if (document.getElementById('rxG').checked) flags += 'g';
+  if (document.getElementById('rxI').checked) flags += 'i';
+  if (document.getElementById('rxM').checked) flags += 'm';
+  try {
+    var allFlags = flags.indexOf('g') > -1 ? flags : flags + 'g';
+    var matches = Array.from(t.matchAll(new RegExp(p, allFlags)));
+    if (!matches.length) { res.innerHTML = '<span style="color:var(--red)">No matches</span>'; cnt.textContent = '0 matches'; return; }
+    var ht = t;
+    matches.map(function(m) { return { i: m.index, l: m[0].length, v: m[0] }; }).sort(function(a, b) { return b.i - a.i; }).forEach(function(m) {
+      ht = ht.slice(0, m.i) + '\x01' + ht.slice(m.i, m.i + m.l) + '\x02' + ht.slice(m.i + m.l);
     });
-    ht=esc(ht).replace(/⟨⟨⟨/g,'<span class="hl">').replace(/⟩⟩⟩/g,'</span>');
-    res.innerHTML=ht;
-    cnt.innerHTML=`<span style="color:var(--green)">${matches.length} match(es)</span>`;
-  }catch(e){res.innerHTML=`<span style="color:var(--red)">Invalid: ${e.message}</span>`;cnt.textContent=''}
+    ht = esc(ht).replace(/\x01/g, '<span class="hl">').replace(/\x02/g, '</span>');
+    res.innerHTML = ht;
+    cnt.innerHTML = '<span style="color:var(--green)">' + matches.length + ' match(es)</span>';
+  } catch (e) { res.innerHTML = '<span style="color:var(--red)">Invalid: ' + e.message + '</span>'; cnt.textContent = ''; }
 }
 
-// ===== HEADER REGEX LIBRARY =====
-const hdrRxLib=[
-  {cat:'Spoofing Detection',name:'Display Name Contains Executive Title',regex:'(?i)^From:.*"?(CEO|CFO|CTO|President|Director|VP|Chief).*"?\\s*<',desc:'Detect display name impersonation of executives'},
-  {cat:'Spoofing Detection',name:'From/Reply-To Domain Mismatch',regex:'From:.*@(\\w+\\.\\w+).*Reply-To:.*@(?!\\1)',desc:'Flag when Reply-To domain differs from From domain'},
-  {cat:'Spoofing Detection',name:'Display Name Mimics Email',regex:'From:\\s*"[^"]*@[^"]*"\\s*<',desc:'Display name contains an email address (impersonation tactic)'},
-  {cat:'Phishing Keywords',name:'Password/Credential Request',regex:'(?i)(update|verify|confirm|validate)\\s+(your\\s+)?(password|credential|account|identity|payment)',desc:'Common credential phishing language'},
-  {cat:'Phishing Keywords',name:'Urgency + Action',regex:'(?i)(urgent|immediate|expire|suspend|locked|unauthorized).*?(click|login|verify|confirm|act\\s+now)',desc:'Urgency combined with call-to-action'},
-  {cat:'Phishing Keywords',name:'BEC Wire Transfer',regex:'(?i)(wire\\s+transfer|bank\\s+transfer|ACH|direct\\s+deposit|routing\\s+number|beneficiary)',desc:'Financial wire transfer BEC keywords'},
-  {cat:'Phishing Keywords',name:'Gift Card Request',regex:'(?i)(gift\\s*card|itunes\\s*card|google\\s*play\\s*card|amazon\\s*card|buy\\s+cards)',desc:'Gift card scam indicators'},
-  {cat:'Suspicious Attachments',name:'Executable Extensions',regex:'\\.(exe|bat|cmd|scr|pif|com|vbs|vbe|js|jse|wsf|wsh|ps1|hta|cpl|msi|dll|lnk)\\b',desc:'Dangerous executable file extensions'},
-  {cat:'Suspicious Attachments',name:'Macro-Enabled Documents',regex:'\\.(docm|xlsm|pptm|dotm|xltm|potm|xlam|ppam|sldm)\\b',desc:'Office documents with macros'},
-  {cat:'Suspicious Attachments',name:'Double Extension',regex:'\\.(pdf|doc|jpg|png|txt)\\.(exe|scr|bat|cmd|pif|com|js|vbs)\\b',desc:'Double extension hiding real file type'},
-  {cat:'URL Patterns',name:'IP Address URL',regex:'https?://\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}',desc:'URL using IP instead of domain'},
-  {cat:'URL Patterns',name:'Suspicious TLD',regex:'https?://[^/]*\\.(tk|ml|ga|cf|gq|xyz|top|buzz|click|work|date|stream|download|win)/',desc:'URL with high-risk TLD'},
-  {cat:'URL Patterns',name:'URL Shortener',regex:'(bit\\.ly|goo\\.gl|tinyurl\\.com|t\\.co|is\\.gd|v\\.gd|cutt\\.ly|rb\\.gy)',desc:'URL shortening services'},
-  {cat:'URL Patterns',name:'Data Exfil URL',regex:'https?://[^/]*/(login|signin|verify|update|confirm|secure|account|password|webmail)',desc:'URLs mimicking login pages'},
-  {cat:'Header Anomalies',name:'Bulk Mailer Headers',regex:'(X-Mailer:\\s*(PHPMailer|SwiftMailer|MIME::Lite)|X-PHP-Script)',desc:'Headers indicating bulk/script mailers'},
-  {cat:'Header Anomalies',name:'Missing Message-ID',regex:'^(?!.*Message-ID)',desc:'Email without Message-ID header'},
-  {cat:'Header Anomalies',name:'Suspicious X-Originating-IP',regex:'X-Originating-IP:\\s*\\[?\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}',desc:'Tracks original sending IP'}
+/* ==========================================================
+   HEADER REGEX LIBRARY
+   ========================================================== */
+var hdrRxLib = [
+  { cat: 'Spoofing', name: 'Executive Title in Display Name', regex: '(?i)From:.*"?(?:CEO|CFO|CTO|President|Director|VP).*"?\\s*<', desc: 'Display name impersonation of executives' },
+  { cat: 'Spoofing', name: 'Email Address in Display Name', regex: 'From:\\s*"[^"]*@[^"]*"\\s*<', desc: 'Display name contains email — impersonation tactic' },
+  { cat: 'Phishing', name: 'Credential Request', regex: '(?i)(?:update|verify|confirm|validate)\\s+(?:your\\s+)?(?:password|credential|account|identity)', desc: 'Credential phishing language' },
+  { cat: 'Phishing', name: 'Urgency + Action', regex: '(?i)(?:urgent|immediate|expire|suspend|locked).*?(?:click|login|verify|confirm)', desc: 'Urgency combined with call-to-action' },
+  { cat: 'Phishing', name: 'BEC Wire Transfer', regex: '(?i)(?:wire\\s+transfer|bank\\s+transfer|ACH|routing\\s+number|beneficiary)', desc: 'Wire transfer BEC keywords' },
+  { cat: 'Phishing', name: 'Gift Card Request', regex: '(?i)(?:gift\\s*card|itunes\\s*card|google\\s*play\\s*card|amazon\\s*card)', desc: 'Gift card scam indicators' },
+  { cat: 'Attachments', name: 'Executable Extensions', regex: '\\.(?:exe|bat|cmd|scr|pif|com|vbs|vbe|js|jse|wsf|wsh|ps1|hta|cpl|msi|lnk)\\b', desc: 'Dangerous executable extensions' },
+  { cat: 'Attachments', name: 'Macro-Enabled Docs', regex: '\\.(?:docm|xlsm|pptm|dotm|xltm|potm|xlam|ppam)\\b', desc: 'Office documents with macros' },
+  { cat: 'Attachments', name: 'Double Extension', regex: '\\.(?:pdf|doc|jpg|png|txt)\\.(?:exe|scr|bat|cmd|pif|js|vbs)\\b', desc: 'Double extension hiding real type' },
+  { cat: 'URLs', name: 'IP Address URL', regex: 'https?://\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}', desc: 'URL using IP instead of domain' },
+  { cat: 'URLs', name: 'Risky TLD URL', regex: 'https?://[^/]*\\.(?:tk|ml|ga|cf|gq|xyz|top|buzz|click)/', desc: 'URL with high-risk TLD' },
+  { cat: 'URLs', name: 'URL Shortener', regex: '(?:bit\\.ly|goo\\.gl|tinyurl\\.com|t\\.co|cutt\\.ly|rb\\.gy)', desc: 'URL shortening services' },
+  { cat: 'URLs', name: 'Login Page URL', regex: 'https?://[^/]*/(?:login|signin|verify|update|confirm|secure|account|password)', desc: 'URLs mimicking login pages' },
+  { cat: 'Headers', name: 'Bulk Mailer', regex: '(?:X-Mailer:\\s*(?:PHPMailer|SwiftMailer)|X-PHP-Script)', desc: 'Bulk/script mailer headers' },
+  { cat: 'Headers', name: 'X-Originating-IP', regex: 'X-Originating-IP:\\s*\\[?\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}', desc: 'Original sending IP' }
 ];
-function renderHdrRx(list){
-  let html='';const cats={};
-  list.forEach(p=>{if(!cats[p.cat])cats[p.cat]=[];cats[p.cat].push(p)});
-  Object.keys(cats).forEach(c=>{
-    html+=`<h3 style="margin:14px 0 8px;color:var(--accent);font-size:.92rem">${c}</h3>`;
-    cats[c].forEach(p=>{
-      html+=`<div class="pattern-card hdr-rx-item"><div style="display:flex;justify-content:space-between;align-items:start"><div><h4>${p.name}</h4><p class="meta">${p.desc}</p></div><button class="btn btn-sm btn-secondary" onclick="clip(\`${p.regex.replace(/`/g,'\\`')}\`)">📋</button></div><code>${esc(p.regex)}</code></div>`;
+
+function renderHdrRx(list) {
+  var html = ''; var cats = {};
+  list.forEach(function(p) { if (!cats[p.cat]) cats[p.cat] = []; cats[p.cat].push(p); });
+  Object.keys(cats).forEach(function(c) {
+    html += '<h3 style="margin:14px 0 8px;color:var(--accent);font-size:.92rem">' + c + '</h3>';
+    cats[c].forEach(function(p) {
+      html += '<div class="pattern-card hdr-rx-item"><div style="display:flex;justify-content:space-between;align-items:start"><div><h4>' + p.name + '</h4><p class="meta">' + p.desc + '</p></div><button class="btn btn-sm btn-secondary" onclick="clip(\'' + p.regex.replace(/\\/g, '\\\\').replace(/'/g, "\\'") + '\')">📋</button></div><code>' + esc(p.regex) + '</code></div>';
     });
   });
-  document.getElementById('hdrRxList').innerHTML=html;
+  document.getElementById('hdrRxList').innerHTML = html;
 }
-function filterHdrRx(q){q=q.toLowerCase();renderHdrRx(hdrRxLib.filter(p=>p.name.toLowerCase().includes(q)||p.cat.toLowerCase().includes(q)||p.desc.toLowerCase().includes(q)))}
+function filterHdrRx(q) {
+  q = q.toLowerCase();
+  renderHdrRx(hdrRxLib.filter(function(p) { return (p.name + p.cat + p.desc + p.regex).toLowerCase().indexOf(q) > -1; }));
+}
 renderHdrRx(hdrRxLib);
 
-// ===== SEVERITY CALCULATOR =====
-function calcSeverity(){
-  const w={sevType:.25,sevUsers:.15,sevExposure:.25,sevFinancial:.15,sevPayload:.1,sevTarget:.1};
-  const vals={};let score=0;
-  Object.keys(w).forEach(k=>{vals[k]=parseInt(document.getElementById(k).value);score+=vals[k]*w[k]});
-  score=(score/5*100).toFixed(1);
-  let sev,col,action;
-  if(score>=75){sev='CRITICAL';col='var(--red)';action='Activate IR team immediately. Isolate affected accounts. Engage legal/compliance. Notify CISO. Begin evidence preservation.'}
-  else if(score>=55){sev='HIGH';col='var(--orange)';action='Escalate to security manager within 1 hour. Reset affected credentials. Block malicious sender/domain. Sweep for additional recipients.'}
-  else if(score>=35){sev='MEDIUM';col='var(--yellow)';action='Investigate within 4 hours. Remove malicious emails from mailboxes. Notify affected users. Update email filtering rules.'}
-  else{sev='LOW';col='var(--green)';action='Standard investigation within 24 hours. Log and monitor. Consider user awareness reminder.'}
-  document.getElementById('sevResults').innerHTML=`
-    <div class="stat-card" style="margin-top:14px;border-color:${col}"><div style="font-size:2.2rem;font-weight:700;color:${col}">⚠️ ${sev}</div><div class="lbl">Score: ${score}/100</div><div class="risk-meter" style="margin-top:10px"><div class="risk-meter-fill" style="width:${score}%;background:${col}"></div></div></div>
-    <div class="pattern-card" style="margin-top:12px;border-left:4px solid ${col}"><h4>Recommended Actions</h4><p style="margin-top:6px;font-size:.85rem">${action}</p></div>`;
+/* ==========================================================
+   SEVERITY CALCULATOR
+   ========================================================== */
+function calcSeverity() {
+  var w = { sevType: .25, sevUsers: .15, sevExposure: .25, sevFinancial: .15, sevPayload: .1, sevTarget: .1 };
+  var vals = {}; var score = 0;
+  Object.keys(w).forEach(function(k) { vals[k] = parseInt(document.getElementById(k).value); score += vals[k] * w[k]; });
+  score = (score / 5 * 100).toFixed(1);
+  var sev, col, action;
+  if (score >= 75) { sev = 'CRITICAL'; col = 'var(--red)'; action = 'Activate IR team. Isolate accounts. Engage legal. Notify CISO.'; }
+  else if (score >= 55) { sev = 'HIGH'; col = 'var(--orange)'; action = 'Escalate within 1 hour. Reset credentials. Block sender/domain.'; }
+  else if (score >= 35) { sev = 'MEDIUM'; col = 'var(--yellow)'; action = 'Investigate within 4 hours. Remove emails. Notify users.'; }
+  else { sev = 'LOW'; col = 'var(--green)'; action = 'Standard investigation. Log and monitor. Awareness reminder.'; }
+  document.getElementById('sevResults').innerHTML =
+    '<div class="stat-card" style="margin-top:14px;border-color:' + col + '"><div style="font-size:2.2rem;font-weight:700;color:' + col + '">⚠️ ' + sev + '</div><div class="lbl">Score: ' + score + '/100</div><div class="risk-meter" style="margin-top:10px"><div class="risk-meter-fill" style="width:' + score + '%;background:' + col + '"></div></div></div>' +
+    '<div class="pattern-card" style="margin-top:12px;border-left:4px solid ' + col + '"><h4>Recommended Actions</h4><p style="margin-top:6px;font-size:.85rem">' + action + '</p></div>';
 }
 
-// ===== IR TEMPLATES =====
-function loadIRTemplate(){
-  const type=document.getElementById('irSelect').value;
-  const tpls={
-phish_report:`PHISHING INCIDENT INVESTIGATION REPORT
-${'═'.repeat(50)}
+/* ==========================================================
+   IR TEMPLATES
+   ========================================================== */
+function loadIRTemplate() {
+  var type = document.getElementById('irSelect').value;
+  var tpls = {};
+  tpls.phish_report = 'PHISHING INCIDENT INVESTIGATION REPORT\n' + '═'.repeat(50) + '\n\nIncident ID:        [INC-YYYY-XXXX]\nDate/Time Reported: [YYYY-MM-DD HH:MM UTC]\nReported By:        [User / Automated]\nAnalyst:            [Your Name]\nStatus:             [Open / Investigating / Closed]\n\n1. INCIDENT SUMMARY\n' + '─'.repeat(30) + '\nType:          [Credential Phishing / Malware / BEC / Spear Phishing]\nSeverity:      [Critical / High / Medium / Low]\nSubject:       [Email subject]\nSender:        [actual@email.com]\nDisplay Name:  [Display name]\nReply-To:      [reply@email.com]\nReceived:      [Date/time]\n\n2. AUTHENTICATION\n' + '─'.repeat(30) + '\nSPF:           [Pass / Fail / SoftFail / None]\nDKIM:          [Pass / Fail / None]\nDMARC:         [Pass / Fail / None]\nSending IP:    [IP address]\n\n3. SCOPE\n' + '─'.repeat(30) + '\nRecipients:    [Number]\nClicked link:  [Number]\nSubmitted:     [Number]\nPurged:        [Yes / No]\n\n4. TECHNICAL ANALYSIS\n' + '─'.repeat(30) + '\nMalicious URL: [Defanged URL]\nLanding Page:  [Description]\nPayload:       [Attachment / Link / Form]\n\n5. CONTAINMENT\n' + '─'.repeat(30) + '\n[ ] Malicious emails removed from all mailboxes\n[ ] Sender blocked at email gateway\n[ ] URL blocked at proxy/DNS\n[ ] Affected credentials reset\n[ ] MFA tokens revoked\n[ ] Endpoint scan completed\n\n6. IOCs\n' + '─'.repeat(30) + '\nSender:        [email]\nSubject:       [subject]\nURL(s):        [defanged URLs]\nIP(s):         [sending IPs]\nHash(es):      [SHA-256]\n\n7. FOLLOW-UP\n' + '─'.repeat(30) + '\nUser notified: [Yes / No]\nTraining:      [Assigned / Not needed]\nRule updates:  [Description]\nLessons:       [Summary]';
 
-Incident ID:        [INC-YYYY-XXXX]
-Date/Time Reported: [YYYY-MM-DD HH:MM UTC]
-Reported By:        [User / Automated Detection]
-Analyst:            [Your Name]
-Status:             [Open / Investigating / Contained / Closed]
+  tpls.user_notify = 'Subject: Security Alert — Phishing Email Detected\n\nDear [User Name],\n\nOur security team identified a phishing email delivered to your mailbox.\n\nABOUT THE EMAIL:\n' + '─'.repeat(20) + '\nSubject: [Subject line]\nFrom:    [Sender address]\nDate:    [Date received]\nStatus:  ✅ Removed from your mailbox\n\nDID YOU INTERACT WITH THIS EMAIL?\n\nIF YOU CLICKED THE LINK or OPENED THE ATTACHMENT:\n1. Change your password IMMEDIATELY\n2. Do NOT enter credentials on any page that opened\n3. Contact the security team RIGHT AWAY: [contact info]\n4. Note the time you clicked\n\nIF YOU DID NOT INTERACT:\n✅ No action needed — the email has been removed.\n\nHOW TO SPOT PHISHING:\n• Check the actual sender email, not just display name\n• Hover over links before clicking\n• Be suspicious of urgent credential/payment requests\n• When in doubt, report: [phishing report button/email]\n\nQuestions? Contact Security:\n📧 [security@company.com]\n📱 [phone]\n\nStay vigilant,\nInformation Security Team';
 
-1. INCIDENT SUMMARY
-──────────────────────
-Incident Type:      [Credential Phishing / Malware / BEC / Spear Phishing]
-Severity:           [Critical / High / Medium / Low]
-Subject Line:       [Email subject]
-Sender (Display):   [Display name]
-Sender (Actual):    [actual@email.com]
-Reply-To:           [reply@email.com]
-Received Date:      [Date/time received]
+  tpls.user_compromised = 'COMPROMISED ACCOUNT RESPONSE CHECKLIST\n' + '═'.repeat(50) + '\n\nIncident ID:   [INC-XXXX]\nAffected User: [username]\nAccount Type:  [Standard / Admin / Service]\nDate Detected: [Date]\n\nIMMEDIATE (within 30 min):\n' + '─'.repeat(30) + '\n[ ] 1. Disable/suspend account\n[ ] 2. Revoke all active sessions & tokens\n[ ] 3. Reset password\n[ ] 4. Revoke & re-register MFA\n[ ] 5. Review/revoke OAuth app consents\n[ ] 6. Check for malicious mail forwarding rules\n[ ] 7. Check for malicious inbox rules\n[ ] 8. Review sign-in activity & locations\n[ ] 9. Block suspicious IPs\n\nINVESTIGATION (within 4 hours):\n' + '─'.repeat(30) + '\n[ ] 10. Review emails sent (internal phishing?)\n[ ] 11. Review files accessed/shared\n[ ] 12. Check for data exfiltration\n[ ] 13. Review admin actions if privileged\n[ ] 14. Check connected devices\n[ ] 15. Review mailbox audit logs\n[ ] 16. Search for additional compromised accounts\n[ ] 17. Determine how MFA was bypassed\n\nREMEDIATION:\n' + '─'.repeat(30) + '\n[ ] 18. Re-enable with new credentials\n[ ] 19. Enforce MFA re-enrollment\n[ ] 20. Notify user & manager\n[ ] 21. Block attacker infrastructure\n[ ] 22. Update email filtering rules\n[ ] 23. Run endpoint scan\n\nPOST-INCIDENT:\n' + '─'.repeat(30) + '\n[ ] 24. Complete investigation report\n[ ] 25. Determine root cause\n[ ] 26. Assign security training\n[ ] 27. Review regulatory requirements\n[ ] 28. Update playbooks\n[ ] 29. Schedule 30-day follow-up';
 
-2. AUTHENTICATION RESULTS
-──────────────────────
-SPF:               [Pass / Fail / SoftFail / None]
-DKIM:              [Pass / Fail / None]
-DMARC:             [Pass / Fail / None]
-Sending IP:        [IP address]
+  tpls.bec_report = 'BEC INVESTIGATION REPORT\n' + '═'.repeat(50) + '\nPRIORITY: CRITICAL\n\nIncident ID:     [INC-XXXX]\nDate Detected:   [Date]\nFinancial Impact: [Amount]\n\nATTACK TYPE:\n[ ] CEO/Executive Impersonation\n[ ] Vendor/Supplier Impersonation\n[ ] Account Compromise\n[ ] Invoice Fraud\n[ ] Payroll Diversion\n\nATTACKER:\n' + '─'.repeat(30) + '\nEmail:         [attacker email]\nDisplay Name:  [impersonated name]\nDomain:        [attacker domain]\nReply-To:      [if different]\n\nTARGET:\n' + '─'.repeat(30) + '\nUser:          [Name / Title]\nDepartment:    [Finance / HR / Executive]\nWhy targeted:  [Has wire authority / Processes payments]\n\nFINANCIAL:\n' + '─'.repeat(30) + '\nRequested:     [$X,XXX.XX]\nMethod:        [Wire / ACH / Gift cards / Crypto]\nBank Details:  [Attacker-provided account]\nPayment Status: [Not sent / Sent-recoverable / Sent-unrecoverable]\n\nIMMEDIATE ACTIONS:\n[ ] Contact bank for recall/freeze\n[ ] File IC3 complaint (ic3.gov)\n[ ] Preserve email evidence\n[ ] Block attacker domain/email\n[ ] Alert Finance team\n[ ] Notify Legal/Compliance';
 
-3. SCOPE ASSESSMENT
-──────────────────────
-Recipients:        [Number and list]
-Who clicked:       [Number / Names]
-Who submitted:     [Number / Names]
-Mailboxes purged:  [Yes / No / In Progress]
+  tpls.exec_summary = 'EXECUTIVE SUMMARY — EMAIL SECURITY INCIDENT\n' + '═'.repeat(50) + '\nClassification: CONFIDENTIAL\nDate: [Date]\n\nOVERVIEW:\nA [phishing / BEC / malware / account compromise] incident was detected on [date].\n\nKEY METRICS:\n• Emails delivered:      [X]\n• Users who clicked:     [X] ([X]%)\n• Credentials submitted: [X]\n• Accounts compromised:  [X]\n• Financial loss:        [$X / None]\n• Time to detect:        [X hours/minutes]\n• Time to contain:       [X hours/minutes]\n\nBUSINESS IMPACT:\n• Operations:    [None / Minimal / Significant]\n• Financial:     [$X / None]\n• Data exposure: [None / PII / Financial]\n• Regulatory:    [No notification / Under review]\n\nACTIONS TAKEN:\n1. [Key action]\n2. [Key action]\n3. [Key action]\n\nRECOMMENDATIONS:\n1. [Strategic recommendation]\n2. [Technical improvement]\n3. [Training update]';
 
-4. TECHNICAL ANALYSIS
-──────────────────────
-Malicious URL(s):  [Defanged URLs]
-Landing Page:      [Description of fake page]
-Payload:           [Attachment / Link / Form]
-Hosting:           [IP / Domain / Provider]
-Similar Campaigns: [Reference if known]
-
-5. CONTAINMENT ACTIONS
-──────────────────────
-[ ] Malicious emails removed from all mailboxes
-[ ] Sender blocked at email gateway
-[ ] Malicious URL blocked at proxy/DNS
-[ ] Affected credentials reset
-[ ] MFA tokens revoked and re-issued
-[ ] Endpoint scan completed
-[ ] Connected sessions terminated
-
-6. INDICATORS OF COMPROMISE
-──────────────────────
-Sender:            [email]
-Subject:           [subject line]
-URL(s):            [defanged URLs]
-IP(s):             [sending IPs]
-Domain(s):         [defanged domains]
-File Hash(es):     [SHA-256 if applicable]
-
-7. FOLLOW-UP
-──────────────────────
-User notification: [Sent / Pending]
-Training assigned: [Yes / No]
-Rule updates:      [Description]
-Lessons learned:   [Summary]`,
-
-user_notify:`Subject: Security Alert — Phishing Email Detected
-
-Dear [User Name],
-
-Our security team has identified a phishing email that was delivered to your mailbox. We have taken the following actions:
-
-ABOUT THE EMAIL:
-────────────────
-Subject: [Subject line]
-From:    [Sender address]
-Date:    [Date received]
-Status:  ✅ Removed from your mailbox
-
-WHAT HAPPENED:
-This email was designed to [steal your login credentials / install malware / trick you into a fraudulent payment]. It [contained a malicious link / had a dangerous attachment / impersonated a trusted sender].
-
-DID YOU INTERACT WITH THIS EMAIL?
-
-IF YOU CLICKED THE LINK or OPENED THE ATTACHMENT:
-1. Change your password IMMEDIATELY: [link to password reset]
-2. Do NOT enter your credentials on any page that was opened
-3. Contact the security team RIGHT AWAY: [contact info]
-4. Note the time you clicked for our investigation
-
-IF YOU DID NOT INTERACT:
-✅ No action needed — the email has been removed.
-
-HOW TO SPOT PHISHING:
-• Check the actual sender email address, not just the display name
-• Hover over links before clicking to verify the destination
-• Be suspicious of urgent requests for credentials or payments
-• When in doubt, report it: [phishing report email/button]
-
-Questions? Contact the Security Team:
-📧 [security@company.com]
-📱 [phone number]
-💬 [chat channel]
-
-Stay vigilant,
-Information Security Team`,
-
-user_compromised:`COMPROMISED ACCOUNT RESPONSE CHECKLIST
-${'═'.repeat(50)}
-
-Incident ID:     [INC-XXXX]
-Affected User:   [username]
-Account Type:    [Standard / Admin / Service]
-Date Detected:   [Date]
-
-IMMEDIATE ACTIONS (within 30 minutes):
-──────────────────────────────────────
-[ ] 1. Disable/suspend the compromised account
-[ ] 2. Revoke all active sessions and tokens
-[ ] 3. Reset password (generate strong password)
-[ ] 4. Revoke MFA and re-register
-[ ] 5. Review and revoke OAuth app consents
-[ ] 6. Check and remove malicious mail forwarding rules
-[ ] 7. Check and remove malicious inbox rules
-[ ] 8. Review recent sign-in activity and locations
-[ ] 9. Block suspicious IPs from sign-in logs
-
-INVESTIGATION (within 4 hours):
-──────────────────────────────────────
-[ ] 10. Review email sent from account (internal phishing?)
-[ ] 11. Review files accessed or shared from account
-[ ] 12. Check for data exfiltration (downloads, forwards)
-[ ] 13. Review admin actions if privileged account
-[ ] 14. Check connected/linked devices
-[ ] 15. Review mailbox audit logs for suspicious access
-[ ] 16. Search for additional compromised accounts
-[ ] 17. Check if MFA was bypassed and how
-
-REMEDIATION:
-──────────────────────────────────────
-[ ] 18. Re-enable account with new credentials
-[ ] 19. Enforce MFA re-enrollment
-[ ] 20. Notify user and provide guidance
-[ ] 21. Notify manager
-[ ] 22. Block attacker infrastructure
-[ ] 23. Update email filtering rules
-[ ] 24. Run endpoint security scan
-
-POST-INCIDENT:
-──────────────────────────────────────
-[ ] 25. Complete investigation report
-[ ] 26. Determine root cause (how was account compromised?)
-[ ] 27. Assign security awareness training
-[ ] 28. Review for regulatory notification requirements
-[ ] 29. Update detection rules / playbooks
-[ ] 30. Schedule 30-day follow-up review`,
-
-bec_report:`BEC (BUSINESS EMAIL COMPROMISE) INVESTIGATION REPORT
-${'═'.repeat(50)}
-
-PRIORITY: [CRITICAL]
-Incident ID:     [INC-XXXX]
-Date Detected:   [Date]
-Financial Impact: [Amount if known]
-
-ATTACK VECTOR:
-──────────────────────
-[ ] CEO/Executive Impersonation
-[ ] Vendor/Supplier Impersonation
-[ ] Account Compromise
-[ ] Lawyer/Legal Impersonation
-[ ] W-2/Tax Scam
-[ ] Invoice Fraud
-
-ATTACKER DETAILS:
-──────────────────────
-Email Used:       [attacker email]
-Display Name:     [impersonated name/title]
-Domain:           [attacker domain]
-Reply-To:         [if different]
-Communication:    [Email only / Email + Phone]
-Infrastructure:   [Registered domain / Free email / Compromised account]
-
-TARGET DETAILS:
-──────────────────────
-Target User:      [Name / Title]
-Department:       [Finance / HR / Executive]
-Why Targeted:     [Has wire authority / Processes payments]
-
-FINANCIAL DETAILS:
-──────────────────────
-Requested Amount: [$X,XXX.XX]
-Payment Method:   [Wire / ACH / Gift cards / Crypto]
-Bank Details:     [Account provided by attacker]
-Payment Status:   [Not sent / Sent - recoverable / Sent - unrecoverable]
-
-IMMEDIATE ACTIONS:
-──────────────────────
-[ ] Contact bank to initiate recall/freeze
-[ ] File IC3 complaint (ic3.gov)
-[ ] Preserve all email evidence
-[ ] Block attacker domain/email
-[ ] Alert Finance team of active BEC campaign
-[ ] Notify Legal/Compliance
-
-EVIDENCE PRESERVATION:
-──────────────────────
-[ ] Original emails with full headers saved
-[ ] Email gateway logs preserved
-[ ] Authentication logs reviewed
-[ ] Financial transaction records secured
-[ ] Communication timeline documented`,
-
-exec_summary:`EXECUTIVE SUMMARY — EMAIL SECURITY INCIDENT
-${'═'.repeat(50)}
-Classification: CONFIDENTIAL
-Date: [Date]
-
-OVERVIEW:
-A [phishing / BEC / malware / account compromise] incident was detected on [date]. This summary provides key facts, impact, and actions taken.
-
-KEY METRICS:
-──────────────────────
-• Emails delivered:      [X]
-• Users who clicked:     [X] ([X]%)
-• Credentials submitted: [X]
-• Accounts compromised:  [X]
-• Financial loss:        [$X / None]
-• Time to detect:        [X hours/minutes]
-• Time to contain:       [X hours/minutes]
-
-WHAT HAPPENED:
-[2-3 sentence description of the incident]
-
-BUSINESS IMPACT:
-──────────────────────
-• Operations:    [None / Minimal / Moderate / Significant]
-• Financial:     [$X / None]
-• Data exposure: [None / PII / Financial / IP]
-• Regulatory:    [No notification required / Under review]
-• Reputation:    [None / Internal only / External exposure]
-
-ACTIONS TAKEN:
-1. [Key action]
-2. [Key action]
-3. [Key action]
-
-GAPS IDENTIFIED:
-1. [Gap / finding]
-2. [Gap / finding]
-
-RECOMMENDATIONS:
-1. [Strategic recommendation]
-2. [Technical improvement]
-3. [Process/training update]
-
-NEXT STEPS:
-[Action items with owners and timelines]`,
-
-mass_phish:`MASS PHISHING CAMPAIGN REPORT
-${'═'.repeat(50)}
-
-Campaign ID:      [CAMP-YYYY-XXXX]
-Detection Date:   [Date]
-Status:           [Active / Contained / Resolved]
-
-CAMPAIGN OVERVIEW:
-──────────────────────
-Campaign Type:    [Credential Harvest / Malware / Invoice Fraud]
-Theme/Lure:       [Describe the social engineering pretext]
-Sophistication:   [Low / Medium / High / Very High]
-Targeted:         [Broad spray / Targeted to org / Spear phishing]
-
-SCOPE:
-──────────────────────
-Total emails sent:      [X]
-Unique recipients:      [X]
-Departments affected:   [List]
-Emails blocked:         [X] ([X]%)
-Emails delivered:       [X] ([X]%)
-Users who clicked:      [X] ([X]%)
-Users who submitted:    [X] ([X]%)
-
-TECHNICAL INDICATORS:
-──────────────────────
-Sender(s):        [List]
-Subject(s):       [List]
-Sending IP(s):    [List]
-Phishing URL(s):  [Defanged list]
-Domain(s):        [Defanged list]
-Attachment(s):    [Names + hashes]
-
-CONTAINMENT TIMELINE:
-──────────────────────
-[Time] First email delivered
-[Time] Detection / User report
-[Time] Investigation started
-[Time] Block rules deployed
-[Time] Mailbox purge initiated
-[Time] Mailbox purge complete
-[Time] All affected users notified
-[Time] Credential resets completed
-
-DETECTION GAPS:
-──────────────────────
-Why did it get through?
-1. [Reason]
-2. [Reason]
-
-RULE UPDATES APPLIED:
-1. [New rule / policy]
-2. [Updated filter]`
-  };
-  document.getElementById('irOutput').value=tpls[type]||'Template not found.';
+  document.getElementById('irOutput').value = tpls[type] || 'Template not found.';
 }
 loadIRTemplate();
 
-// ===== BEC PLAYBOOK =====
-function loadBEC(){
-  const steps=[
-    {title:'1. 🚨 Detection & Initial Assessment',content:`<strong>Identify the BEC type:</strong>
-<ul><li>CEO/Executive impersonation</li><li>Vendor email compromise</li><li>Account compromise</li><li>Attorney impersonation</li><li>Invoice fraud / payment redirect</li></ul>
-<strong>Immediate questions:</strong>
-<ul><li>Has any payment been made?</li><li>Is the email from a compromised internal account or external?</li><li>Who is being impersonated?</li><li>What is the requested action (wire, gift cards, W-2, data)?</li></ul>`},
-    {title:'2. 💰 Financial Response (if payment made)',content:`<strong>CRITICAL — Time is essential. Act within minutes.</strong>
-<ol><li>Contact your bank's fraud department IMMEDIATELY</li><li>Request a wire recall / payment freeze</li><li>File FBI IC3 complaint: <code>ic3.gov</code></li><li>Contact the receiving bank if information is available</li><li>Document all transaction details</li><li>Engage Legal for potential recovery actions</li></ol>
-<div class="danger-box">⏰ Wire recalls have the highest success rate within the first 24 hours. After 72 hours, recovery is unlikely.</div>`},
-    {title:'3. 🔒 Containment',content:`<ul><li>Block the attacker's email address and domain</li><li>If internal account compromised: disable account, revoke sessions, reset password</li><li>Remove BEC emails from all mailboxes (search & purge)</li><li>Alert Finance/AP team to hold any pending payments</li><li>Check for email forwarding rules added by attacker</li><li>Review inbox rules for auto-forwarding or auto-deletion</li></ul>`},
-    {title:'4. 🔍 Investigation',content:`<ul><li>Analyze email headers for origin and authentication results</li><li>Determine if attacker domain is registered lookalike or compromised legitimate domain</li><li>Check for ongoing email thread hijacking</li><li>Review if vendor/partner email systems were compromised</li><li>Search for related emails to/from attacker infrastructure</li><li>Check if invoice bank details were altered</li><li>Interview targeted user(s) for timeline</li></ul>`},
-    {title:'5. 📢 Communication & Notification',content:`<ul><li>Notify affected employees and their management</li><li>Alert executive team if C-suite was impersonated</li><li>Notify affected vendors/partners if their domain was spoofed</li><li>Engage Legal for regulatory notification assessment</li><li>Prepare internal communications if widespread</li><li>Document all communications in incident record</li></ul>`},
-    {title:'6. 🛡️ Prevention & Hardening',content:`<ul><li>Implement/strengthen DMARC to <code>p=reject</code></li><li>Enable external email tagging / banners</li><li>Add BEC-specific transport rules (display name impersonation)</li><li>Implement dual-authorization for wire transfers</li><li>Establish out-of-band verification for payment changes</li><li>Deploy anti-impersonation / advanced threat protection</li><li>Conduct targeted BEC awareness training</li><li>Register defensive domains (common typosquats)</li></ul>`}
+/* ==========================================================
+   BEC PLAYBOOK
+   ========================================================== */
+(function loadBEC() {
+  var steps = [
+    { title: '1. 🚨 Detection & Assessment', content: '<strong>Identify BEC type:</strong><ul><li>CEO/Executive impersonation</li><li>Vendor email compromise</li><li>Account compromise</li><li>Invoice fraud / payment redirect</li></ul><strong>Key questions:</strong><ul><li>Has any payment been made?</li><li>Internal compromised account or external?</li><li>Who is impersonated?</li><li>What action was requested?</li></ul>' },
+    { title: '2. 💰 Financial Response (if payment made)', content: '<div class="danger-box">⏰ Time is critical. Act within minutes.</div><ol><li>Contact bank fraud department IMMEDIATELY</li><li>Request wire recall / payment freeze</li><li>File FBI IC3 complaint: <code>ic3.gov</code></li><li>Contact receiving bank if possible</li><li>Document all transaction details</li><li>Engage Legal for recovery</li></ol><div class="warn-box">Wire recalls succeed most often within 24 hours. After 72 hours recovery is unlikely.</div>' },
+    { title: '3. 🔒 Containment', content: '<ul><li>Block attacker email and domain</li><li>If internal account compromised: disable, revoke sessions, reset password</li><li>Remove BEC emails from mailboxes</li><li>Alert Finance/AP to hold pending payments</li><li>Check for forwarding rules added by attacker</li><li>Review inbox rules for auto-forward/delete</li></ul>' },
+    { title: '4. 🔍 Investigation', content: '<ul><li>Analyze email headers for origin</li><li>Is attacker domain a registered lookalike or compromised legit domain?</li><li>Check for email thread hijacking</li><li>Review if vendor systems were compromised</li><li>Search for related attacker emails</li><li>Check if invoice bank details were altered</li></ul>' },
+    { title: '5. 📢 Communication', content: '<ul><li>Notify affected employees and management</li><li>Alert executive team if C-suite impersonated</li><li>Notify vendors/partners if their domain was spoofed</li><li>Engage Legal for regulatory assessment</li><li>Document all communications</li></ul>' },
+    { title: '6. 🛡️ Prevention', content: '<ul><li>Implement DMARC <code>p=reject</code></li><li>Enable external email banners</li><li>Add display name impersonation rules</li><li>Implement dual-auth for wire transfers</li><li>Out-of-band verification for payment changes</li><li>Deploy advanced threat protection</li><li>BEC awareness training</li><li>Register defensive domains</li></ul>' }
   ];
-  let html='';
-  steps.forEach(s=>{
-    html+=`<div class="acc-header" onclick="this.nextElementSibling.classList.toggle('open')"><span>${s.title}</span><span>▼</span></div><div class="acc-body">${s.content}</div>`;
+  var html = '';
+  steps.forEach(function(s) {
+    html += '<div class="acc-header"><span>' + s.title + '</span><span>▼</span></div><div class="acc-body">' + s.content + '</div>';
   });
-  document.getElementById('becContent').innerHTML=html;
-}
-loadBEC();
+  document.getElementById('becContent').innerHTML = html;
+})();
 
-// ===== PHISHING INDICATORS =====
-function loadPhishInd(){
-  const cats=[
-    {name:'📧 Header Indicators',items:['From display name doesn\'t match email address','Reply-To differs from From address','Return-Path domain mismatch','SPF/DKIM/DMARC failures','Unusual X-Originating-IP or X-Mailer','Missing or malformed Message-ID','Recently registered sending domain','Free email service for "business" communication','Multiple recipients in BCC']},
-    {name:'✍️ Content Indicators',items:['Generic greeting (Dear Customer, Dear User)','Urgency / threat language','Spelling and grammar errors','Request for credentials or personal info','Mismatched hyperlink text and actual URL','Embedded forms requesting input','Brand impersonation with slight differences','Too-good-to-be-true offers','Unsolicited password reset notifications']},
-    {name:'🔗 URL Indicators',items:['IP address instead of domain name','Misspelled brand names in URL','Suspicious TLD (.tk, .xyz, .top, etc.)','URL shorteners (bit.ly, tinyurl)','Excessive subdomains','URL-encoded characters','HTTP instead of HTTPS for login pages','Redirect chains','Data URI schemes']},
-    {name:'📎 Attachment Indicators',items:['Executable files (.exe, .scr, .bat)','Macro-enabled Office documents (.docm, .xlsm)','Double file extensions (report.pdf.exe)','Password-protected archives','Unexpected invoice/receipt attachments','ISO/IMG disk image files','HTML attachments with embedded forms','Files named to create urgency (URGENT_invoice.doc)']},
-    {name:'🎭 Social Engineering Indicators',items:['Impersonation of authority (CEO, IT, HR)','Creating false sense of urgency','Threatening account suspension or legal action','Requests to bypass normal procedures','Asking to keep communication confidential','Unusual request for gift card purchases','Request to change payment/bank details','Pretending to be from IT support']}
+/* ==========================================================
+   PHISHING INDICATORS
+   ========================================================== */
+(function loadPhishInd() {
+  var cats = [
+    { name: '📧 Header Indicators', items: ['From display name doesn\'t match email', 'Reply-To differs from From', 'Return-Path domain mismatch', 'SPF/DKIM/DMARC failures', 'Unusual X-Mailer', 'Missing Message-ID', 'Recently registered domain', 'Free email for "business"'] },
+    { name: '✍️ Content Indicators', items: ['Generic greeting', 'Urgency / threat language', 'Spelling/grammar errors', 'Request for credentials', 'Mismatched hyperlinks', 'Embedded forms', 'Brand impersonation', 'Too-good-to-be-true offers'] },
+    { name: '🔗 URL Indicators', items: ['IP address URLs', 'Misspelled brands in URL', 'Suspicious TLDs', 'URL shorteners', 'Excessive subdomains', 'HTTP for login pages', 'Redirect chains'] },
+    { name: '📎 Attachment Indicators', items: ['Executables (.exe, .scr, .bat)', 'Macro-enabled docs (.docm)', 'Double extensions (report.pdf.exe)', 'Password-protected archives', 'ISO/IMG disk images', 'HTML with embedded forms'] },
+    { name: '🎭 Social Engineering', items: ['Authority impersonation (CEO, IT)', 'False urgency', 'Account suspension threats', 'Requests to bypass procedures', 'Confidentiality requests', 'Gift card purchase requests', 'Payment detail changes'] }
   ];
-  let html='';
-  cats.forEach(c=>{
-    html+=`<div class="acc-header" onclick="this.nextElementSibling.classList.toggle('open')"><span>${c.name}</span><span>▼</span></div><div class="acc-body"><ul>`;
-    c.items.forEach(i=>html+=`<li>${i}</li>`);
-    html+='</ul></div>';
+  var html = '';
+  cats.forEach(function(c) {
+    html += '<div class="acc-header"><span>' + c.name + '</span><span>▼</span></div><div class="acc-body"><ul>';
+    c.items.forEach(function(i) { html += '<li>' + i + '</li>'; });
+    html += '</ul></div>';
   });
-  document.getElementById('phishIndContent').innerHTML=html;
-}
-loadPhishInd();
+  document.getElementById('phishIndContent').innerHTML = html;
+})();
 
-// ===== BEC PATTERNS =====
-function loadBECPat(){
-  const patterns=[
-    {name:'CEO Fraud / Executive Impersonation',icon:'👔',risk:'Critical',desc:'Attacker impersonates CEO or executive, requesting urgent wire transfer or sensitive data from Finance/HR.',indicators:['Sender uses free email or lookalike domain','Display name matches executive name','Request is urgent and confidential','Asks to bypass normal approval process','Often targets Finance, AP, or HR personnel'],example:'Subject: Urgent Wire Transfer\nFrom: "John Smith CEO" <john.smith@company-inc.com>\n"I need you to process a wire transfer today. This is confidential, don\'t discuss with anyone."'},
-    {name:'Invoice / Payment Fraud',icon:'📄',risk:'Critical',desc:'Attacker intercepts real business relationship and sends fake invoices or requests payment detail changes.',indicators:['Comes from compromised vendor email or lookalike','References real POs or projects','Bank details have changed','Slight email address variations','Often follows real email thread'],example:'Subject: RE: Invoice #4521 - Updated Banking Information\n"Please note our banking details have changed. Use the following for all future payments..."'},
-    {name:'Account Compromise',icon:'🔓',risk:'High',desc:'Attacker compromises a legitimate internal mailbox and uses it to send phishing or BEC emails.',indicators:['Sent from real internal account','Mailbox rules added (forwarding, deletion)','Unusual login locations','Emails sent at unusual hours','Targets contacts from address book'],example:'Internal user\'s account is compromised and used to send targeted phishing to their contacts, leveraging existing trust.'},
-    {name:'Vendor Email Compromise (VEC)',icon:'🏭',risk:'Critical',desc:'Attacker compromises a vendor/supplier\'s email and intercepts payment communications.',indicators:['Comes from actual vendor email address','References real invoices and contracts','Only bank details have changed','May include fake "audit" excuse','Request timing aligns with payment cycles'],example:'Legitimate vendor email account is hacked. Attacker monitors email, then sends invoice with altered bank details during regular payment cycle.'},
-    {name:'Payroll Diversion',icon:'💰',risk:'High',desc:'Attacker impersonates employee and requests direct deposit / payroll changes to redirect salary.',indicators:['Appears to come from employee','Requests change to bank account for payroll','Often targets HR or Payroll','Uses personal email or lookalike','May include fake identification'],example:'Subject: Direct Deposit Update\nFrom: "Jane Employee" <jane.employee@gmail.com>\n"Can you update my direct deposit to the following account?"'},
-    {name:'Data Theft / W-2 Scam',icon:'📋',risk:'High',desc:'Attacker impersonates executive requesting employee W-2s, tax forms, or PII.',indicators:['Targets HR in January-April (tax season)','Asks for employee W-2s or tax records','Requests "all employee" data','Impersonates CEO or senior exec','Creates urgency around tax deadlines'],example:'Subject: Employee W-2s Needed\nFrom: "CEO Name" <ceo@company-inc.com>\n"I need all employee W-2 forms sent to me as PDF immediately for the audit."'}
+/* ==========================================================
+   BEC PATTERNS
+   ========================================================== */
+(function loadBECPat() {
+  var patterns = [
+    { name: 'CEO Fraud', icon: '👔', risk: 'Critical', desc: 'Impersonates CEO requesting urgent wire transfer or sensitive data.', indicators: ['Free email or lookalike domain', 'Display name matches executive', 'Urgent and confidential', 'Bypasses normal approval', 'Targets Finance/AP/HR'] },
+    { name: 'Invoice Fraud', icon: '📄', risk: 'Critical', desc: 'Intercepts business relationship, sends fake invoices or changes payment details.', indicators: ['Compromised vendor email or lookalike', 'References real POs/projects', 'Bank details changed', 'Slight email variations', 'Follows real email thread'] },
+    { name: 'Account Compromise', icon: '🔓', risk: 'High', desc: 'Compromises internal mailbox to send phishing or BEC from trusted account.', indicators: ['Sent from real internal account', 'Forwarding rules added', 'Unusual login locations', 'Emails at odd hours', 'Targets address book contacts'] },
+    { name: 'Vendor Email Compromise', icon: '🏭', risk: 'Critical', desc: 'Compromises vendor email to intercept payment communications.', indicators: ['From actual vendor email', 'References real invoices', 'Only bank details changed', 'Payment cycle timing', 'Fake audit excuse'] },
+    { name: 'Payroll Diversion', icon: '💰', risk: 'High', desc: 'Impersonates employee to redirect direct deposit/salary.', indicators: ['Appears from employee', 'Bank account change request', 'Targets HR/Payroll', 'Personal email or lookalike', 'May include fake ID'] },
+    { name: 'W-2 / Data Theft', icon: '📋', risk: 'High', desc: 'Impersonates executive requesting W-2s or employee PII.', indicators: ['Targets HR (Jan-Apr)', 'Asks for all W-2s/tax records', 'Impersonates CEO/CFO', 'Creates urgency around tax deadlines'] }
   ];
-  let html='';
-  patterns.forEach(p=>{
-    const rTag=p.risk==='Critical'?'tag-red':'tag-orange';
-    html+=`<div class="acc-header" onclick="this.nextElementSibling.classList.toggle('open')"><span>${p.icon} ${p.name} <span class="tag ${rTag}">${p.risk}</span></span><span>▼</span></div>
-    <div class="acc-body">
-      <p>${p.desc}</p>
-      <p style="margin-top:8px"><strong>Key Indicators:</strong></p>
-      <ul>${p.indicators.map(i=>'<li>'+i+'</li>').join('')}</ul>
-      <p style="margin-top:8px"><strong>Example:</strong></p>
-      <div class="out-box" style="font-size:.8rem">${esc(p.example)}</div>
-    </div>`;
+  var html = '';
+  patterns.forEach(function(p) {
+    var rTag = p.risk === 'Critical' ? 'tag-red' : 'tag-orange';
+    html += '<div class="acc-header"><span>' + p.icon + ' ' + p.name + ' <span class="tag ' + rTag + '">' + p.risk + '</span></span><span>▼</span></div><div class="acc-body"><p>' + p.desc + '</p><p style="margin-top:8px"><strong>Indicators:</strong></p><ul>';
+    p.indicators.forEach(function(i) { html += '<li>' + i + '</li>'; });
+    html += '</ul></div>';
   });
-  document.getElementById('becPatContent').innerHTML=html;
-}
-loadBECPat();
+  document.getElementById('becPatContent').innerHTML = html;
+})();
 
-// ===== SMTP CODES =====
-function loadSMTP(){
-  const codes=[
-    {code:'211',cat:'System',desc:'System status or help reply'},
-    {code:'214',cat:'System',desc:'Help message'},
-    {code:'220',cat:'Connection',desc:'Service ready - SMTP greeting'},
-    {code:'221',cat:'Connection',desc:'Service closing transmission channel'},
-    {code:'235',cat:'Auth',desc:'Authentication successful'},
-    {code:'250',cat:'Success',desc:'Requested action completed'},
-    {code:'251',cat:'Success',desc:'User not local; will forward'},
-    {code:'252',cat:'Success',desc:'Cannot verify user, but will attempt delivery'},
-    {code:'334',cat:'Auth',desc:'Server challenge (AUTH continuation)'},
-    {code:'354',cat:'Data',desc:'Start mail input; end with <CRLF>.<CRLF>'},
-    {code:'421',cat:'Temp Fail',desc:'Service not available, closing channel'},
-    {code:'450',cat:'Temp Fail',desc:'Mailbox unavailable (busy/blocked)'},
-    {code:'451',cat:'Temp Fail',desc:'Requested action aborted: local error'},
-    {code:'452',cat:'Temp Fail',desc:'Insufficient system storage'},
-    {code:'455',cat:'Temp Fail',desc:'Server unable to accommodate parameters'},
-    {code:'500',cat:'Error',desc:'Syntax error, command unrecognized'},
-    {code:'501',cat:'Error',desc:'Syntax error in parameters or arguments'},
-    {code:'502',cat:'Error',desc:'Command not implemented'},
-    {code:'503',cat:'Error',desc:'Bad sequence of commands'},
-    {code:'504',cat:'Error',desc:'Command parameter not implemented'},
-    {code:'535',cat:'Auth',desc:'Authentication failed'},
-    {code:'550',cat:'Perm Fail',desc:'Mailbox unavailable / access denied / SPF fail'},
-    {code:'551',cat:'Perm Fail',desc:'User not local; try forwarding path'},
-    {code:'552',cat:'Perm Fail',desc:'Exceeded storage allocation'},
-    {code:'553',cat:'Perm Fail',desc:'Mailbox name not allowed'},
-    {code:'554',cat:'Perm Fail',desc:'Transaction failed / DMARC reject / blocked'},
-    {code:'556',cat:'Perm Fail',desc:'Domain does not accept mail'}
+/* ==========================================================
+   SMTP CODES
+   ========================================================== */
+(function loadSMTP() {
+  var codes = [
+    { code: '220', cat: 'Connection', desc: 'Service ready — SMTP greeting' },
+    { code: '221', cat: 'Connection', desc: 'Service closing channel' },
+    { code: '235', cat: 'Auth', desc: 'Authentication successful' },
+    { code: '250', cat: 'Success', desc: 'Requested action completed' },
+    { code: '251', cat: 'Success', desc: 'User not local; will forward' },
+    { code: '334', cat: 'Auth', desc: 'Server challenge (AUTH continuation)' },
+    { code: '354', cat: 'Data', desc: 'Start mail input' },
+    { code: '421', cat: 'Temp Fail', desc: 'Service not available, closing' },
+    { code: '450', cat: 'Temp Fail', desc: 'Mailbox unavailable (busy/blocked)' },
+    { code: '451', cat: 'Temp Fail', desc: 'Action aborted: local error' },
+    { code: '452', cat: 'Temp Fail', desc: 'Insufficient storage' },
+    { code: '500', cat: 'Error', desc: 'Syntax error, command unrecognized' },
+    { code: '501', cat: 'Error', desc: 'Syntax error in parameters' },
+    { code: '502', cat: 'Error', desc: 'Command not implemented' },
+    { code: '503', cat: 'Error', desc: 'Bad sequence of commands' },
+    { code: '535', cat: 'Auth', desc: 'Authentication failed' },
+    { code: '550', cat: 'Perm Fail', desc: 'Mailbox unavailable / access denied / SPF fail' },
+    { code: '551', cat: 'Perm Fail', desc: 'User not local' },
+    { code: '552', cat: 'Perm Fail', desc: 'Exceeded storage allocation' },
+    { code: '553', cat: 'Perm Fail', desc: 'Mailbox name not allowed' },
+    { code: '554', cat: 'Perm Fail', desc: 'Transaction failed / DMARC reject / blocked' }
   ];
-  let html='<table><tr><th>Code</th><th>Category</th><th>Description</th></tr>';
-  codes.forEach(c=>{
-    const catTag=c.cat==='Success'?'tag-green':c.cat.includes('Fail')?c.cat==='Temp Fail'?'tag-yellow':'tag-red':c.cat==='Auth'?'tag-purple':'tag-blue';
-    html+=`<tr class="smtp-row"><td style="font-family:monospace;font-weight:700;font-size:1rem">${c.code}</td><td><span class="tag ${catTag}">${c.cat}</span></td><td>${c.desc}</td></tr>`;
+  var html = '<table><tr><th>Code</th><th>Category</th><th>Description</th></tr>';
+  codes.forEach(function(c) {
+    var catTag = c.cat === 'Success' ? 'tag-green' : c.cat.indexOf('Fail') > -1 ? (c.cat === 'Temp Fail' ? 'tag-yellow' : 'tag-red') : c.cat === 'Auth' ? 'tag-purple' : 'tag-blue';
+    html += '<tr class="smtp-row"><td style="font-family:monospace;font-weight:700;font-size:1rem">' + c.code + '</td><td><span class="tag ' + catTag + '">' + c.cat + '</span></td><td>' + c.desc + '</td></tr>';
   });
-  html+='</table>';
-  document.getElementById('smtpContent').innerHTML=html;
-}
-function filterSMTP(q){q=q.toLowerCase();document.querySelectorAll('.smtp-row').forEach(r=>{r.style.display=r.textContent.toLowerCase().includes(q)?'':'none'})}
-loadSMTP();
+  html += '</table>';
+  document.getElementById('smtpContent').innerHTML = html;
+})();
+function filterSMTP(q) { q = q.toLowerCase(); document.querySelectorAll('.smtp-row').forEach(function(r) { r.style.display = r.textContent.toLowerCase().indexOf(q) > -1 ? '' : 'none'; }); }
 
-// ===== EMAIL PORTS =====
-function loadPorts(){
-  const ports=[
-    {port:'25',proto:'SMTP',enc:'None (STARTTLS optional)',use:'Server-to-server relay','status':'⚠️ Unencrypted by default'},
-    {port:'465',proto:'SMTPS',enc:'Implicit TLS/SSL',use:'Submission (deprecated, revived)','status':'✅ Encrypted'},
-    {port:'587',proto:'SMTP Submission',enc:'STARTTLS (required)',use:'Client-to-server submission','status':'✅ Recommended for sending'},
-    {port:'110',proto:'POP3',enc:'None',use:'Mail retrieval','status':'🚨 Unencrypted'},
-    {port:'995',proto:'POP3S',enc:'Implicit TLS/SSL',use:'Secure mail retrieval','status':'✅ Encrypted'},
-    {port:'143',proto:'IMAP',enc:'None (STARTTLS optional)',use:'Mail access','status':'⚠️ Unencrypted by default'},
-    {port:'993',proto:'IMAPS',enc:'Implicit TLS/SSL',use:'Secure mail access','status':'✅ Encrypted'},
-    {port:'2525',proto:'SMTP Alt',enc:'Varies',use:'Alternative SMTP when 25 is blocked','status':'⚠️ Non-standard'}
+/* ==========================================================
+   EMAIL PORTS
+   ========================================================== */
+(function loadPorts() {
+  var ports = [
+    { port: '25', proto: 'SMTP', enc: 'None (STARTTLS optional)', use: 'Server-to-server relay', status: '⚠️ Unencrypted default' },
+    { port: '465', proto: 'SMTPS', enc: 'Implicit TLS', use: 'Submission (revived)', status: '✅ Encrypted' },
+    { port: '587', proto: 'SMTP Submission', enc: 'STARTTLS required', use: 'Client-to-server', status: '✅ Recommended' },
+    { port: '110', proto: 'POP3', enc: 'None', use: 'Mail retrieval', status: '🚨 Unencrypted' },
+    { port: '995', proto: 'POP3S', enc: 'Implicit TLS', use: 'Secure retrieval', status: '✅ Encrypted' },
+    { port: '143', proto: 'IMAP', enc: 'None (STARTTLS optional)', use: 'Mail access', status: '⚠️ Unencrypted default' },
+    { port: '993', proto: 'IMAPS', enc: 'Implicit TLS', use: 'Secure mail access', status: '✅ Encrypted' }
   ];
-  let html='<table><tr><th>Port</th><th>Protocol</th><th>Encryption</th><th>Use Case</th><th>Status</th></tr>';
-  ports.forEach(p=>{
-    html+=`<tr><td style="font-family:monospace;font-weight:700;font-size:1.1rem">${p.port}</td><td>${p.proto}</td><td>${p.enc}</td><td>${p.use}</td><td>${p.status}</td></tr>`;
+  var html = '<table><tr><th>Port</th><th>Protocol</th><th>Encryption</th><th>Use</th><th>Status</th></tr>';
+  ports.forEach(function(p) { html += '<tr><td style="font-family:monospace;font-weight:700;font-size:1.1rem">' + p.port + '</td><td>' + p.proto + '</td><td>' + p.enc + '</td><td>' + p.use + '</td><td>' + p.status + '</td></tr>'; });
+  html += '</table>';
+  html += '<div class="info-box" style="margin-top:14px">💡 Block port 25 outbound for users. Use 587 with STARTTLS. Enforce TLS 1.2+. Disable POP3/IMAP if not needed.</div>';
+  document.getElementById('portContent').innerHTML = html;
+})();
+
+/* ==========================================================
+   MIME TYPES
+   ========================================================== */
+(function loadMIME() {
+  var mimes = [
+    { mime: 'multipart/mixed', desc: 'Body + attachments' },
+    { mime: 'multipart/alternative', desc: 'Text + HTML alternatives' },
+    { mime: 'multipart/related', desc: 'HTML + inline images' },
+    { mime: 'text/plain', desc: 'Plain text body' },
+    { mime: 'text/html', desc: 'HTML body' },
+    { mime: 'text/calendar', desc: 'Calendar invitation (ICS)' },
+    { mime: 'message/rfc822', desc: 'Attached/forwarded email' },
+    { mime: 'message/delivery-status', desc: 'NDR / bounce' },
+    { mime: 'application/pdf', desc: 'PDF' },
+    { mime: 'application/msword', desc: 'Word (.doc)' },
+    { mime: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', desc: 'Word (.docx)' },
+    { mime: 'application/vnd.ms-excel', desc: 'Excel (.xls)' },
+    { mime: 'application/zip', desc: 'ZIP archive' },
+    { mime: 'application/octet-stream', desc: 'Binary/unknown' },
+    { mime: 'application/pkcs7-mime', desc: 'S/MIME encrypted' },
+    { mime: 'image/jpeg', desc: 'JPEG image' },
+    { mime: 'image/png', desc: 'PNG image' },
+    { mime: 'image/gif', desc: 'GIF (tracking pixels)' }
+  ];
+  var html = '<table><tr><th>MIME Type</th><th>Description</th></tr>';
+  mimes.forEach(function(m) { html += '<tr class="mime-row"><td style="font-family:monospace;font-size:.8rem">' + m.mime + '</td><td>' + m.desc + '</td></tr>'; });
+  html += '</table>';
+  document.getElementById('mimeContent').innerHTML = html;
+})();
+function filterMime(q) { q = q.toLowerCase(); document.querySelectorAll('.mime-row').forEach(function(r) { r.style.display = r.textContent.toLowerCase().indexOf(q) > -1 ? '' : 'none'; }); }
+
+/* ==========================================================
+   RFC REFERENCE
+   ========================================================== */
+(function loadRFC() {
+  var rfcs = [
+    { num: 'RFC 5321', title: 'SMTP', desc: 'Core SMTP protocol', cat: 'Protocol' },
+    { num: 'RFC 5322', title: 'Internet Message Format', desc: 'Email message syntax', cat: 'Protocol' },
+    { num: 'RFC 2045-2049', title: 'MIME', desc: 'Attachments, HTML, multimedia', cat: 'Protocol' },
+    { num: 'RFC 7208', title: 'SPF', desc: 'Sender Policy Framework', cat: 'Auth' },
+    { num: 'RFC 6376', title: 'DKIM', desc: 'DomainKeys Identified Mail', cat: 'Auth' },
+    { num: 'RFC 7489', title: 'DMARC', desc: 'Domain-based Message Authentication', cat: 'Auth' },
+    { num: 'RFC 8617', title: 'ARC', desc: 'Authenticated Received Chain', cat: 'Auth' },
+    { num: 'RFC 8461', title: 'MTA-STS', desc: 'Strict Transport Security for email', cat: 'Security' },
+    { num: 'RFC 3207', title: 'STARTTLS', desc: 'TLS for SMTP', cat: 'Security' },
+    { num: 'RFC 8301', title: 'DKIM Crypto Update', desc: 'Mandates rsa-sha256', cat: 'Security' },
+    { num: 'RFC 7601', title: 'Auth-Results Header', desc: 'Authentication-Results format', cat: 'Auth' },
+    { num: 'RFC 8616', title: 'BIMI', desc: 'Brand logos for authenticated email', cat: 'Auth' }
+  ];
+  var html = '<table><tr><th>RFC</th><th>Title</th><th>Cat</th><th>Description</th></tr>';
+  rfcs.forEach(function(r) {
+    var catTag = r.cat === 'Auth' ? 'tag-green' : r.cat === 'Security' ? 'tag-blue' : 'tag-purple';
+    html += '<tr><td style="font-family:monospace;font-weight:600">' + r.num + '</td><td style="font-weight:600">' + r.title + '</td><td><span class="tag ' + catTag + '">' + r.cat + '</span></td><td style="font-size:.82rem">' + r.desc + '</td></tr>';
   });
-  html+='</table>';
-  html+='<div class="info-box" style="margin-top:14px">💡 <strong>Best practices:</strong> Block port 25 outbound for end users. Use port 587 with STARTTLS for mail submission. Enforce TLS 1.2+ for all email transport. Disable POP3/IMAP if not needed (use modern protocols like MAPI/EWS/Graph API).</div>';
-  document.getElementById('portContent').innerHTML=html;
-}
-loadPorts();
+  html += '</table>';
+  document.getElementById('rfcContent').innerHTML = html;
+})();
 
-// ===== MIME TYPES =====
-function loadMIME(){
-  const mimes=[
-    {mime:'multipart/mixed',desc:'Message with different content types (body + attachments)'},
-    {mime:'multipart/alternative',desc:'Message with alternative representations (text + HTML)'},
-    {mime:'multipart/related',desc:'Message with inline content (HTML + embedded images)'},
-    {mime:'multipart/signed',desc:'Digitally signed message (S/MIME or PGP)'},
-    {mime:'text/plain',desc:'Plain text email body'},
-    {mime:'text/html',desc:'HTML email body'},
-    {mime:'text/calendar',desc:'Calendar invitation (ICS)'},
-    {mime:'message/rfc822',desc:'Attached/forwarded email message'},
-    {mime:'message/delivery-status',desc:'Delivery status notification (DSN/NDR)'},
-    {mime:'application/pdf',desc:'PDF attachment'},
-    {mime:'application/msword',desc:'Word document (.doc)'},
-    {mime:'application/vnd.openxmlformats-officedocument.wordprocessingml.document',desc:'Word document (.docx)'},
-    {mime:'application/vnd.ms-excel',desc:'Excel spreadsheet (.xls)'},
-    {mime:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',desc:'Excel spreadsheet (.xlsx)'},
-    {mime:'application/zip',desc:'ZIP archive'},
-    {mime:'application/x-rar-compressed',desc:'RAR archive'},
-    {mime:'application/octet-stream',desc:'Binary/unknown (often used for executables)'},
-    {mime:'application/pgp-encrypted',desc:'PGP encrypted content'},
-    {mime:'application/pkcs7-mime',desc:'S/MIME encrypted or signed content'},
-    {mime:'application/x-pkcs7-signature',desc:'S/MIME signature'},
-    {mime:'image/jpeg',desc:'JPEG image (inline or attachment)'},
-    {mime:'image/png',desc:'PNG image'},
-    {mime:'image/gif',desc:'GIF image (tracking pixels often use this)'}
+/* ==========================================================
+   GLOSSARY
+   ========================================================== */
+(function loadGloss() {
+  var terms = [
+    { term: 'SPF', def: 'Sender Policy Framework — DNS-based auth specifying authorized sending servers.' },
+    { term: 'DKIM', def: 'DomainKeys Identified Mail — cryptographic signing verifying message integrity and sender.' },
+    { term: 'DMARC', def: 'Domain-based Message Authentication, Reporting & Conformance — combines SPF + DKIM with policy.' },
+    { term: 'ARC', def: 'Authenticated Received Chain — preserves auth results across forwarding.' },
+    { term: 'BIMI', def: 'Brand Indicators for Message Identification — verified brand logos for authenticated emails.' },
+    { term: 'MTA-STS', def: 'Mail Transfer Agent Strict Transport Security — enforces TLS for email transport.' },
+    { term: 'BEC', def: 'Business Email Compromise — scam impersonating executives/vendors to redirect payments.' },
+    { term: 'Phishing', def: 'Social engineering via email to steal credentials, install malware, or trigger harmful actions.' },
+    { term: 'Spear Phishing', def: 'Targeted phishing at specific individuals using personalized content.' },
+    { term: 'Whaling', def: 'Phishing targeting C-suite / senior executives.' },
+    { term: 'Homoglyph Attack', def: 'Using visually similar characters to create lookalike domains.' },
+    { term: 'Typosquatting', def: 'Registering domains with common typos of legitimate domains.' },
+    { term: 'SEG', def: 'Secure Email Gateway — filters inbound/outbound email for threats.' },
+    { term: 'Safe Links', def: 'Microsoft Defender feature providing time-of-click URL scanning.' },
+    { term: 'Safe Attachments', def: 'Microsoft Defender sandbox detonation for email attachments.' },
+    { term: 'S/MIME', def: 'Standard for public-key encryption and digital signing of email.' },
+    { term: 'SMTP', def: 'Simple Mail Transfer Protocol — the core protocol for sending email.' },
+    { term: 'IMAP', def: 'Internet Message Access Protocol — server-side email access (port 143/993).' },
+    { term: 'MX Record', def: 'DNS record specifying the mail server for a domain.' },
+    { term: 'PTR Record', def: 'Reverse DNS mapping IP → domain. Used for sender verification.' },
+    { term: 'NDR', def: 'Non-Delivery Report — bounce message when delivery fails.' },
+    { term: 'Backscatter', def: 'Bounces from spoofed emails flooding the forged sender.' },
+    { term: 'Transport Rule', def: 'Email gateway rule evaluating conditions and applying security actions.' },
+    { term: 'Quarantine', def: 'Isolated storage for suspicious emails pending admin review.' },
+    { term: 'IOC', def: 'Indicator of Compromise — IP, domain, hash, or email indicating malicious activity.' },
+    { term: 'Sandbox', def: 'Isolated environment for detonating suspicious attachments/URLs.' },
+    { term: 'Envelope From', def: 'MAIL FROM in SMTP (Return-Path). Different from visible header From.' },
+    { term: 'Header From', def: 'The From address users see. DMARC aligns this with SPF/DKIM domains.' },
+    { term: 'Defang', def: 'Making IOCs non-clickable for safe sharing (e.g., hxxp://evil[.]com).' }
   ];
-  let html='<table><tr><th>MIME Type</th><th>Description</th></tr>';
-  mimes.forEach(m=>{html+=`<tr class="mime-row"><td style="font-family:monospace;font-size:.8rem">${m.mime}</td><td>${m.desc}</td></tr>`});
-  html+='</table>';
-  document.getElementById('mimeContent').innerHTML=html;
-}
-function filterMime(q){q=q.toLowerCase();document.querySelectorAll('.mime-row').forEach(r=>{r.style.display=r.textContent.toLowerCase().includes(q)?'':'none'})}
-loadMIME();
-
-// ===== RFC REFERENCE =====
-function loadRFC(){
-  const rfcs=[
-    {num:'RFC 5321',title:'Simple Mail Transfer Protocol (SMTP)',desc:'Core SMTP protocol specification for sending email between servers.',cat:'Protocol'},
-    {num:'RFC 5322',title:'Internet Message Format',desc:'Defines the syntax of email messages — headers, body, addressing.',cat:'Protocol'},
-    {num:'RFC 2045-2049',title:'MIME (Multipurpose Internet Mail Extensions)',desc:'Extends email to support attachments, HTML, character sets, and multimedia.',cat:'Protocol'},
-    {num:'RFC 7208',title:'Sender Policy Framework (SPF)',desc:'DNS-based email authentication to verify sending server authorization.',cat:'Authentication'},
-    {num:'RFC 6376',title:'DomainKeys Identified Mail (DKIM)',desc:'Cryptographic email signing to verify message integrity and sender domain.',cat:'Authentication'},
-    {num:'RFC 7489',title:'DMARC',desc:'Domain-based Message Authentication, Reporting, and Conformance. Ties SPF and DKIM together with policy and reporting.',cat:'Authentication'},
-    {num:'RFC 8617',title:'Authenticated Received Chain (ARC)',desc:'Preserves authentication results across mail forwarding.',cat:'Authentication'},
-    {num:'RFC 8461',title:'MTA-STS',desc:'SMTP MTA Strict Transport Security — enforces TLS for email transport.',cat:'Security'},
-    {num:'RFC 8460',title:'TLS Reporting (TLSRPT)',desc:'Reporting mechanism for TLS connection failures in email delivery.',cat:'Security'},
-    {num:'RFC 3207',title:'SMTP STARTTLS Extension',desc:'Adds TLS encryption capability to SMTP connections.',cat:'Security'},
-    {num:'RFC 8301',title:'Cryptographic Algorithm Updates for DKIM',desc:'Deprecates rsa-sha1, mandates rsa-sha256 for DKIM.',cat:'Security'},
-    {num:'RFC 7601',title:'Message Header Field for Indicating Authentication Results',desc:'Defines the Authentication-Results header format.',cat:'Authentication'},
-    {num:'RFC 8616',title:'BIMI (Brand Indicators for Message Identification)',desc:'Displays verified brand logos for authenticated emails.',cat:'Authentication'},
-    {num:'RFC 6710',title:'S/MIME Capabilities',desc:'End-to-end email encryption and signing standard.',cat:'Security'}
-  ];
-  let html='<table><tr><th>RFC</th><th>Title</th><th>Category</th><th>Description</th></tr>';
-  rfcs.forEach(r=>{
-    const catTag=r.cat==='Authentication'?'tag-green':r.cat==='Security'?'tag-blue':'tag-purple';
-    html+=`<tr><td style="font-family:monospace;white-space:nowrap;font-weight:600">${r.num}</td><td style="font-weight:600">${r.title}</td><td><span class="tag ${catTag}">${r.cat}</span></td><td style="font-size:.82rem">${r.desc}</td></tr>`;
-  });
-  html+='</table>';
-  document.getElementById('rfcContent').innerHTML=html;
-}
-loadRFC();
-
-// ===== GLOSSARY =====
-function loadGloss(){
-  const terms=[
-    {term:'SPF',def:'Sender Policy Framework — DNS-based authentication that specifies which mail servers are authorized to send email on behalf of a domain.'},
-    {term:'DKIM',def:'DomainKeys Identified Mail — cryptographic authentication method that adds a digital signature to email headers, verifying message integrity and sender domain.'},
-    {term:'DMARC',def:'Domain-based Message Authentication, Reporting, and Conformance — protocol that combines SPF and DKIM with alignment checks and reporting.'},
-    {term:'ARC',def:'Authenticated Received Chain — authentication protocol that preserves SPF/DKIM results across email forwarding, preventing authentication failures.'},
-    {term:'BIMI',def:'Brand Indicators for Message Identification — standard that allows organizations to display their verified logo next to authenticated emails.'},
-    {term:'MTA-STS',def:'Mail Transfer Agent Strict Transport Security — mechanism for mail servers to declare support for TLS and refuse unencrypted connections.'},
-    {term:'BEC',def:'Business Email Compromise — sophisticated scam targeting businesses by impersonating executives, vendors, or partners to fraudulently redirect payments.'},
-    {term:'Phishing',def:'Social engineering attack delivered via email that attempts to steal credentials, install malware, or trick users into harmful actions.'},
-    {term:'Spear Phishing',def:'Targeted phishing attack directed at specific individuals or organizations, using personalized content for higher success rates.'},
-    {term:'Whaling',def:'Phishing specifically targeting high-profile executives (CEO, CFO) or other senior leaders within an organization.'},
-    {term:'Vishing',def:'Voice phishing — using phone calls to socially engineer victims, often in combination with email-based attacks.'},
-    {term:'Smishing',def:'SMS phishing — sending fraudulent text messages to trick recipients into clicking links or sharing information.'},
-    {term:'Homoglyph Attack',def:'Using visually similar characters from different alphabets/fonts to create lookalike domain names (e.g., using Cyrillic "а" instead of Latin "a").'},
-    {term:'Typosquatting',def:'Registering domains with common typos of legitimate domains to catch mistyped URLs or create convincing phishing emails.'},
-    {term:'Credential Harvesting',def:'Phishing technique that directs victims to fake login pages to capture usernames, passwords, and MFA tokens.'},
-    {term:'SEG',def:'Secure Email Gateway — email security solution that filters inbound/outbound email for spam, malware, phishing, and policy violations.'},
-    {term:'EOP',def:'Exchange Online Protection — Microsoft\'s cloud-based email filtering service included with Microsoft 365.'},
-    {term:'MDO',def:'Microsoft Defender for Office 365 — advanced threat protection for email including Safe Links, Safe Attachments, and anti-phishing.'},
-    {term:'Safe Links',def:'Microsoft Defender feature that rewrites URLs to route through Microsoft\'s scanning service for time-of-click protection.'},
-    {term:'Safe Attachments',def:'Microsoft Defender feature that detonates email attachments in a sandbox before delivery to detect zero-day malware.'},
-    {term:'S/MIME',def:'Secure/Multipurpose Internet Mail Extensions — standard for public-key encryption and digital signing of email messages (end-to-end).'},
-    {term:'PGP/GPG',def:'Pretty Good Privacy / GNU Privacy Guard — encryption standard for end-to-end email encryption using public key cryptography.'},
-    {term:'SMTP',def:'Simple Mail Transfer Protocol — the standard protocol for sending email between mail servers (port 25, 587, or 465).'},
-    {term:'IMAP',def:'Internet Message Access Protocol — protocol for accessing and managing email on a mail server (port 143/993).'},
-    {term:'POP3',def:'Post Office Protocol version 3 — protocol for retrieving email from a server, typically downloading and deleting (port 110/995).'},
-    {term:'MX Record',def:'Mail Exchanger DNS record that specifies the mail server responsible for accepting email for a domain.'},
-    {term:'PTR Record',def:'Pointer DNS record that maps an IP address to a domain name (reverse DNS). Used for sender verification.'},
-    {term:'NDR',def:'Non-Delivery Report — bounce message returned when an email cannot be delivered. Can be spoofed (backscatter).'},
-    {term:'Backscatter',def:'Bounce messages generated by mail servers when spam/phishing emails use a forged sender address (collateral spam).'},
-    {term:'Transport Rule',def:'Email gateway rule that evaluates messages against conditions and applies actions (block, redirect, modify, encrypt).'},
-    {term:'Quarantine',def:'Isolated storage where suspicious emails are held for admin review before delivery or deletion.'},
-    {term:'IOC',def:'Indicator of Compromise — observable artifact (IP, domain, hash, email) that indicates a security incident or malicious activity.'},
-    {term:'Sandbox',def:'Isolated environment where suspicious attachments/URLs are executed to detect malicious behavior without risk to production systems.'},
-    {term:'Zero-Day',def:'Previously unknown vulnerability with no available patch. Zero-day email attacks use novel malware or techniques not yet in signature databases.'},
-    {term:'Envelope From',def:'The MAIL FROM address in the SMTP conversation (Return-Path). Different from the header From that users see.'},
-    {term:'Header From',def:'The From address displayed in the email client. Can be different from the Envelope From — this is what DMARC aligns against.'}
-  ];
-  let html='';
-  terms.forEach(t=>{html+=`<div class="pattern-card gloss-item"><h4 style="color:var(--accent)">${t.term}</h4><p style="font-size:.83rem;margin-top:4px;line-height:1.5">${t.def}</p></div>`});
-  document.getElementById('glossContent').innerHTML=html;
-}
-function filterGloss(q){q=q.toLowerCase();document.querySelectorAll('.gloss-item').forEach(g=>{g.style.display=g.textContent.toLowerCase().includes(q)?'':'none'})}
-loadGloss();
+  var html = '';
+  terms.forEach(function(t) { html += '<div class="pattern-card gloss-item"><h4 style="color:var(--accent)">' + t.term + '</h4><p style="font-size:.83rem;margin-top:4px;line-height:1.5">' + t.def + '</p></div>'; });
+  document.getElementById('glossContent').innerHTML = html;
+})();
+function filterGloss(q) { q = q.toLowerCase(); document.querySelectorAll('.gloss-item').forEach(function(g) { g.style.display = g.textContent.toLowerCase().indexOf(q) > -1 ? '' : 'none'; }); }
 </script>
 </body>
 </html>
